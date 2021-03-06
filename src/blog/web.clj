@@ -12,7 +12,7 @@
             [clj-yaml.core :as yaml]
             [clojure.java.io :as io]))
 
-(def site-url "http://ellahoeppner.com/")
+(def site-url "https://friendly-cray-726f8a.netlify.app/")
 
 (def output-dir "output/")
 
