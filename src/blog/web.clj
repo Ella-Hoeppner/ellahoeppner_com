@@ -14,6 +14,8 @@
 
 (def site-url "http://ellahoeppner.com/")
 
+(def output-dir "output/")
+
 (defn date-string [date]
   (let [[year month day] (string/split date #"-")]
     (str (["January"
@@ -225,3 +227,7 @@
                 get-assets
                 optimizations/all
                 strategies/serve-live-assets))
+
+(defn export []
+  (stasis/empty-directory! output-dir)
+  (stasis/export-pages (get-pages) output-dir))
