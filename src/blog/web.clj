@@ -4,6 +4,7 @@
             [optimus.optimizations :as optimizations]
             [optimus.prime :as optimus]
             [optimus.strategies :as strategies]
+            [optimus.export]
             [clojure.string :as string]
             [clj-rss.core :as rss]
             [hiccup.page :refer [html5]]
@@ -229,5 +230,7 @@
                 strategies/serve-live-assets))
 
 (defn export []
-  (stasis/empty-directory! output-dir)
-  (stasis/export-pages (get-pages) output-dir))
+  (let [assets (optimizations/all (get-assets) {})]
+    (stasis/empty-directory! output-dir)
+    (optimus.export/save-assets assets output-dir)
+    (stasis/export-pages (get-pages) output-dir {:optimus-assets assets})))
