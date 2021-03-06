@@ -3,7 +3,7 @@ title: The Case for a Critical Rationalist Approach to AGI
 date: "2019-10-28"
 tags:
   - AGI
-  - epistemology
+  - Epistemology
 ---
 
 #Artificial General Intelligence

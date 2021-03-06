@@ -2,7 +2,7 @@
 title: "Plan Disruption"
 date: "2020-1-16"
 tags:
-  - game design
+  - Game Design
 ---
 
 *This post (minus a few small edits) originally appeared on my old website in May of 2017.*

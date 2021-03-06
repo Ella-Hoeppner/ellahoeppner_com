@@ -2,7 +2,7 @@
 title: "Making Randomness Fair"
 date: "2019-11-10"
 tags:
-  - game design
+  - Game Design
 ---
 
 #The Problem with Randomness

@@ -2,7 +2,7 @@
 title: "Blind Variation as Heuristics that May Fail?"
 date: "2020-12-23"
 tags:
-  - epistemology
+  - Epistemology
 ---
 [Bruce Neilson](http://fourstrands.org) and I have an ongoing discussion about our differing interpretation of Donald Campbell’s notion of “blindness”. Bruce has previously published [a post](http://fourstrands.org/2020/10/22/campbells-evolutionary-epistemology/) explaining his interpretation of Campbell’s essays, and while I agree with much of what Bruce says, we have some important disagreements about what counts as “blind” and what doesn’t. To try to make some progress in this discussion, I’m going to respond to a part of Bruce’s essays that I disagree with. In particular, I’m responding to the section titled “Blind Variation = Heuristics that May Fail”.
 

@@ -3,7 +3,7 @@ title: "CTP Theory: Automatic Routine Extraction"
 date: "2019-12-07"
 tags:
   - AGI
-  - epistemology
+  - Epistemology
   - CTP Theory
 ---
 

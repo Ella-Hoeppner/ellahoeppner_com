@@ -3,7 +3,7 @@ title: "Does CTP Theory Need a New Type of Problem?"
 date: "2019-11-15"
 tags:
   - AGI
-  - epistemology
+  - Epistemology
   - CTP Theory
 ---
 

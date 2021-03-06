@@ -2,7 +2,7 @@
 title: "Computationally Universal Inference Systems as a Model for General Intelligence"
 date: "2021-2-24"
 tags:
-  - epistemology
+  - Epistemology
   - AGI
   - CTP Theory
   - Conjectural Inference Theory

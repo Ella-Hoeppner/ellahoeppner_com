@@ -2,7 +2,7 @@
 title: "Some Criticisms of the Neo-Darwinian Theory of the Mind"
 date: "2021-1-20"
 tags:
-  - epistemology
+  - Epistemology
 ---
 Dennis Hackethal [has proposed](https://medium.com/conjecture-magazine/the-neo-darwinian-theory-of-the-mind-d84c0bcc6485) a theory he calls “The Neo-Darwinian Theory of the Mind”, which is intended to be a low-level explanation of how intelligent minds work. The central concept of the theory is that ideas within a mind are replicators that compete with one another for prevalence in the mind. The evolutionary dynamics that arise from this evolutionary competition supposedly explain creativity, just as the competition between genes within gene pools explains the origin of adaptivity in biological evolution.
 

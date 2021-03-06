@@ -3,7 +3,7 @@ title: "The Current State of CTP Theory"
 date: "2020-6-25"
 tags:
   - AGI
-  - epistemology
+  - Epistemology
   - CTP Theory
 ---
 

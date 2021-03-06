@@ -2,7 +2,7 @@
 title: "The Case for Score Systems in Single-Player Strategy Games"
 date: "2020-1-23"
 tags:
-  - game design
+  - Game Design
 ---
 
 I have argued for a long time that score systems are superior to win/loss systems as endgame feedback mechanisms in single-player strategy games. I believe that there are significant advantages to score systems, and no significant disadvantages, so all single-player strategy games, going forward, should adopt score systems.

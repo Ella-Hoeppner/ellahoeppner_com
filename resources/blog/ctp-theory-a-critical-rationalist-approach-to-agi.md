@@ -3,7 +3,7 @@ title: "CTP Theory: A Critical Rationalist approach to AGI"
 date: "2019-11-01"
 tags:
   - AGI
-  - epistemology
+  - Epistemology
   - CTP Theory
 ---
 

@@ -3,7 +3,7 @@ title: "Unifying Claims and Theories in CTP Theory"
 date: "2020-3-9"
 tags:
   - AGI
-  - epistemology
+  - Epistemology
   - CTP Theory
 ---
 
