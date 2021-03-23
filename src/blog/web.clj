@@ -183,15 +183,6 @@
                                 "/js/ui.js"
                                 #"/images/.*\..*"]))
 
-(defn raw-files [paths]
-  (into {}
-        (mapv (fn [path]
-                [(str "/" path)
-                 (slurp
-                  (io/resource
-                   (str "public/raw/" path)))])
-              paths)))
-
 (defn rss-feed []
   (apply (partial rss/channel-xml {:title "Ella Hoeppner's blog"
                                    :link site-url
@@ -218,12 +209,7 @@
     :tags (tag-pages)
     :rss
     {"/blog.rss" (rss-feed)}
-    :broth (raw-files
-            ["broth/broth.js"
-             "broth/index.html"
-             "broth/states/default.json"
-             "broth/states/empty.json"
-             "broth/states/lone_replicator.json"])}))
+    :raw (stasis/slurp-resources "public/raw" #"")}))
 
 (def app
   (optimus/wrap (stasis/serve-pages get-pages)
