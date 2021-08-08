@@ -1,0 +1,14 @@
+@font-face {
+  font-family: "monoid";
+  src: url("./monoid.ttf");
+}
+
+@font-face {
+  font-family: "monoid-bold";
+  src: url("./monoid-bold.ttf");
+}
+
+body {
+  margin: 0;
+  overflow: hidden;
+}
