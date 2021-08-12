@@ -6,14 +6,14 @@ ellah.geometry.unit = new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.K
 ellah.geometry.unit_square = new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [ellah.geometry.origin,ellah.geometry.unit], null);
 ellah.geometry.add_points = (function ellah$geometry$add_points(var_args){
 var args__4742__auto__ = [];
-var len__4736__auto___75782 = arguments.length;
-var i__4737__auto___75783 = (0);
+var len__4736__auto___468896 = arguments.length;
+var i__4737__auto___468897 = (0);
 while(true){
-if((i__4737__auto___75783 < len__4736__auto___75782)){
-args__4742__auto__.push((arguments[i__4737__auto___75783]));
+if((i__4737__auto___468897 < len__4736__auto___468896)){
+args__4742__auto__.push((arguments[i__4737__auto___468897]));
 
-var G__75785 = (i__4737__auto___75783 + (1));
-i__4737__auto___75783 = G__75785;
+var G__468898 = (i__4737__auto___468897 + (1));
+i__4737__auto___468897 = G__468898;
 continue;
 } else {
 }
@@ -25,27 +25,27 @@ return ellah.geometry.add_points.cljs$core$IFn$_invoke$arity$variadic(argseq__47
 });
 
 (ellah.geometry.add_points.cljs$core$IFn$_invoke$arity$variadic = (function (points){
-return new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null,"x","x",2099068185),cljs.core.apply.cljs$core$IFn$_invoke$arity$2(cljs.core._PLUS_,cljs.core.mapv.cljs$core$IFn$_invoke$arity$2(new cljs.core.Keyword(null,"x","x",2099068185),points)),new cljs.core.Keyword(null,"y","y",-1757859776),cljs.core.apply.cljs$core$IFn$_invoke$arity$2(cljs.core._PLUS_,cljs.core.mapv.cljs$core$IFn$_invoke$arity$2(new cljs.core.Keyword(null,"y","y",-1757859776),points))], null);
+return cljs.core.merge.cljs$core$IFn$_invoke$arity$variadic(cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([cljs.core.first(points),new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null,"x","x",2099068185),cljs.core.apply.cljs$core$IFn$_invoke$arity$2(cljs.core._PLUS_,cljs.core.mapv.cljs$core$IFn$_invoke$arity$2(new cljs.core.Keyword(null,"x","x",2099068185),points)),new cljs.core.Keyword(null,"y","y",-1757859776),cljs.core.apply.cljs$core$IFn$_invoke$arity$2(cljs.core._PLUS_,cljs.core.mapv.cljs$core$IFn$_invoke$arity$2(new cljs.core.Keyword(null,"y","y",-1757859776),points))], null)], 0));
 }));
 
 (ellah.geometry.add_points.cljs$lang$maxFixedArity = (0));
 
 /** @this {Function} */
-(ellah.geometry.add_points.cljs$lang$applyTo = (function (seq75732){
+(ellah.geometry.add_points.cljs$lang$applyTo = (function (seq468870){
 var self__4724__auto__ = this;
-return self__4724__auto__.cljs$core$IFn$_invoke$arity$variadic(cljs.core.seq(seq75732));
+return self__4724__auto__.cljs$core$IFn$_invoke$arity$variadic(cljs.core.seq(seq468870));
 }));
 
 ellah.geometry.multiply_points = (function ellah$geometry$multiply_points(var_args){
 var args__4742__auto__ = [];
-var len__4736__auto___75790 = arguments.length;
-var i__4737__auto___75791 = (0);
+var len__4736__auto___468899 = arguments.length;
+var i__4737__auto___468900 = (0);
 while(true){
-if((i__4737__auto___75791 < len__4736__auto___75790)){
-args__4742__auto__.push((arguments[i__4737__auto___75791]));
+if((i__4737__auto___468900 < len__4736__auto___468899)){
+args__4742__auto__.push((arguments[i__4737__auto___468900]));
 
-var G__75792 = (i__4737__auto___75791 + (1));
-i__4737__auto___75791 = G__75792;
+var G__468901 = (i__4737__auto___468900 + (1));
+i__4737__auto___468900 = G__468901;
 continue;
 } else {
 }
@@ -57,34 +57,35 @@ return ellah.geometry.multiply_points.cljs$core$IFn$_invoke$arity$variadic(argse
 });
 
 (ellah.geometry.multiply_points.cljs$core$IFn$_invoke$arity$variadic = (function (points){
-return new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null,"x","x",2099068185),cljs.core.apply.cljs$core$IFn$_invoke$arity$2(cljs.core._STAR_,cljs.core.mapv.cljs$core$IFn$_invoke$arity$2(new cljs.core.Keyword(null,"x","x",2099068185),points)),new cljs.core.Keyword(null,"y","y",-1757859776),cljs.core.apply.cljs$core$IFn$_invoke$arity$2(cljs.core._STAR_,cljs.core.mapv.cljs$core$IFn$_invoke$arity$2(new cljs.core.Keyword(null,"y","y",-1757859776),points))], null);
+return cljs.core.merge.cljs$core$IFn$_invoke$arity$variadic(cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([cljs.core.first(points),new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null,"x","x",2099068185),cljs.core.apply.cljs$core$IFn$_invoke$arity$2(cljs.core._STAR_,cljs.core.mapv.cljs$core$IFn$_invoke$arity$2(new cljs.core.Keyword(null,"x","x",2099068185),points)),new cljs.core.Keyword(null,"y","y",-1757859776),cljs.core.apply.cljs$core$IFn$_invoke$arity$2(cljs.core._STAR_,cljs.core.mapv.cljs$core$IFn$_invoke$arity$2(new cljs.core.Keyword(null,"y","y",-1757859776),points))], null)], 0));
 }));
 
 (ellah.geometry.multiply_points.cljs$lang$maxFixedArity = (0));
 
 /** @this {Function} */
-(ellah.geometry.multiply_points.cljs$lang$applyTo = (function (seq75739){
+(ellah.geometry.multiply_points.cljs$lang$applyTo = (function (seq468871){
 var self__4724__auto__ = this;
-return self__4724__auto__.cljs$core$IFn$_invoke$arity$variadic(cljs.core.seq(seq75739));
+return self__4724__auto__.cljs$core$IFn$_invoke$arity$variadic(cljs.core.seq(seq468871));
 }));
 
 ellah.geometry.scale_point = (function ellah$geometry$scale_point(a,s){
-return new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null,"x","x",2099068185),(new cljs.core.Keyword(null,"x","x",2099068185).cljs$core$IFn$_invoke$arity$1(a) * s),new cljs.core.Keyword(null,"y","y",-1757859776),(new cljs.core.Keyword(null,"y","y",-1757859776).cljs$core$IFn$_invoke$arity$1(a) * s)], null);
+var scale_fn = cljs.core.partial.cljs$core$IFn$_invoke$arity$2(cljs.core._STAR_,s);
+return cljs.core.update.cljs$core$IFn$_invoke$arity$3(cljs.core.update.cljs$core$IFn$_invoke$arity$3(a,new cljs.core.Keyword(null,"x","x",2099068185),scale_fn),new cljs.core.Keyword(null,"y","y",-1757859776),scale_fn);
 });
 ellah.geometry.subtract_points = (function ellah$geometry$subtract_points(a,b){
 return ellah.geometry.add_points.cljs$core$IFn$_invoke$arity$variadic(cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([a,ellah.geometry.scale_point(b,(-1))], 0));
 });
-ellah.geometry.in_rect_QMARK_ = (function ellah$geometry$in_rect_QMARK_(p__75743,point){
-var vec__75744 = p__75743;
-var pos = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__75744,(0),null);
-var size = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__75744,(1),null);
+ellah.geometry.in_rect_QMARK_ = (function ellah$geometry$in_rect_QMARK_(p__468872,point){
+var vec__468873 = p__468872;
+var pos = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__468873,(0),null);
+var size = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__468873,(1),null);
 var off = ellah.geometry.subtract_points(point,pos);
 return ((((((0) <= new cljs.core.Keyword(null,"x","x",2099068185).cljs$core$IFn$_invoke$arity$1(off))) && ((new cljs.core.Keyword(null,"x","x",2099068185).cljs$core$IFn$_invoke$arity$1(off) <= new cljs.core.Keyword(null,"x","x",2099068185).cljs$core$IFn$_invoke$arity$1(size))))) && (((((0) <= new cljs.core.Keyword(null,"y","y",-1757859776).cljs$core$IFn$_invoke$arity$1(off))) && ((new cljs.core.Keyword(null,"y","y",-1757859776).cljs$core$IFn$_invoke$arity$1(off) <= new cljs.core.Keyword(null,"y","y",-1757859776).cljs$core$IFn$_invoke$arity$1(size))))));
 });
-ellah.geometry.rect_within = (function ellah$geometry$rect_within(p__75753,aspect_ratio){
-var vec__75754 = p__75753;
-var pos = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__75754,(0),null);
-var size = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__75754,(1),null);
+ellah.geometry.rect_within = (function ellah$geometry$rect_within(p__468876,aspect_ratio){
+var vec__468877 = p__468876;
+var pos = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__468877,(0),null);
+var size = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__468877,(1),null);
 var rect_width = (function (){var x__4217__auto__ = new cljs.core.Keyword(null,"x","x",2099068185).cljs$core$IFn$_invoke$arity$1(size);
 var y__4218__auto__ = (aspect_ratio * new cljs.core.Keyword(null,"y","y",-1757859776).cljs$core$IFn$_invoke$arity$1(size));
 return ((x__4217__auto__ < y__4218__auto__) ? x__4217__auto__ : y__4218__auto__);
@@ -94,10 +95,20 @@ var rect_size = new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword
 var rect_pos = ellah.geometry.add_points.cljs$core$IFn$_invoke$arity$variadic(cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([pos,ellah.geometry.scale_point(ellah.geometry.subtract_points(size,rect_size),0.5)], 0));
 return new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [rect_pos,rect_size], null);
 });
-ellah.geometry.rect_around = (function ellah$geometry$rect_around(p__75757,aspect_ratio){
-var vec__75758 = p__75757;
-var pos = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__75758,(0),null);
-var size = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__75758,(1),null);
+ellah.geometry.rect_center = (function ellah$geometry$rect_center(p__468880){
+var vec__468881 = p__468880;
+var pos = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__468881,(0),null);
+var size = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__468881,(1),null);
+return ellah.geometry.add_points.cljs$core$IFn$_invoke$arity$variadic(cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([pos,ellah.geometry.scale_point(size,0.5)], 0));
+});
+ellah.geometry.circle_within = (function ellah$geometry$circle_within(rect){
+var square = ellah.geometry.rect_within(rect,(1));
+return cljs.core.assoc.cljs$core$IFn$_invoke$arity$3(ellah.geometry.rect_center(square),new cljs.core.Keyword(null,"radius","radius",-2073122258),(new cljs.core.Keyword(null,"x","x",2099068185).cljs$core$IFn$_invoke$arity$1(cljs.core.second(square)) / (2)));
+});
+ellah.geometry.rect_around = (function ellah$geometry$rect_around(p__468884,aspect_ratio){
+var vec__468885 = p__468884;
+var pos = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__468885,(0),null);
+var size = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__468885,(1),null);
 var rect_width = (function (){var x__4214__auto__ = new cljs.core.Keyword(null,"x","x",2099068185).cljs$core$IFn$_invoke$arity$1(size);
 var y__4215__auto__ = (aspect_ratio * new cljs.core.Keyword(null,"y","y",-1757859776).cljs$core$IFn$_invoke$arity$1(size));
 return ((x__4214__auto__ > y__4215__auto__) ? x__4214__auto__ : y__4215__auto__);
@@ -134,10 +145,10 @@ ellah.geometry.point_angle = (function ellah$geometry$point_angle(point){
 return Math.atan2(new cljs.core.Keyword(null,"x","x",2099068185).cljs$core$IFn$_invoke$arity$1(point),new cljs.core.Keyword(null,"y","y",-1757859776).cljs$core$IFn$_invoke$arity$1(point));
 });
 ellah.geometry.reflect_point = (function ellah$geometry$reflect_point(point,angle){
-var map__75761 = point;
-var map__75761__$1 = (((((!((map__75761 == null))))?(((((map__75761.cljs$lang$protocol_mask$partition0$ & (64))) || ((cljs.core.PROTOCOL_SENTINEL === map__75761.cljs$core$ISeq$))))?true:false):false))?cljs.core.apply.cljs$core$IFn$_invoke$arity$2(cljs.core.hash_map,map__75761):map__75761);
-var x = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__75761__$1,new cljs.core.Keyword(null,"x","x",2099068185));
-var y = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__75761__$1,new cljs.core.Keyword(null,"y","y",-1757859776));
+var map__468888 = point;
+var map__468888__$1 = (((((!((map__468888 == null))))?(((((map__468888.cljs$lang$protocol_mask$partition0$ & (64))) || ((cljs.core.PROTOCOL_SENTINEL === map__468888.cljs$core$ISeq$))))?true:false):false))?cljs.core.apply.cljs$core$IFn$_invoke$arity$2(cljs.core.hash_map,map__468888):map__468888);
+var x = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__468888__$1,new cljs.core.Keyword(null,"x","x",2099068185));
+var y = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__468888__$1,new cljs.core.Keyword(null,"y","y",-1757859776));
 var double_angle = ((2) * cljs.core.mod(angle,((2) * Math.PI)));
 var c = Math.cos(double_angle);
 var s = Math.sin(double_angle);
@@ -148,14 +159,14 @@ return new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null,"x"
 });
 ellah.geometry.polygon = (function ellah$geometry$polygon(var_args){
 var args__4742__auto__ = [];
-var len__4736__auto___75797 = arguments.length;
-var i__4737__auto___75798 = (0);
+var len__4736__auto___468909 = arguments.length;
+var i__4737__auto___468910 = (0);
 while(true){
-if((i__4737__auto___75798 < len__4736__auto___75797)){
-args__4742__auto__.push((arguments[i__4737__auto___75798]));
+if((i__4737__auto___468910 < len__4736__auto___468909)){
+args__4742__auto__.push((arguments[i__4737__auto___468910]));
 
-var G__75799 = (i__4737__auto___75798 + (1));
-i__4737__auto___75798 = G__75799;
+var G__468911 = (i__4737__auto___468910 + (1));
+i__4737__auto___468910 = G__468911;
 continue;
 } else {
 }
@@ -166,9 +177,9 @@ var argseq__4743__auto__ = ((((1) < args__4742__auto__.length))?(new cljs.core.I
 return ellah.geometry.polygon.cljs$core$IFn$_invoke$arity$variadic((arguments[(0)]),argseq__4743__auto__);
 });
 
-(ellah.geometry.polygon.cljs$core$IFn$_invoke$arity$variadic = (function (sides,p__75767){
-var vec__75770 = p__75767;
-var rotation = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__75770,(0),null);
+(ellah.geometry.polygon.cljs$core$IFn$_invoke$arity$variadic = (function (sides,p__468892){
+var vec__468893 = p__468892;
+var rotation = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__468893,(0),null);
 return cljs.core.mapv.cljs$core$IFn$_invoke$arity$2((function (i){
 var angle = (rotation + ((ellah.geometry.TAU * i) / sides));
 return new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null,"x","x",2099068185),Math.cos(angle),new cljs.core.Keyword(null,"y","y",-1757859776),Math.sin(angle)], null);
@@ -178,11 +189,11 @@ return new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null,"x"
 (ellah.geometry.polygon.cljs$lang$maxFixedArity = (1));
 
 /** @this {Function} */
-(ellah.geometry.polygon.cljs$lang$applyTo = (function (seq75763){
-var G__75764 = cljs.core.first(seq75763);
-var seq75763__$1 = cljs.core.next(seq75763);
+(ellah.geometry.polygon.cljs$lang$applyTo = (function (seq468890){
+var G__468891 = cljs.core.first(seq468890);
+var seq468890__$1 = cljs.core.next(seq468890);
 var self__4723__auto__ = this;
-return self__4723__auto__.cljs$core$IFn$_invoke$arity$variadic(G__75764,seq75763__$1);
+return self__4723__auto__.cljs$core$IFn$_invoke$arity$variadic(G__468891,seq468890__$1);
 }));
 
 ellah.geometry.map_point = (function ellah$geometry$map_point(from_pos,from_size,to_pos,to_size,point){

@@ -7,14 +7,14 @@ ellah.graphics.graphics_state = cljs.core.atom.cljs$core$IFn$_invoke$arity$1(clj
 }
 ellah.graphics.get_graphics = (function ellah$graphics$get_graphics(var_args){
 var args__4742__auto__ = [];
-var len__4736__auto___91342 = arguments.length;
-var i__4737__auto___91343 = (0);
+var len__4736__auto___80523 = arguments.length;
+var i__4737__auto___80524 = (0);
 while(true){
-if((i__4737__auto___91343 < len__4736__auto___91342)){
-args__4742__auto__.push((arguments[i__4737__auto___91343]));
+if((i__4737__auto___80524 < len__4736__auto___80523)){
+args__4742__auto__.push((arguments[i__4737__auto___80524]));
 
-var G__91344 = (i__4737__auto___91343 + (1));
-i__4737__auto___91343 = G__91344;
+var G__80525 = (i__4737__auto___80524 + (1));
+i__4737__auto___80524 = G__80525;
 continue;
 } else {
 }
@@ -25,9 +25,9 @@ var argseq__4743__auto__ = ((((0) < args__4742__auto__.length))?(new cljs.core.I
 return ellah.graphics.get_graphics.cljs$core$IFn$_invoke$arity$variadic(argseq__4743__auto__);
 });
 
-(ellah.graphics.get_graphics.cljs$core$IFn$_invoke$arity$variadic = (function (p__91019){
-var vec__91020 = p__91019;
-var layer = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__91020,(0),null);
+(ellah.graphics.get_graphics.cljs$core$IFn$_invoke$arity$variadic = (function (p__78847){
+var vec__78848 = p__78847;
+var layer = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__78848,(0),null);
 return cljs.core.get.cljs$core$IFn$_invoke$arity$2(new cljs.core.Keyword(null,"graphics","graphics",-2079995979).cljs$core$IFn$_invoke$arity$1(cljs.core.deref(ellah.graphics.graphics_state)),(function (){var or__4126__auto__ = layer;
 if(cljs.core.truth_(or__4126__auto__)){
 return or__4126__auto__;
@@ -40,21 +40,21 @@ return cljs.core.first(ellah.constants.ui_layers);
 (ellah.graphics.get_graphics.cljs$lang$maxFixedArity = (0));
 
 /** @this {Function} */
-(ellah.graphics.get_graphics.cljs$lang$applyTo = (function (seq91018){
+(ellah.graphics.get_graphics.cljs$lang$applyTo = (function (seq78846){
 var self__4724__auto__ = this;
-return self__4724__auto__.cljs$core$IFn$_invoke$arity$variadic(cljs.core.seq(seq91018));
+return self__4724__auto__.cljs$core$IFn$_invoke$arity$variadic(cljs.core.seq(seq78846));
 }));
 
 ellah.graphics.set_attr_BANG_ = (function ellah$graphics$set_attr_BANG_(key,value){
-cljs.core.swap_BANG_.cljs$core$IFn$_invoke$arity$2(ellah.graphics.graphics_state,(function (p1__91023_SHARP_){
-return cljs.core.assoc.cljs$core$IFn$_invoke$arity$3(p1__91023_SHARP_,key,value);
+cljs.core.swap_BANG_.cljs$core$IFn$_invoke$arity$2(ellah.graphics.graphics_state,(function (p1__78851_SHARP_){
+return cljs.core.assoc.cljs$core$IFn$_invoke$arity$3(p1__78851_SHARP_,key,value);
 }));
 
 return value;
 });
 ellah.graphics.update_attr_BANG_ = (function ellah$graphics$update_attr_BANG_(key,value){
-return cljs.core.swap_BANG_.cljs$core$IFn$_invoke$arity$2(ellah.graphics.graphics_state,(function (p1__91024_SHARP_){
-return cljs.core.update.cljs$core$IFn$_invoke$arity$3(p1__91024_SHARP_,key,value);
+return cljs.core.swap_BANG_.cljs$core$IFn$_invoke$arity$2(ellah.graphics.graphics_state,(function (p1__78852_SHARP_){
+return cljs.core.update.cljs$core$IFn$_invoke$arity$3(p1__78852_SHARP_,key,value);
 }));
 });
 ellah.graphics.app_width = (function ellah$graphics$app_width(){
@@ -71,8 +71,30 @@ return ((x__4217__auto__ < y__4218__auto__) ? x__4217__auto__ : y__4218__auto__)
 ellah.graphics.app_aspect_ratio = (function ellah$graphics$app_aspect_ratio(){
 return (ellah.graphics.app_width() / ellah.graphics.app_height());
 });
+ellah.graphics.hide_text_input = (function ellah$graphics$hide_text_input(){
+var text_input = new cljs.core.Keyword(null,"text-input","text-input",-1937260843).cljs$core$IFn$_invoke$arity$1(cljs.core.deref(ellah.graphics.graphics_state));
+return (text_input.style.display = "none");
+});
+ellah.graphics.activate_text_input = (function ellah$graphics$activate_text_input(path){
+var text_input_80526 = new cljs.core.Keyword(null,"text-input","text-input",-1937260843).cljs$core$IFn$_invoke$arity$1(cljs.core.deref(ellah.graphics.graphics_state));
+(text_input_80526.style.display = "block");
+
+(text_input_80526.value = new cljs.core.Keyword(null,"value","value",305978217).cljs$core$IFn$_invoke$arity$1(ellah.vedn.get_child(new cljs.core.Keyword(null,"form","form",-1624062471).cljs$core$IFn$_invoke$arity$1(cljs.core.deref(ellah.graphics.graphics_state)),cljs.core.concat.cljs$core$IFn$_invoke$arity$2(new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [(0)], null),path))));
+
+return ellah.graphics.set_attr_BANG_(new cljs.core.Keyword(null,"text-input-path","text-input-path",1110769199),path);
+});
 ellah.graphics.resize = (function ellah$graphics$resize(){
-return new cljs.core.Keyword(null,"app","app",-560961707).cljs$core$IFn$_invoke$arity$1(cljs.core.deref(ellah.graphics.graphics_state)).renderer.resize(ellah.graphics.app_width(),ellah.graphics.app_height());
+var current_width = ellah.graphics.app_width();
+var current_height = ellah.graphics.app_height();
+new cljs.core.Keyword(null,"app","app",-560961707).cljs$core$IFn$_invoke$arity$1(cljs.core.deref(ellah.graphics.graphics_state)).renderer.resize(current_width,current_height);
+
+var text_input = new cljs.core.Keyword(null,"text-input","text-input",-1937260843).cljs$core$IFn$_invoke$arity$1(cljs.core.deref(ellah.graphics.graphics_state));
+var text_width = (current_width * ellah.constants.text_input_size);
+(text_input.style.left = [cljs.core.str.cljs$core$IFn$_invoke$arity$1((((current_width - text_width) / (2)) | (0))),"px"].join(''));
+
+(text_input.style.top = [cljs.core.str.cljs$core$IFn$_invoke$arity$1(((current_height / (2)) | (0))),"px"].join(''));
+
+return (new cljs.core.Keyword(null,"text-input","text-input",-1937260843).cljs$core$IFn$_invoke$arity$1(cljs.core.deref(ellah.graphics.graphics_state)).style.width = [cljs.core.str.cljs$core$IFn$_invoke$arity$1((text_width | (0))),"px"].join(''));
 });
 ellah.graphics.screen_x = (function ellah$graphics$screen_x(x){
 var w = ellah.graphics.app_width();
@@ -85,9 +107,9 @@ return ((0.5 * (w - s)) + (x * s));
 });
 ellah.graphics.layout_path_at = (function ellah$graphics$layout_path_at(layout,pos){
 if(ellah.geometry.in_circle_QMARK_(layout,pos)){
-var map__91025 = layout;
-var map__91025__$1 = (((((!((map__91025 == null))))?(((((map__91025.cljs$lang$protocol_mask$partition0$ & (64))) || ((cljs.core.PROTOCOL_SENTINEL === map__91025.cljs$core$ISeq$))))?true:false):false))?cljs.core.apply.cljs$core$IFn$_invoke$arity$2(cljs.core.hash_map,map__91025):map__91025);
-var sublayouts = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__91025__$1,new cljs.core.Keyword(null,"sublayouts","sublayouts",-1203105463));
+var map__78853 = layout;
+var map__78853__$1 = (((((!((map__78853 == null))))?(((((map__78853.cljs$lang$protocol_mask$partition0$ & (64))) || ((cljs.core.PROTOCOL_SENTINEL === map__78853.cljs$core$ISeq$))))?true:false):false))?cljs.core.apply.cljs$core$IFn$_invoke$arity$2(cljs.core.hash_map,map__78853):map__78853);
+var sublayouts = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__78853__$1,new cljs.core.Keyword(null,"sublayouts","sublayouts",-1203105463));
 if(cljs.core.empty_QMARK_(sublayouts)){
 return cljs.core.List.EMPTY;
 } else {
@@ -112,9 +134,9 @@ return null;
 });
 ellah.graphics.layout_insertion_path_at = (function ellah$graphics$layout_insertion_path_at(layout,pos){
 if(ellah.geometry.in_circle_QMARK_(layout,pos)){
-var map__91027 = layout;
-var map__91027__$1 = (((((!((map__91027 == null))))?(((((map__91027.cljs$lang$protocol_mask$partition0$ & (64))) || ((cljs.core.PROTOCOL_SENTINEL === map__91027.cljs$core$ISeq$))))?true:false):false))?cljs.core.apply.cljs$core$IFn$_invoke$arity$2(cljs.core.hash_map,map__91027):map__91027);
-var sublayouts = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__91027__$1,new cljs.core.Keyword(null,"sublayouts","sublayouts",-1203105463));
+var map__78855 = layout;
+var map__78855__$1 = (((((!((map__78855 == null))))?(((((map__78855.cljs$lang$protocol_mask$partition0$ & (64))) || ((cljs.core.PROTOCOL_SENTINEL === map__78855.cljs$core$ISeq$))))?true:false):false))?cljs.core.apply.cljs$core$IFn$_invoke$arity$2(cljs.core.hash_map,map__78855):map__78855);
+var sublayouts = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__78855__$1,new cljs.core.Keyword(null,"sublayouts","sublayouts",-1203105463));
 if(cljs.core.empty_QMARK_(sublayouts)){
 return cljs.core.List.EMPTY;
 } else {
@@ -142,26 +164,26 @@ ellah.graphics.get_sublayout = (function ellah$graphics$get_sublayout(layout,pat
 if(cljs.core.empty_QMARK_(path)){
 return layout;
 } else {
-var G__91029 = cljs.core.nth.cljs$core$IFn$_invoke$arity$2(new cljs.core.Keyword(null,"sublayouts","sublayouts",-1203105463).cljs$core$IFn$_invoke$arity$1(layout),cljs.core.first(path));
-var G__91030 = cljs.core.rest(path);
-return (ellah.graphics.get_sublayout.cljs$core$IFn$_invoke$arity$2 ? ellah.graphics.get_sublayout.cljs$core$IFn$_invoke$arity$2(G__91029,G__91030) : ellah.graphics.get_sublayout.call(null,G__91029,G__91030));
+var G__78857 = cljs.core.nth.cljs$core$IFn$_invoke$arity$2(new cljs.core.Keyword(null,"sublayouts","sublayouts",-1203105463).cljs$core$IFn$_invoke$arity$1(layout),cljs.core.first(path));
+var G__78858 = cljs.core.rest(path);
+return (ellah.graphics.get_sublayout.cljs$core$IFn$_invoke$arity$2 ? ellah.graphics.get_sublayout.cljs$core$IFn$_invoke$arity$2(G__78857,G__78858) : ellah.graphics.get_sublayout.call(null,G__78857,G__78858));
 }
 });
 ellah.graphics.form_layout = (function ellah$graphics$form_layout(form,starting_layout){
 var current_layout = starting_layout;
-var map__91031 = form;
-var map__91031__$1 = (((((!((map__91031 == null))))?(((((map__91031.cljs$lang$protocol_mask$partition0$ & (64))) || ((cljs.core.PROTOCOL_SENTINEL === map__91031.cljs$core$ISeq$))))?true:false):false))?cljs.core.apply.cljs$core$IFn$_invoke$arity$2(cljs.core.hash_map,map__91031):map__91031);
-var type = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__91031__$1,new cljs.core.Keyword(null,"type","type",1174270348));
-var value = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__91031__$1,new cljs.core.Keyword(null,"value","value",305978217));
-var children = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__91031__$1,new cljs.core.Keyword(null,"children","children",-940561982));
+var map__78859 = form;
+var map__78859__$1 = (((((!((map__78859 == null))))?(((((map__78859.cljs$lang$protocol_mask$partition0$ & (64))) || ((cljs.core.PROTOCOL_SENTINEL === map__78859.cljs$core$ISeq$))))?true:false):false))?cljs.core.apply.cljs$core$IFn$_invoke$arity$2(cljs.core.hash_map,map__78859):map__78859);
+var type = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__78859__$1,new cljs.core.Keyword(null,"type","type",1174270348));
+var value = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__78859__$1,new cljs.core.Keyword(null,"value","value",305978217));
+var children = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__78859__$1,new cljs.core.Keyword(null,"children","children",-940561982));
 if(cljs.core._EQ_.cljs$core$IFn$_invoke$arity$2(type,new cljs.core.Keyword(null,"literal","literal",1664775605))){
 return cljs.core.assoc.cljs$core$IFn$_invoke$arity$variadic(current_layout,new cljs.core.Keyword(null,"type","type",1174270348),type,cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([new cljs.core.Keyword(null,"value","value",305978217),value], 0));
 } else {
 return cljs.core.assoc.cljs$core$IFn$_invoke$arity$variadic(current_layout,new cljs.core.Keyword(null,"type","type",1174270348),type,cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([new cljs.core.Keyword(null,"sublayouts","sublayouts",-1203105463),(function (){var subform_count = cljs.core.count(children);
 if(cljs.core._EQ_.cljs$core$IFn$_invoke$arity$2(subform_count,(1))){
-return new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [(function (){var G__91033 = cljs.core.first(children);
-var G__91034 = cljs.core.assoc.cljs$core$IFn$_invoke$arity$3(current_layout,new cljs.core.Keyword(null,"radius","radius",-2073122258),(ellah.constants.sole_subform_shrink_factor * new cljs.core.Keyword(null,"radius","radius",-2073122258).cljs$core$IFn$_invoke$arity$1(current_layout)));
-return (ellah.graphics.form_layout.cljs$core$IFn$_invoke$arity$2 ? ellah.graphics.form_layout.cljs$core$IFn$_invoke$arity$2(G__91033,G__91034) : ellah.graphics.form_layout.call(null,G__91033,G__91034));
+return new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [(function (){var G__78861 = cljs.core.first(children);
+var G__78862 = cljs.core.assoc.cljs$core$IFn$_invoke$arity$3(current_layout,new cljs.core.Keyword(null,"radius","radius",-2073122258),(ellah.constants.sole_subform_shrink_factor * new cljs.core.Keyword(null,"radius","radius",-2073122258).cljs$core$IFn$_invoke$arity$1(current_layout)));
+return (ellah.graphics.form_layout.cljs$core$IFn$_invoke$arity$2 ? ellah.graphics.form_layout.cljs$core$IFn$_invoke$arity$2(G__78861,G__78862) : ellah.graphics.form_layout.call(null,G__78861,G__78862));
 })()], null);
 } else {
 var raw_radius = Math.sin((Math.PI / subform_count));
@@ -169,9 +191,9 @@ var unscaled_radius = (raw_radius / (raw_radius + (1)));
 var radius = ((unscaled_radius * ((1) - ellah.constants.bubble_thickness)) * new cljs.core.Keyword(null,"radius","radius",-2073122258).cljs$core$IFn$_invoke$arity$1(current_layout));
 return cljs.core.mapv.cljs$core$IFn$_invoke$arity$3((function (subform,i){
 var angle = ((Math.PI * -0.5) - (((Math.PI * (2)) * i) / subform_count));
-var G__91035 = subform;
-var G__91036 = cljs.core.assoc.cljs$core$IFn$_invoke$arity$3(ellah.geometry.add_points.cljs$core$IFn$_invoke$arity$variadic(cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([current_layout,ellah.geometry.scale_point(ellah.geometry.angle_point(angle),((new cljs.core.Keyword(null,"radius","radius",-2073122258).cljs$core$IFn$_invoke$arity$1(current_layout) * ((1) - ellah.constants.bubble_thickness)) - radius))], 0)),new cljs.core.Keyword(null,"radius","radius",-2073122258),(ellah.constants.subform_shrink_factor * radius));
-return (ellah.graphics.form_layout.cljs$core$IFn$_invoke$arity$2 ? ellah.graphics.form_layout.cljs$core$IFn$_invoke$arity$2(G__91035,G__91036) : ellah.graphics.form_layout.call(null,G__91035,G__91036));
+var G__78863 = subform;
+var G__78864 = cljs.core.assoc.cljs$core$IFn$_invoke$arity$3(ellah.geometry.add_points.cljs$core$IFn$_invoke$arity$variadic(cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([current_layout,ellah.geometry.scale_point(ellah.geometry.angle_point(angle),((new cljs.core.Keyword(null,"radius","radius",-2073122258).cljs$core$IFn$_invoke$arity$1(current_layout) * ((1) - ellah.constants.bubble_thickness)) - radius))], 0)),new cljs.core.Keyword(null,"radius","radius",-2073122258),(ellah.constants.subform_shrink_factor * radius));
+return (ellah.graphics.form_layout.cljs$core$IFn$_invoke$arity$2 ? ellah.graphics.form_layout.cljs$core$IFn$_invoke$arity$2(G__78863,G__78864) : ellah.graphics.form_layout.call(null,G__78863,G__78864));
 }),children,cljs.core.range.cljs$core$IFn$_invoke$arity$0());
 }
 })()], 0));
@@ -197,27 +219,30 @@ return ((0.5 * (h - s)) + (y * s));
 });
 ellah.graphics.rect = (function ellah$graphics$rect(var_args){
 var args__4742__auto__ = [];
-var len__4736__auto___91345 = arguments.length;
-var i__4737__auto___91346 = (0);
+var len__4736__auto___80527 = arguments.length;
+var i__4737__auto___80528 = (0);
 while(true){
-if((i__4737__auto___91346 < len__4736__auto___91345)){
-args__4742__auto__.push((arguments[i__4737__auto___91346]));
+if((i__4737__auto___80528 < len__4736__auto___80527)){
+args__4742__auto__.push((arguments[i__4737__auto___80528]));
 
-var G__91347 = (i__4737__auto___91346 + (1));
-i__4737__auto___91346 = G__91347;
+var G__80529 = (i__4737__auto___80528 + (1));
+i__4737__auto___80528 = G__80529;
 continue;
 } else {
 }
 break;
 }
 
-var argseq__4743__auto__ = ((((3) < args__4742__auto__.length))?(new cljs.core.IndexedSeq(args__4742__auto__.slice((3)),(0),null)):null);
-return ellah.graphics.rect.cljs$core$IFn$_invoke$arity$variadic((arguments[(0)]),(arguments[(1)]),(arguments[(2)]),argseq__4743__auto__);
+var argseq__4743__auto__ = ((((2) < args__4742__auto__.length))?(new cljs.core.IndexedSeq(args__4742__auto__.slice((2)),(0),null)):null);
+return ellah.graphics.rect.cljs$core$IFn$_invoke$arity$variadic((arguments[(0)]),(arguments[(1)]),argseq__4743__auto__);
 });
 
-(ellah.graphics.rect.cljs$core$IFn$_invoke$arity$variadic = (function (pos,size,fill,p__91041){
-var vec__91042 = p__91041;
-var layer = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__91042,(0),null);
+(ellah.graphics.rect.cljs$core$IFn$_invoke$arity$variadic = (function (p__78868,fill,p__78869){
+var vec__78870 = p__78868;
+var pos = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__78870,(0),null);
+var size = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__78870,(1),null);
+var vec__78873 = p__78869;
+var layer = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__78873,(0),null);
 var graphics = ellah.graphics.get_graphics.cljs$core$IFn$_invoke$arity$variadic(cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([layer], 0));
 graphics.beginFill(fill);
 
@@ -226,30 +251,28 @@ graphics.drawRect(ellah.graphics.screen_x(new cljs.core.Keyword(null,"x","x",209
 return graphics.endFill();
 }));
 
-(ellah.graphics.rect.cljs$lang$maxFixedArity = (3));
+(ellah.graphics.rect.cljs$lang$maxFixedArity = (2));
 
 /** @this {Function} */
-(ellah.graphics.rect.cljs$lang$applyTo = (function (seq91037){
-var G__91038 = cljs.core.first(seq91037);
-var seq91037__$1 = cljs.core.next(seq91037);
-var G__91039 = cljs.core.first(seq91037__$1);
-var seq91037__$2 = cljs.core.next(seq91037__$1);
-var G__91040 = cljs.core.first(seq91037__$2);
-var seq91037__$3 = cljs.core.next(seq91037__$2);
+(ellah.graphics.rect.cljs$lang$applyTo = (function (seq78865){
+var G__78866 = cljs.core.first(seq78865);
+var seq78865__$1 = cljs.core.next(seq78865);
+var G__78867 = cljs.core.first(seq78865__$1);
+var seq78865__$2 = cljs.core.next(seq78865__$1);
 var self__4723__auto__ = this;
-return self__4723__auto__.cljs$core$IFn$_invoke$arity$variadic(G__91038,G__91039,G__91040,seq91037__$3);
+return self__4723__auto__.cljs$core$IFn$_invoke$arity$variadic(G__78866,G__78867,seq78865__$2);
 }));
 
 ellah.graphics.circle = (function ellah$graphics$circle(var_args){
 var args__4742__auto__ = [];
-var len__4736__auto___91348 = arguments.length;
-var i__4737__auto___91349 = (0);
+var len__4736__auto___80530 = arguments.length;
+var i__4737__auto___80531 = (0);
 while(true){
-if((i__4737__auto___91349 < len__4736__auto___91348)){
-args__4742__auto__.push((arguments[i__4737__auto___91349]));
+if((i__4737__auto___80531 < len__4736__auto___80530)){
+args__4742__auto__.push((arguments[i__4737__auto___80531]));
 
-var G__91350 = (i__4737__auto___91349 + (1));
-i__4737__auto___91349 = G__91350;
+var G__80532 = (i__4737__auto___80531 + (1));
+i__4737__auto___80531 = G__80532;
 continue;
 } else {
 }
@@ -260,14 +283,14 @@ var argseq__4743__auto__ = ((((2) < args__4742__auto__.length))?(new cljs.core.I
 return ellah.graphics.circle.cljs$core$IFn$_invoke$arity$variadic((arguments[(0)]),(arguments[(1)]),argseq__4743__auto__);
 });
 
-(ellah.graphics.circle.cljs$core$IFn$_invoke$arity$variadic = (function (p__91048,fill,p__91049){
-var map__91050 = p__91048;
-var map__91050__$1 = (((((!((map__91050 == null))))?(((((map__91050.cljs$lang$protocol_mask$partition0$ & (64))) || ((cljs.core.PROTOCOL_SENTINEL === map__91050.cljs$core$ISeq$))))?true:false):false))?cljs.core.apply.cljs$core$IFn$_invoke$arity$2(cljs.core.hash_map,map__91050):map__91050);
-var x = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__91050__$1,new cljs.core.Keyword(null,"x","x",2099068185));
-var y = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__91050__$1,new cljs.core.Keyword(null,"y","y",-1757859776));
-var radius = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__91050__$1,new cljs.core.Keyword(null,"radius","radius",-2073122258));
-var vec__91051 = p__91049;
-var layer = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__91051,(0),null);
+(ellah.graphics.circle.cljs$core$IFn$_invoke$arity$variadic = (function (p__78879,fill,p__78880){
+var map__78881 = p__78879;
+var map__78881__$1 = (((((!((map__78881 == null))))?(((((map__78881.cljs$lang$protocol_mask$partition0$ & (64))) || ((cljs.core.PROTOCOL_SENTINEL === map__78881.cljs$core$ISeq$))))?true:false):false))?cljs.core.apply.cljs$core$IFn$_invoke$arity$2(cljs.core.hash_map,map__78881):map__78881);
+var x = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__78881__$1,new cljs.core.Keyword(null,"x","x",2099068185));
+var y = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__78881__$1,new cljs.core.Keyword(null,"y","y",-1757859776));
+var radius = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__78881__$1,new cljs.core.Keyword(null,"radius","radius",-2073122258));
+var vec__78882 = p__78880;
+var layer = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__78882,(0),null);
 var graphics = ellah.graphics.get_graphics.cljs$core$IFn$_invoke$arity$variadic(cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([layer], 0));
 graphics.beginFill(fill);
 
@@ -279,25 +302,25 @@ return graphics.endFill();
 (ellah.graphics.circle.cljs$lang$maxFixedArity = (2));
 
 /** @this {Function} */
-(ellah.graphics.circle.cljs$lang$applyTo = (function (seq91045){
-var G__91046 = cljs.core.first(seq91045);
-var seq91045__$1 = cljs.core.next(seq91045);
-var G__91047 = cljs.core.first(seq91045__$1);
-var seq91045__$2 = cljs.core.next(seq91045__$1);
+(ellah.graphics.circle.cljs$lang$applyTo = (function (seq78876){
+var G__78877 = cljs.core.first(seq78876);
+var seq78876__$1 = cljs.core.next(seq78876);
+var G__78878 = cljs.core.first(seq78876__$1);
+var seq78876__$2 = cljs.core.next(seq78876__$1);
 var self__4723__auto__ = this;
-return self__4723__auto__.cljs$core$IFn$_invoke$arity$variadic(G__91046,G__91047,seq91045__$2);
+return self__4723__auto__.cljs$core$IFn$_invoke$arity$variadic(G__78877,G__78878,seq78876__$2);
 }));
 
 ellah.graphics.polygon = (function ellah$graphics$polygon(var_args){
 var args__4742__auto__ = [];
-var len__4736__auto___91351 = arguments.length;
-var i__4737__auto___91352 = (0);
+var len__4736__auto___80533 = arguments.length;
+var i__4737__auto___80534 = (0);
 while(true){
-if((i__4737__auto___91352 < len__4736__auto___91351)){
-args__4742__auto__.push((arguments[i__4737__auto___91352]));
+if((i__4737__auto___80534 < len__4736__auto___80533)){
+args__4742__auto__.push((arguments[i__4737__auto___80534]));
 
-var G__91353 = (i__4737__auto___91352 + (1));
-i__4737__auto___91352 = G__91353;
+var G__80535 = (i__4737__auto___80534 + (1));
+i__4737__auto___80534 = G__80535;
 continue;
 } else {
 }
@@ -308,14 +331,14 @@ var argseq__4743__auto__ = ((((2) < args__4742__auto__.length))?(new cljs.core.I
 return ellah.graphics.polygon.cljs$core$IFn$_invoke$arity$variadic((arguments[(0)]),(arguments[(1)]),argseq__4743__auto__);
 });
 
-(ellah.graphics.polygon.cljs$core$IFn$_invoke$arity$variadic = (function (points,fill,p__91059){
-var vec__91060 = p__91059;
-var layer = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__91060,(0),null);
+(ellah.graphics.polygon.cljs$core$IFn$_invoke$arity$variadic = (function (points,fill,p__78890){
+var vec__78891 = p__78890;
+var layer = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__78891,(0),null);
 var graphics = ellah.graphics.get_graphics.cljs$core$IFn$_invoke$arity$variadic(cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([layer], 0));
 graphics.beginFill(fill);
 
-graphics.drawPolygon(cljs.core.clj__GT_js(cljs.core.mapv.cljs$core$IFn$_invoke$arity$2((function (p1__91055_SHARP_){
-return (new module$node_modules$pixi_DOT_js$dist$cjs$pixi.Point(ellah.graphics.screen_x(new cljs.core.Keyword(null,"x","x",2099068185).cljs$core$IFn$_invoke$arity$1(p1__91055_SHARP_)),ellah.graphics.screen_y(new cljs.core.Keyword(null,"y","y",-1757859776).cljs$core$IFn$_invoke$arity$1(p1__91055_SHARP_))));
+graphics.drawPolygon(cljs.core.clj__GT_js(cljs.core.mapv.cljs$core$IFn$_invoke$arity$2((function (p1__78886_SHARP_){
+return (new module$node_modules$pixi_DOT_js$dist$cjs$pixi.Point(ellah.graphics.screen_x(new cljs.core.Keyword(null,"x","x",2099068185).cljs$core$IFn$_invoke$arity$1(p1__78886_SHARP_)),ellah.graphics.screen_y(new cljs.core.Keyword(null,"y","y",-1757859776).cljs$core$IFn$_invoke$arity$1(p1__78886_SHARP_))));
 }),points)));
 
 return graphics.endFill();
@@ -324,25 +347,25 @@ return graphics.endFill();
 (ellah.graphics.polygon.cljs$lang$maxFixedArity = (2));
 
 /** @this {Function} */
-(ellah.graphics.polygon.cljs$lang$applyTo = (function (seq91056){
-var G__91057 = cljs.core.first(seq91056);
-var seq91056__$1 = cljs.core.next(seq91056);
-var G__91058 = cljs.core.first(seq91056__$1);
-var seq91056__$2 = cljs.core.next(seq91056__$1);
+(ellah.graphics.polygon.cljs$lang$applyTo = (function (seq78887){
+var G__78888 = cljs.core.first(seq78887);
+var seq78887__$1 = cljs.core.next(seq78887);
+var G__78889 = cljs.core.first(seq78887__$1);
+var seq78887__$2 = cljs.core.next(seq78887__$1);
 var self__4723__auto__ = this;
-return self__4723__auto__.cljs$core$IFn$_invoke$arity$variadic(G__91057,G__91058,seq91056__$2);
+return self__4723__auto__.cljs$core$IFn$_invoke$arity$variadic(G__78888,G__78889,seq78887__$2);
 }));
 
 ellah.graphics.line = (function ellah$graphics$line(var_args){
 var args__4742__auto__ = [];
-var len__4736__auto___91354 = arguments.length;
-var i__4737__auto___91355 = (0);
+var len__4736__auto___80536 = arguments.length;
+var i__4737__auto___80537 = (0);
 while(true){
-if((i__4737__auto___91355 < len__4736__auto___91354)){
-args__4742__auto__.push((arguments[i__4737__auto___91355]));
+if((i__4737__auto___80537 < len__4736__auto___80536)){
+args__4742__auto__.push((arguments[i__4737__auto___80537]));
 
-var G__91356 = (i__4737__auto___91355 + (1));
-i__4737__auto___91355 = G__91356;
+var G__80538 = (i__4737__auto___80537 + (1));
+i__4737__auto___80537 = G__80538;
 continue;
 } else {
 }
@@ -353,9 +376,9 @@ var argseq__4743__auto__ = ((((4) < args__4742__auto__.length))?(new cljs.core.I
 return ellah.graphics.line.cljs$core$IFn$_invoke$arity$variadic((arguments[(0)]),(arguments[(1)]),(arguments[(2)]),(arguments[(3)]),argseq__4743__auto__);
 });
 
-(ellah.graphics.line.cljs$core$IFn$_invoke$arity$variadic = (function (start,end,width,color,p__91068){
-var vec__91069 = p__91068;
-var layer = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__91069,(0),null);
+(ellah.graphics.line.cljs$core$IFn$_invoke$arity$variadic = (function (start,end,width,color,p__78899){
+var vec__78900 = p__78899;
+var layer = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__78900,(0),null);
 var graphics = ellah.graphics.get_graphics.cljs$core$IFn$_invoke$arity$variadic(cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([layer], 0));
 graphics.lineStyle((width * ellah.graphics.app_width()),color);
 
@@ -369,29 +392,29 @@ return graphics.lineStyle((0));
 (ellah.graphics.line.cljs$lang$maxFixedArity = (4));
 
 /** @this {Function} */
-(ellah.graphics.line.cljs$lang$applyTo = (function (seq91063){
-var G__91064 = cljs.core.first(seq91063);
-var seq91063__$1 = cljs.core.next(seq91063);
-var G__91065 = cljs.core.first(seq91063__$1);
-var seq91063__$2 = cljs.core.next(seq91063__$1);
-var G__91066 = cljs.core.first(seq91063__$2);
-var seq91063__$3 = cljs.core.next(seq91063__$2);
-var G__91067 = cljs.core.first(seq91063__$3);
-var seq91063__$4 = cljs.core.next(seq91063__$3);
+(ellah.graphics.line.cljs$lang$applyTo = (function (seq78894){
+var G__78895 = cljs.core.first(seq78894);
+var seq78894__$1 = cljs.core.next(seq78894);
+var G__78896 = cljs.core.first(seq78894__$1);
+var seq78894__$2 = cljs.core.next(seq78894__$1);
+var G__78897 = cljs.core.first(seq78894__$2);
+var seq78894__$3 = cljs.core.next(seq78894__$2);
+var G__78898 = cljs.core.first(seq78894__$3);
+var seq78894__$4 = cljs.core.next(seq78894__$3);
 var self__4723__auto__ = this;
-return self__4723__auto__.cljs$core$IFn$_invoke$arity$variadic(G__91064,G__91065,G__91066,G__91067,seq91063__$4);
+return self__4723__auto__.cljs$core$IFn$_invoke$arity$variadic(G__78895,G__78896,G__78897,G__78898,seq78894__$4);
 }));
 
 ellah.graphics.text = (function ellah$graphics$text(var_args){
 var args__4742__auto__ = [];
-var len__4736__auto___91357 = arguments.length;
-var i__4737__auto___91358 = (0);
+var len__4736__auto___80539 = arguments.length;
+var i__4737__auto___80540 = (0);
 while(true){
-if((i__4737__auto___91358 < len__4736__auto___91357)){
-args__4742__auto__.push((arguments[i__4737__auto___91358]));
+if((i__4737__auto___80540 < len__4736__auto___80539)){
+args__4742__auto__.push((arguments[i__4737__auto___80540]));
 
-var G__91359 = (i__4737__auto___91358 + (1));
-i__4737__auto___91358 = G__91359;
+var G__80541 = (i__4737__auto___80540 + (1));
+i__4737__auto___80540 = G__80541;
 continue;
 } else {
 }
@@ -402,9 +425,9 @@ var argseq__4743__auto__ = ((((4) < args__4742__auto__.length))?(new cljs.core.I
 return ellah.graphics.text.cljs$core$IFn$_invoke$arity$variadic((arguments[(0)]),(arguments[(1)]),(arguments[(2)]),(arguments[(3)]),argseq__4743__auto__);
 });
 
-(ellah.graphics.text.cljs$core$IFn$_invoke$arity$variadic = (function (s,pos,size,color,p__91077){
-var vec__91078 = p__91077;
-var layer = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__91078,(0),null);
+(ellah.graphics.text.cljs$core$IFn$_invoke$arity$variadic = (function (s,pos,size,color,p__78908){
+var vec__78909 = p__78908;
+var layer = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__78909,(0),null);
 if(cljs.core.truth_(new cljs.core.Keyword(null,"font-loaded?","font-loaded?",-1665361590).cljs$core$IFn$_invoke$arity$1(cljs.core.deref(ellah.graphics.graphics_state)))){
 var length = cljs.core.count(s);
 var t = (new module$node_modules$pixi_DOT_js$dist$cjs$pixi.Text(cljs.core.str.cljs$core$IFn$_invoke$arity$1(s),cljs.core.clj__GT_js(new cljs.core.PersistentArrayMap(null, 3, [new cljs.core.Keyword(null,"fontFamily","fontFamily",1493518353),ellah.constants.font_name,new cljs.core.Keyword(null,"fontSize","fontSize",919623033),"8pt",new cljs.core.Keyword(null,"fill","fill",883462889),color], null))));
@@ -437,17 +460,17 @@ return null;
 (ellah.graphics.text.cljs$lang$maxFixedArity = (4));
 
 /** @this {Function} */
-(ellah.graphics.text.cljs$lang$applyTo = (function (seq91072){
-var G__91073 = cljs.core.first(seq91072);
-var seq91072__$1 = cljs.core.next(seq91072);
-var G__91074 = cljs.core.first(seq91072__$1);
-var seq91072__$2 = cljs.core.next(seq91072__$1);
-var G__91075 = cljs.core.first(seq91072__$2);
-var seq91072__$3 = cljs.core.next(seq91072__$2);
-var G__91076 = cljs.core.first(seq91072__$3);
-var seq91072__$4 = cljs.core.next(seq91072__$3);
+(ellah.graphics.text.cljs$lang$applyTo = (function (seq78903){
+var G__78904 = cljs.core.first(seq78903);
+var seq78903__$1 = cljs.core.next(seq78903);
+var G__78905 = cljs.core.first(seq78903__$1);
+var seq78903__$2 = cljs.core.next(seq78903__$1);
+var G__78906 = cljs.core.first(seq78903__$2);
+var seq78903__$3 = cljs.core.next(seq78903__$2);
+var G__78907 = cljs.core.first(seq78903__$3);
+var seq78903__$4 = cljs.core.next(seq78903__$3);
 var self__4723__auto__ = this;
-return self__4723__auto__.cljs$core$IFn$_invoke$arity$variadic(G__91073,G__91074,G__91075,G__91076,seq91072__$4);
+return self__4723__auto__.cljs$core$IFn$_invoke$arity$variadic(G__78904,G__78905,G__78906,G__78907,seq78903__$4);
 }));
 
 ellah.graphics.flatten_layout = (function ellah$graphics$flatten_layout(layout){
@@ -460,29 +483,53 @@ return (new cljs.core.List(null,layout,null,(1),null));
 ellah.graphics.app_rect = (function ellah$graphics$app_rect(){
 return ellah.geometry.rect_around(ellah.geometry.unit_square,ellah.graphics.app_aspect_ratio());
 });
-ellah.graphics.adjust_layout = (function ellah$graphics$adjust_layout(pos,zoom,layout){
-return cljs.core.update.cljs$core$IFn$_invoke$arity$3(cljs.core.update.cljs$core$IFn$_invoke$arity$3(cljs.core.update.cljs$core$IFn$_invoke$arity$3(cljs.core.update.cljs$core$IFn$_invoke$arity$3(layout,new cljs.core.Keyword(null,"x","x",2099068185),(function (p1__91081_SHARP_){
-return (zoom * (p1__91081_SHARP_ + new cljs.core.Keyword(null,"x","x",2099068185).cljs$core$IFn$_invoke$arity$1(pos)));
-})),new cljs.core.Keyword(null,"y","y",-1757859776),(function (p1__91082_SHARP_){
-return (zoom * (p1__91082_SHARP_ + new cljs.core.Keyword(null,"y","y",-1757859776).cljs$core$IFn$_invoke$arity$1(pos)));
-})),new cljs.core.Keyword(null,"radius","radius",-2073122258),cljs.core.partial.cljs$core$IFn$_invoke$arity$2(cljs.core._STAR_,zoom)),new cljs.core.Keyword(null,"sublayouts","sublayouts",-1203105463),(function (p1__91083_SHARP_){
-if(cljs.core.truth_(p1__91083_SHARP_)){
-return cljs.core.mapv.cljs$core$IFn$_invoke$arity$2(cljs.core.partial.cljs$core$IFn$_invoke$arity$3(ellah.graphics.adjust_layout,pos,zoom),p1__91083_SHARP_);
+ellah.graphics.adjust_layout = (function ellah$graphics$adjust_layout(layout,pos,zoom){
+return cljs.core.update.cljs$core$IFn$_invoke$arity$3(cljs.core.update.cljs$core$IFn$_invoke$arity$3(cljs.core.update.cljs$core$IFn$_invoke$arity$3(cljs.core.update.cljs$core$IFn$_invoke$arity$3(layout,new cljs.core.Keyword(null,"x","x",2099068185),(function (p1__78912_SHARP_){
+return (zoom * (p1__78912_SHARP_ + new cljs.core.Keyword(null,"x","x",2099068185).cljs$core$IFn$_invoke$arity$1(pos)));
+})),new cljs.core.Keyword(null,"y","y",-1757859776),(function (p1__78913_SHARP_){
+return (zoom * (p1__78913_SHARP_ + new cljs.core.Keyword(null,"y","y",-1757859776).cljs$core$IFn$_invoke$arity$1(pos)));
+})),new cljs.core.Keyword(null,"radius","radius",-2073122258),cljs.core.partial.cljs$core$IFn$_invoke$arity$2(cljs.core._STAR_,zoom)),new cljs.core.Keyword(null,"sublayouts","sublayouts",-1203105463),(function (sub){
+if(cljs.core.truth_(sub)){
+return cljs.core.mapv.cljs$core$IFn$_invoke$arity$2((function (p1__78914_SHARP_){
+return (ellah.graphics.adjust_layout.cljs$core$IFn$_invoke$arity$3 ? ellah.graphics.adjust_layout.cljs$core$IFn$_invoke$arity$3(p1__78914_SHARP_,pos,zoom) : ellah.graphics.adjust_layout.call(null,p1__78914_SHARP_,pos,zoom));
+}),sub);
 } else {
 return null;
 }
 }));
 });
+ellah.graphics.map_layout = (function ellah$graphics$map_layout(layout,from,to){
+return (function ellah$graphics$map_layout_$_f(layout__$1,p__78918,radius_change_factor){
+var map__78919 = p__78918;
+var map__78919__$1 = (((((!((map__78919 == null))))?(((((map__78919.cljs$lang$protocol_mask$partition0$ & (64))) || ((cljs.core.PROTOCOL_SENTINEL === map__78919.cljs$core$ISeq$))))?true:false):false))?cljs.core.apply.cljs$core$IFn$_invoke$arity$2(cljs.core.hash_map,map__78919):map__78919);
+var offset = map__78919__$1;
+var x = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__78919__$1,new cljs.core.Keyword(null,"x","x",2099068185));
+var y = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__78919__$1,new cljs.core.Keyword(null,"y","y",-1757859776));
+return cljs.core.update.cljs$core$IFn$_invoke$arity$3(cljs.core.update.cljs$core$IFn$_invoke$arity$3(cljs.core.update.cljs$core$IFn$_invoke$arity$3(cljs.core.update.cljs$core$IFn$_invoke$arity$3(layout__$1,new cljs.core.Keyword(null,"x","x",2099068185),(function (p1__78915_SHARP_){
+return (x + (p1__78915_SHARP_ * radius_change_factor));
+})),new cljs.core.Keyword(null,"y","y",-1757859776),(function (p1__78916_SHARP_){
+return (y + (p1__78916_SHARP_ * radius_change_factor));
+})),new cljs.core.Keyword(null,"radius","radius",-2073122258),cljs.core.partial.cljs$core$IFn$_invoke$arity$2(cljs.core._STAR_,radius_change_factor)),new cljs.core.Keyword(null,"sublayouts","sublayouts",-1203105463),(function (sub){
+if(cljs.core.truth_(sub)){
+return cljs.core.mapv.cljs$core$IFn$_invoke$arity$2((function (p1__78917_SHARP_){
+return ellah$graphics$map_layout_$_f(p1__78917_SHARP_,offset,radius_change_factor);
+}),sub);
+} else {
+return null;
+}
+}));
+})(layout,ellah.geometry.add_points.cljs$core$IFn$_invoke$arity$variadic(cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([ellah.geometry.subtract_points(ellah.geometry.subtract_points(to,ellah.geometry.scale_point(ellah.geometry.unit,new cljs.core.Keyword(null,"radius","radius",-2073122258).cljs$core$IFn$_invoke$arity$1(to))),ellah.geometry.subtract_points(from,ellah.geometry.scale_point(ellah.geometry.unit,new cljs.core.Keyword(null,"radius","radius",-2073122258).cljs$core$IFn$_invoke$arity$1(from))))], 0)),(new cljs.core.Keyword(null,"radius","radius",-2073122258).cljs$core$IFn$_invoke$arity$1(to) / new cljs.core.Keyword(null,"radius","radius",-2073122258).cljs$core$IFn$_invoke$arity$1(from)));
+});
 ellah.graphics.render_layout = (function ellah$graphics$render_layout(var_args){
 var args__4742__auto__ = [];
-var len__4736__auto___91360 = arguments.length;
-var i__4737__auto___91361 = (0);
+var len__4736__auto___80542 = arguments.length;
+var i__4737__auto___80543 = (0);
 while(true){
-if((i__4737__auto___91361 < len__4736__auto___91360)){
-args__4742__auto__.push((arguments[i__4737__auto___91361]));
+if((i__4737__auto___80543 < len__4736__auto___80542)){
+args__4742__auto__.push((arguments[i__4737__auto___80543]));
 
-var G__91362 = (i__4737__auto___91361 + (1));
-i__4737__auto___91361 = G__91362;
+var G__80544 = (i__4737__auto___80543 + (1));
+i__4737__auto___80543 = G__80544;
 continue;
 } else {
 }
@@ -493,32 +540,271 @@ var argseq__4743__auto__ = ((((1) < args__4742__auto__.length))?(new cljs.core.I
 return ellah.graphics.render_layout.cljs$core$IFn$_invoke$arity$variadic((arguments[(0)]),argseq__4743__auto__);
 });
 
-(ellah.graphics.render_layout.cljs$core$IFn$_invoke$arity$variadic = (function (layout,p__91088){
-var vec__91089 = p__91088;
-var layer = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__91089,(0),null);
+(ellah.graphics.render_layout.cljs$core$IFn$_invoke$arity$variadic = (function (layout,p__78925){
+var vec__78926 = p__78925;
+var layer = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__78926,(0),null);
 var center = layout;
 var radius = new cljs.core.Keyword(null,"radius","radius",-2073122258).cljs$core$IFn$_invoke$arity$1(layout);
-if(cljs.core._EQ_.cljs$core$IFn$_invoke$arity$2(new cljs.core.Keyword(null,"type","type",1174270348).cljs$core$IFn$_invoke$arity$1(layout),new cljs.core.Keyword(null,"list","list",765357683))){
+if(cljs.core.truth_((function (){var G__78930 = new cljs.core.Keyword(null,"type","type",1174270348).cljs$core$IFn$_invoke$arity$1(layout);
+var fexpr__78929 = new cljs.core.PersistentHashSet(null, new cljs.core.PersistentArrayMap(null, 5, [new cljs.core.Keyword(null,"lit-fn","lit-fn",782737969),null,new cljs.core.Keyword(null,"list","list",765357683),null,new cljs.core.Keyword(null,"literal","literal",1664775605),null,new cljs.core.Keyword(null,"set","set",304602554),null,new cljs.core.Keyword(null,"map","map",1371690461),null], null), null);
+return (fexpr__78929.cljs$core$IFn$_invoke$arity$1 ? fexpr__78929.cljs$core$IFn$_invoke$arity$1(G__78930) : fexpr__78929.call(null,G__78930));
+})())){
 ellah.graphics.circle.cljs$core$IFn$_invoke$arity$variadic(layout,ellah.constants.foreground_color,cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([layer], 0));
+} else {
+}
 
+if(cljs.core.truth_((function (){var G__78932 = new cljs.core.Keyword(null,"type","type",1174270348).cljs$core$IFn$_invoke$arity$1(layout);
+var fexpr__78931 = new cljs.core.PersistentHashSet(null, new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null,"lit-fn","lit-fn",782737969),null,new cljs.core.Keyword(null,"map","map",1371690461),null], null), null);
+return (fexpr__78931.cljs$core$IFn$_invoke$arity$1 ? fexpr__78931.cljs$core$IFn$_invoke$arity$1(G__78932) : fexpr__78931.call(null,G__78932));
+})())){
+var r_80545 = new cljs.core.Keyword(null,"radius","radius",-2073122258).cljs$core$IFn$_invoke$arity$1(layout);
+var seq__78933_80546 = cljs.core.seq(new cljs.core.PersistentVector(null, 4, 5, cljs.core.PersistentVector.EMPTY_NODE, [(ellah.geometry.PI * 0.25),(ellah.geometry.PI * 0.75),(ellah.geometry.PI * 1.25),(ellah.geometry.PI * 1.75)], null));
+var chunk__78934_80547 = null;
+var count__78935_80548 = (0);
+var i__78936_80549 = (0);
+while(true){
+if((i__78936_80549 < count__78935_80548)){
+var base_angle_80550 = chunk__78934_80547.cljs$core$IIndexed$_nth$arity$2(null,i__78936_80549);
+ellah.graphics.polygon.cljs$core$IFn$_invoke$arity$variadic(new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [ellah.geometry.add_points.cljs$core$IFn$_invoke$arity$variadic(cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([layout,ellah.geometry.scale_point(ellah.geometry.angle_point((base_angle_80550 - ellah.constants.map_point_width)),r_80545)], 0)),ellah.geometry.add_points.cljs$core$IFn$_invoke$arity$variadic(cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([layout,ellah.geometry.scale_point(ellah.geometry.angle_point(base_angle_80550),((ellah.constants.map_point_height + (1)) * r_80545))], 0)),ellah.geometry.add_points.cljs$core$IFn$_invoke$arity$variadic(cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([layout,ellah.geometry.scale_point(ellah.geometry.angle_point((base_angle_80550 + ellah.constants.map_point_width)),r_80545)], 0))], null),ellah.constants.foreground_color,cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([layer], 0));
+
+
+var G__80551 = seq__78933_80546;
+var G__80552 = chunk__78934_80547;
+var G__80553 = count__78935_80548;
+var G__80554 = (i__78936_80549 + (1));
+seq__78933_80546 = G__80551;
+chunk__78934_80547 = G__80552;
+count__78935_80548 = G__80553;
+i__78936_80549 = G__80554;
+continue;
+} else {
+var temp__5753__auto___80555 = cljs.core.seq(seq__78933_80546);
+if(temp__5753__auto___80555){
+var seq__78933_80556__$1 = temp__5753__auto___80555;
+if(cljs.core.chunked_seq_QMARK_(seq__78933_80556__$1)){
+var c__4556__auto___80557 = cljs.core.chunk_first(seq__78933_80556__$1);
+var G__80558 = cljs.core.chunk_rest(seq__78933_80556__$1);
+var G__80559 = c__4556__auto___80557;
+var G__80560 = cljs.core.count(c__4556__auto___80557);
+var G__80561 = (0);
+seq__78933_80546 = G__80558;
+chunk__78934_80547 = G__80559;
+count__78935_80548 = G__80560;
+i__78936_80549 = G__80561;
+continue;
+} else {
+var base_angle_80562 = cljs.core.first(seq__78933_80556__$1);
+ellah.graphics.polygon.cljs$core$IFn$_invoke$arity$variadic(new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [ellah.geometry.add_points.cljs$core$IFn$_invoke$arity$variadic(cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([layout,ellah.geometry.scale_point(ellah.geometry.angle_point((base_angle_80562 - ellah.constants.map_point_width)),r_80545)], 0)),ellah.geometry.add_points.cljs$core$IFn$_invoke$arity$variadic(cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([layout,ellah.geometry.scale_point(ellah.geometry.angle_point(base_angle_80562),((ellah.constants.map_point_height + (1)) * r_80545))], 0)),ellah.geometry.add_points.cljs$core$IFn$_invoke$arity$variadic(cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([layout,ellah.geometry.scale_point(ellah.geometry.angle_point((base_angle_80562 + ellah.constants.map_point_width)),r_80545)], 0))], null),ellah.constants.foreground_color,cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([layer], 0));
+
+
+var G__80563 = cljs.core.next(seq__78933_80556__$1);
+var G__80564 = null;
+var G__80565 = (0);
+var G__80566 = (0);
+seq__78933_80546 = G__80563;
+chunk__78934_80547 = G__80564;
+count__78935_80548 = G__80565;
+i__78936_80549 = G__80566;
+continue;
+}
+} else {
+}
+}
+break;
+}
+} else {
+}
+
+if(cljs.core.truth_((function (){var G__78938 = new cljs.core.Keyword(null,"type","type",1174270348).cljs$core$IFn$_invoke$arity$1(layout);
+var fexpr__78937 = new cljs.core.PersistentHashSet(null, new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null,"lit-fn","lit-fn",782737969),null,new cljs.core.Keyword(null,"set","set",304602554),null], null), null);
+return (fexpr__78937.cljs$core$IFn$_invoke$arity$1 ? fexpr__78937.cljs$core$IFn$_invoke$arity$1(G__78938) : fexpr__78937.call(null,G__78938));
+})())){
+var r_80567 = new cljs.core.Keyword(null,"radius","radius",-2073122258).cljs$core$IFn$_invoke$arity$1(layout);
+var seq__78939_80568 = cljs.core.seq(new cljs.core.PersistentVector(null, 4, 5, cljs.core.PersistentVector.EMPTY_NODE, [(0),(ellah.geometry.PI * 0.5),ellah.geometry.PI,(ellah.geometry.PI * 1.5)], null));
+var chunk__78940_80569 = null;
+var count__78941_80570 = (0);
+var i__78942_80571 = (0);
+while(true){
+if((i__78942_80571 < count__78941_80570)){
+var angle_80572 = chunk__78940_80569.cljs$core$IIndexed$_nth$arity$2(null,i__78942_80571);
+var base_offset_80573 = ellah.geometry.scale_point(ellah.geometry.angle_point((angle_80572 + (ellah.geometry.PI * 0.5))),(r_80567 * ellah.constants.set_line_offset));
+var seq__78951_80574 = cljs.core.seq(new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [base_offset_80573,ellah.geometry.scale_point(base_offset_80573,(-1))], null));
+var chunk__78952_80575 = null;
+var count__78953_80576 = (0);
+var i__78954_80577 = (0);
+while(true){
+if((i__78954_80577 < count__78953_80576)){
+var offset_80578 = chunk__78952_80575.cljs$core$IIndexed$_nth$arity$2(null,i__78954_80577);
+ellah.graphics.line.cljs$core$IFn$_invoke$arity$variadic(ellah.geometry.add_points.cljs$core$IFn$_invoke$arity$variadic(cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([offset_80578,layout], 0)),ellah.geometry.add_points.cljs$core$IFn$_invoke$arity$variadic(cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([layout,offset_80578,ellah.geometry.scale_point(ellah.geometry.angle_point(angle_80572),((ellah.constants.set_line_length + (1)) * r_80567))], 0)),(r_80567 * ellah.constants.set_line_width),ellah.constants.foreground_color,cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([layer], 0));
+
+
+var G__80579 = seq__78951_80574;
+var G__80580 = chunk__78952_80575;
+var G__80581 = count__78953_80576;
+var G__80582 = (i__78954_80577 + (1));
+seq__78951_80574 = G__80579;
+chunk__78952_80575 = G__80580;
+count__78953_80576 = G__80581;
+i__78954_80577 = G__80582;
+continue;
+} else {
+var temp__5753__auto___80583 = cljs.core.seq(seq__78951_80574);
+if(temp__5753__auto___80583){
+var seq__78951_80584__$1 = temp__5753__auto___80583;
+if(cljs.core.chunked_seq_QMARK_(seq__78951_80584__$1)){
+var c__4556__auto___80585 = cljs.core.chunk_first(seq__78951_80584__$1);
+var G__80586 = cljs.core.chunk_rest(seq__78951_80584__$1);
+var G__80587 = c__4556__auto___80585;
+var G__80588 = cljs.core.count(c__4556__auto___80585);
+var G__80589 = (0);
+seq__78951_80574 = G__80586;
+chunk__78952_80575 = G__80587;
+count__78953_80576 = G__80588;
+i__78954_80577 = G__80589;
+continue;
+} else {
+var offset_80590 = cljs.core.first(seq__78951_80584__$1);
+ellah.graphics.line.cljs$core$IFn$_invoke$arity$variadic(ellah.geometry.add_points.cljs$core$IFn$_invoke$arity$variadic(cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([offset_80590,layout], 0)),ellah.geometry.add_points.cljs$core$IFn$_invoke$arity$variadic(cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([layout,offset_80590,ellah.geometry.scale_point(ellah.geometry.angle_point(angle_80572),((ellah.constants.set_line_length + (1)) * r_80567))], 0)),(r_80567 * ellah.constants.set_line_width),ellah.constants.foreground_color,cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([layer], 0));
+
+
+var G__80591 = cljs.core.next(seq__78951_80584__$1);
+var G__80592 = null;
+var G__80593 = (0);
+var G__80594 = (0);
+seq__78951_80574 = G__80591;
+chunk__78952_80575 = G__80592;
+count__78953_80576 = G__80593;
+i__78954_80577 = G__80594;
+continue;
+}
+} else {
+}
+}
+break;
+}
+
+
+var G__80595 = seq__78939_80568;
+var G__80596 = chunk__78940_80569;
+var G__80597 = count__78941_80570;
+var G__80598 = (i__78942_80571 + (1));
+seq__78939_80568 = G__80595;
+chunk__78940_80569 = G__80596;
+count__78941_80570 = G__80597;
+i__78942_80571 = G__80598;
+continue;
+} else {
+var temp__5753__auto___80599 = cljs.core.seq(seq__78939_80568);
+if(temp__5753__auto___80599){
+var seq__78939_80600__$1 = temp__5753__auto___80599;
+if(cljs.core.chunked_seq_QMARK_(seq__78939_80600__$1)){
+var c__4556__auto___80601 = cljs.core.chunk_first(seq__78939_80600__$1);
+var G__80602 = cljs.core.chunk_rest(seq__78939_80600__$1);
+var G__80603 = c__4556__auto___80601;
+var G__80604 = cljs.core.count(c__4556__auto___80601);
+var G__80605 = (0);
+seq__78939_80568 = G__80602;
+chunk__78940_80569 = G__80603;
+count__78941_80570 = G__80604;
+i__78942_80571 = G__80605;
+continue;
+} else {
+var angle_80606 = cljs.core.first(seq__78939_80600__$1);
+var base_offset_80607 = ellah.geometry.scale_point(ellah.geometry.angle_point((angle_80606 + (ellah.geometry.PI * 0.5))),(r_80567 * ellah.constants.set_line_offset));
+var seq__78955_80608 = cljs.core.seq(new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [base_offset_80607,ellah.geometry.scale_point(base_offset_80607,(-1))], null));
+var chunk__78956_80609 = null;
+var count__78957_80610 = (0);
+var i__78958_80611 = (0);
+while(true){
+if((i__78958_80611 < count__78957_80610)){
+var offset_80612 = chunk__78956_80609.cljs$core$IIndexed$_nth$arity$2(null,i__78958_80611);
+ellah.graphics.line.cljs$core$IFn$_invoke$arity$variadic(ellah.geometry.add_points.cljs$core$IFn$_invoke$arity$variadic(cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([offset_80612,layout], 0)),ellah.geometry.add_points.cljs$core$IFn$_invoke$arity$variadic(cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([layout,offset_80612,ellah.geometry.scale_point(ellah.geometry.angle_point(angle_80606),((ellah.constants.set_line_length + (1)) * r_80567))], 0)),(r_80567 * ellah.constants.set_line_width),ellah.constants.foreground_color,cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([layer], 0));
+
+
+var G__80613 = seq__78955_80608;
+var G__80614 = chunk__78956_80609;
+var G__80615 = count__78957_80610;
+var G__80616 = (i__78958_80611 + (1));
+seq__78955_80608 = G__80613;
+chunk__78956_80609 = G__80614;
+count__78957_80610 = G__80615;
+i__78958_80611 = G__80616;
+continue;
+} else {
+var temp__5753__auto___80617__$1 = cljs.core.seq(seq__78955_80608);
+if(temp__5753__auto___80617__$1){
+var seq__78955_80618__$1 = temp__5753__auto___80617__$1;
+if(cljs.core.chunked_seq_QMARK_(seq__78955_80618__$1)){
+var c__4556__auto___80619 = cljs.core.chunk_first(seq__78955_80618__$1);
+var G__80620 = cljs.core.chunk_rest(seq__78955_80618__$1);
+var G__80621 = c__4556__auto___80619;
+var G__80622 = cljs.core.count(c__4556__auto___80619);
+var G__80623 = (0);
+seq__78955_80608 = G__80620;
+chunk__78956_80609 = G__80621;
+count__78957_80610 = G__80622;
+i__78958_80611 = G__80623;
+continue;
+} else {
+var offset_80624 = cljs.core.first(seq__78955_80618__$1);
+ellah.graphics.line.cljs$core$IFn$_invoke$arity$variadic(ellah.geometry.add_points.cljs$core$IFn$_invoke$arity$variadic(cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([offset_80624,layout], 0)),ellah.geometry.add_points.cljs$core$IFn$_invoke$arity$variadic(cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([layout,offset_80624,ellah.geometry.scale_point(ellah.geometry.angle_point(angle_80606),((ellah.constants.set_line_length + (1)) * r_80567))], 0)),(r_80567 * ellah.constants.set_line_width),ellah.constants.foreground_color,cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([layer], 0));
+
+
+var G__80625 = cljs.core.next(seq__78955_80618__$1);
+var G__80626 = null;
+var G__80627 = (0);
+var G__80628 = (0);
+seq__78955_80608 = G__80625;
+chunk__78956_80609 = G__80626;
+count__78957_80610 = G__80627;
+i__78958_80611 = G__80628;
+continue;
+}
+} else {
+}
+}
+break;
+}
+
+
+var G__80629 = cljs.core.next(seq__78939_80600__$1);
+var G__80630 = null;
+var G__80631 = (0);
+var G__80632 = (0);
+seq__78939_80568 = G__80629;
+chunk__78940_80569 = G__80630;
+count__78941_80570 = G__80631;
+i__78942_80571 = G__80632;
+continue;
+}
+} else {
+}
+}
+break;
+}
+} else {
+}
+
+if(cljs.core.truth_((function (){var G__78960 = new cljs.core.Keyword(null,"type","type",1174270348).cljs$core$IFn$_invoke$arity$1(layout);
+var fexpr__78959 = new cljs.core.PersistentHashSet(null, new cljs.core.PersistentArrayMap(null, 4, [new cljs.core.Keyword(null,"lit-fn","lit-fn",782737969),null,new cljs.core.Keyword(null,"list","list",765357683),null,new cljs.core.Keyword(null,"set","set",304602554),null,new cljs.core.Keyword(null,"map","map",1371690461),null], null), null);
+return (fexpr__78959.cljs$core$IFn$_invoke$arity$1 ? fexpr__78959.cljs$core$IFn$_invoke$arity$1(G__78960) : fexpr__78959.call(null,G__78960));
+})())){
 ellah.graphics.circle.cljs$core$IFn$_invoke$arity$variadic(cljs.core.update.cljs$core$IFn$_invoke$arity$3(layout,new cljs.core.Keyword(null,"radius","radius",-2073122258),cljs.core.partial.cljs$core$IFn$_invoke$arity$2(cljs.core._STAR_,((1) - ellah.constants.bubble_thickness))),ellah.constants.background_color,cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([layer], 0));
 } else {
 }
 
 if(cljs.core._EQ_.cljs$core$IFn$_invoke$arity$2(new cljs.core.Keyword(null,"type","type",1174270348).cljs$core$IFn$_invoke$arity$1(layout),new cljs.core.Keyword(null,"vector","vector",1902966158))){
-ellah.graphics.polygon.cljs$core$IFn$_invoke$arity$variadic(cljs.core.mapv.cljs$core$IFn$_invoke$arity$2((function (p1__91084_SHARP_){
-return ellah.geometry.add_points.cljs$core$IFn$_invoke$arity$variadic(cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([center,ellah.geometry.scale_point(p1__91084_SHARP_,(radius * ellah.constants.vector_size_factor))], 0));
+ellah.graphics.polygon.cljs$core$IFn$_invoke$arity$variadic(cljs.core.mapv.cljs$core$IFn$_invoke$arity$2((function (p1__78921_SHARP_){
+return ellah.geometry.add_points.cljs$core$IFn$_invoke$arity$variadic(cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([center,ellah.geometry.scale_point(p1__78921_SHARP_,(radius * ellah.constants.vector_size_factor))], 0));
 }),ellah.geometry.polygon.cljs$core$IFn$_invoke$arity$variadic((8),cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([(ellah.geometry.PI * 0.125)], 0))),ellah.constants.foreground_color,cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([layer], 0));
 
-ellah.graphics.polygon.cljs$core$IFn$_invoke$arity$variadic(cljs.core.mapv.cljs$core$IFn$_invoke$arity$2((function (p1__91085_SHARP_){
-return ellah.geometry.add_points.cljs$core$IFn$_invoke$arity$variadic(cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([center,ellah.geometry.scale_point(p1__91085_SHARP_,((radius * ellah.constants.vector_size_factor) * ((1) - ellah.constants.bubble_thickness)))], 0));
+ellah.graphics.polygon.cljs$core$IFn$_invoke$arity$variadic(cljs.core.mapv.cljs$core$IFn$_invoke$arity$2((function (p1__78922_SHARP_){
+return ellah.geometry.add_points.cljs$core$IFn$_invoke$arity$variadic(cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([center,ellah.geometry.scale_point(p1__78922_SHARP_,((radius * ellah.constants.vector_size_factor) * ((1) - ellah.constants.bubble_thickness)))], 0));
 }),ellah.geometry.polygon.cljs$core$IFn$_invoke$arity$variadic((8),cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([(ellah.geometry.PI * 0.125)], 0))),ellah.constants.background_color,cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([layer], 0));
 } else {
 }
 
 if(cljs.core._EQ_.cljs$core$IFn$_invoke$arity$2(new cljs.core.Keyword(null,"type","type",1174270348).cljs$core$IFn$_invoke$arity$1(layout),new cljs.core.Keyword(null,"literal","literal",1664775605))){
-ellah.graphics.circle.cljs$core$IFn$_invoke$arity$variadic(layout,ellah.constants.foreground_color,cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([layer], 0));
-
 return ellah.graphics.text.cljs$core$IFn$_invoke$arity$variadic(new cljs.core.Keyword(null,"value","value",305978217).cljs$core$IFn$_invoke$arity$1(layout),layout,new cljs.core.Keyword(null,"radius","radius",-2073122258).cljs$core$IFn$_invoke$arity$1(layout),ellah.constants.text_color,cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([layer], 0));
 } else {
 return null;
@@ -528,74 +814,152 @@ return null;
 (ellah.graphics.render_layout.cljs$lang$maxFixedArity = (1));
 
 /** @this {Function} */
-(ellah.graphics.render_layout.cljs$lang$applyTo = (function (seq91086){
-var G__91087 = cljs.core.first(seq91086);
-var seq91086__$1 = cljs.core.next(seq91086);
+(ellah.graphics.render_layout.cljs$lang$applyTo = (function (seq78923){
+var G__78924 = cljs.core.first(seq78923);
+var seq78923__$1 = cljs.core.next(seq78923);
 var self__4723__auto__ = this;
-return self__4723__auto__.cljs$core$IFn$_invoke$arity$variadic(G__91087,seq91086__$1);
+return self__4723__auto__.cljs$core$IFn$_invoke$arity$variadic(G__78924,seq78923__$1);
 }));
 
-ellah.graphics.formbar_y = (function ellah$graphics$formbar_y(index){
-var vec__91092 = ellah.graphics.app_rect();
-var app_pos = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__91092,(0),null);
-var app_size = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__91092,(1),null);
-return ((((new cljs.core.Keyword(null,"y","y",-1757859776).cljs$core$IFn$_invoke$arity$1(app_pos) + new cljs.core.Keyword(null,"y","y",-1757859776).cljs$core$IFn$_invoke$arity$1(app_size)) - ellah.constants.formbar_pos) - ellah.constants.formbar_radius) - (index * (((2) * ellah.constants.formbar_radius) * ellah.constants.formbar_spacing)));
+ellah.graphics.formbar_offset = (function ellah$graphics$formbar_offset(index){
+return ((ellah.constants.formbar_pos + ellah.constants.formbar_radius) + (index * (((2) * ellah.constants.formbar_radius) * ellah.constants.formbar_spacing)));
 });
-ellah.graphics.formbar_zone_top = (function ellah$graphics$formbar_zone_top(){
-return (ellah.graphics.formbar_y((cljs.core.count(new cljs.core.Keyword(null,"formbars","formbars",393026901).cljs$core$IFn$_invoke$arity$1(cljs.core.deref(ellah.graphics.graphics_state))) - (1))) - ellah.constants.formbar_radius);
+ellah.graphics.formbar_zone_size = (function ellah$graphics$formbar_zone_size(side){
+var side_stage_count = cljs.core.count(cljs.core.get.cljs$core$IFn$_invoke$arity$2(new cljs.core.Keyword(null,"formbars","formbars",393026901).cljs$core$IFn$_invoke$arity$1(cljs.core.deref(ellah.graphics.graphics_state)),side));
+if((side_stage_count === (0))){
+return (0);
+} else {
+return (ellah.graphics.formbar_offset(side_stage_count) - ellah.constants.formbar_radius);
+}
 });
 ellah.graphics.adjusted_form_layout = (function ellah$graphics$adjusted_form_layout(){
-var vec__91095 = ellah.graphics.app_rect();
-var app_pos = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__91095,(0),null);
-var app_size = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__91095,(1),null);
-var min_y = (function (){var x__4217__auto__ = (0);
-var y__4218__auto__ = new cljs.core.Keyword(null,"y","y",-1757859776).cljs$core$IFn$_invoke$arity$1(app_pos);
-return ((x__4217__auto__ < y__4218__auto__) ? x__4217__auto__ : y__4218__auto__);
-})();
-var max_y = (function (){var x__4217__auto__ = (new cljs.core.Keyword(null,"y","y",-1757859776).cljs$core$IFn$_invoke$arity$1(app_size) + new cljs.core.Keyword(null,"y","y",-1757859776).cljs$core$IFn$_invoke$arity$1(app_pos));
-var y__4218__auto__ = ellah.graphics.formbar_zone_top();
-return ((x__4217__auto__ < y__4218__auto__) ? x__4217__auto__ : y__4218__auto__);
-})();
-var y_space = (max_y - min_y);
-var radius = (function (){var x__4217__auto__ = new cljs.core.Keyword(null,"x","x",2099068185).cljs$core$IFn$_invoke$arity$1(app_size);
-var y__4218__auto__ = y_space;
-return ((x__4217__auto__ < y__4218__auto__) ? x__4217__auto__ : y__4218__auto__);
-})();
-return ellah.graphics.adjust_layout(ellah.geometry.unit,0.5,ellah.graphics.adjust_layout(new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"y","y",-1757859776),((y_space - new cljs.core.Keyword(null,"y","y",-1757859776).cljs$core$IFn$_invoke$arity$1(app_size)) / radius)], null),radius,ellah.graphics.adjust_layout(new cljs.core.Keyword(null,"camera-pos","camera-pos",666924233).cljs$core$IFn$_invoke$arity$1(cljs.core.deref(ellah.graphics.graphics_state)),new cljs.core.Keyword(null,"camera-zoom","camera-zoom",-1214902147).cljs$core$IFn$_invoke$arity$1(cljs.core.deref(ellah.graphics.graphics_state)),ellah.graphics.current_form_layout())));
+var current_app_rect = ellah.graphics.app_rect();
+var vec__78961 = current_app_rect;
+var app_pos = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__78961,(0),null);
+var app_size = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__78961,(1),null);
+var min_y = (new cljs.core.Keyword(null,"y","y",-1757859776).cljs$core$IFn$_invoke$arity$1(app_pos) + ellah.graphics.formbar_zone_size(new cljs.core.Keyword(null,"top","top",-1856271961)));
+var max_y = ((new cljs.core.Keyword(null,"y","y",-1757859776).cljs$core$IFn$_invoke$arity$1(app_size) + new cljs.core.Keyword(null,"y","y",-1757859776).cljs$core$IFn$_invoke$arity$1(app_pos)) - ellah.graphics.formbar_zone_size(new cljs.core.Keyword(null,"bottom","bottom",-1550509018)));
+var min_x = (new cljs.core.Keyword(null,"x","x",2099068185).cljs$core$IFn$_invoke$arity$1(app_pos) + ellah.graphics.formbar_zone_size(new cljs.core.Keyword(null,"left","left",-399115937)));
+var max_x = ((new cljs.core.Keyword(null,"x","x",2099068185).cljs$core$IFn$_invoke$arity$1(app_size) + new cljs.core.Keyword(null,"x","x",2099068185).cljs$core$IFn$_invoke$arity$1(app_pos)) - ellah.graphics.formbar_zone_size(new cljs.core.Keyword(null,"right","right",-452581833)));
+var form_rect = new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null,"x","x",2099068185),min_x,new cljs.core.Keyword(null,"y","y",-1757859776),min_y], null),new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null,"x","x",2099068185),(max_x - min_x),new cljs.core.Keyword(null,"y","y",-1757859776),(max_y - min_y)], null)], null);
+var form_circle = ellah.geometry.circle_within(form_rect);
+return ellah.graphics.map_layout(ellah.graphics.adjust_layout(ellah.graphics.adjust_layout(ellah.graphics.current_form_layout(),new cljs.core.Keyword(null,"camera-pos","camera-pos",666924233).cljs$core$IFn$_invoke$arity$1(cljs.core.deref(ellah.graphics.graphics_state)),new cljs.core.Keyword(null,"camera-zoom","camera-zoom",-1214902147).cljs$core$IFn$_invoke$arity$1(cljs.core.deref(ellah.graphics.graphics_state))),ellah.geometry.unit,0.5),ellah.geometry.circle_within(current_app_rect),form_circle);
 });
-ellah.graphics.formbar_width = (function ellah$graphics$formbar_width(index){
+ellah.graphics.formbar_arrangement = (function ellah$graphics$formbar_arrangement(){
+return cljs.core.zipmap(ellah.constants.screen_sides,cljs.core.map.cljs$core$IFn$_invoke$arity$2((function (side){
+var vec__78964 = ellah.graphics.app_rect();
+var app_pos = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__78964,(0),null);
+var app_size = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__78964,(1),null);
+var map__78967 = cljs.core.deref(ellah.graphics.graphics_state);
+var map__78967__$1 = (((((!((map__78967 == null))))?(((((map__78967.cljs$lang$protocol_mask$partition0$ & (64))) || ((cljs.core.PROTOCOL_SENTINEL === map__78967.cljs$core$ISeq$))))?true:false):false))?cljs.core.apply.cljs$core$IFn$_invoke$arity$2(cljs.core.hash_map,map__78967):map__78967);
+var formbars = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__78967__$1,new cljs.core.Keyword(null,"formbars","formbars",393026901));
+var horizontal_QMARK_ = (function (){var fexpr__78969 = new cljs.core.PersistentHashSet(null, new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null,"bottom","bottom",-1550509018),null,new cljs.core.Keyword(null,"top","top",-1856271961),null], null), null);
+return (fexpr__78969.cljs$core$IFn$_invoke$arity$1 ? fexpr__78969.cljs$core$IFn$_invoke$arity$1(side) : fexpr__78969.call(null,side));
+})();
+var bar_stages = cljs.core.get.cljs$core$IFn$_invoke$arity$2(formbars,side);
+return cljs.core.mapv.cljs$core$IFn$_invoke$arity$3((function (stage,stage_index){
+var sizes = cljs.core.mapv.cljs$core$IFn$_invoke$arity$2((function (bar){
 var x__4214__auto__ = (0);
-var y__4215__auto__ = (function (){var size = cljs.core.count(new cljs.core.Keyword(null,"forms","forms",2045992350).cljs$core$IFn$_invoke$arity$1(cljs.core.nth.cljs$core$IFn$_invoke$arity$2(new cljs.core.Keyword(null,"formbars","formbars",393026901).cljs$core$IFn$_invoke$arity$1(cljs.core.deref(ellah.graphics.graphics_state)),index)));
-return ((((size - (1)) * (2)) * ellah.constants.formbar_radius) * ellah.constants.formbar_form_size);
+var y__4215__auto__ = (function (){var size = cljs.core.count(new cljs.core.Keyword(null,"forms","forms",2045992350).cljs$core$IFn$_invoke$arity$1(bar));
+return ((((size - (1)) * (2)) * ellah.constants.formbar_radius) * ((1) - ellah.constants.formbar_outline_thickness));
 })();
 return ((x__4214__auto__ > y__4215__auto__) ? x__4214__auto__ : y__4215__auto__);
+}),stage);
+var total_size = (cljs.core.apply.cljs$core$IFn$_invoke$arity$2(cljs.core._PLUS_,sizes) + (((ellah.constants.formbar_spacing + (1)) * ellah.constants.formbar_radius) * (cljs.core.count(stage) - (1))));
+var edge_offset = ((ellah.constants.formbar_pos + ellah.constants.formbar_radius) + (stage_index * (ellah.constants.formbar_radius + (ellah.constants.formbar_radius * ellah.constants.formbar_spacing))));
+var offsets = cljs.core.vec(cljs.core.reverse(cljs.core.reduce.cljs$core$IFn$_invoke$arity$3((function (offsets,size){
+return cljs.core.conj.cljs$core$IFn$_invoke$arity$2(offsets,((cljs.core.first(offsets) + size) + ((ellah.constants.formbar_spacing + (1)) * ellah.constants.formbar_radius)));
+}),(new cljs.core.List(null,(-0.5 * total_size),null,(1),null)),cljs.core.rest(cljs.core.reverse(sizes)))));
+return cljs.core.mapv.cljs$core$IFn$_invoke$arity$4((function (bar,size,bar_offset){
+var bar_pos = (function (){var G__78970 = side;
+var G__78970__$1 = (((G__78970 instanceof cljs.core.Keyword))?G__78970.fqn:null);
+switch (G__78970__$1) {
+case "bottom":
+return new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null,"x","x",2099068185),((new cljs.core.Keyword(null,"x","x",2099068185).cljs$core$IFn$_invoke$arity$1(app_pos) + (0.5 * new cljs.core.Keyword(null,"x","x",2099068185).cljs$core$IFn$_invoke$arity$1(app_size))) + bar_offset),new cljs.core.Keyword(null,"y","y",-1757859776),((new cljs.core.Keyword(null,"y","y",-1757859776).cljs$core$IFn$_invoke$arity$1(app_pos) + new cljs.core.Keyword(null,"y","y",-1757859776).cljs$core$IFn$_invoke$arity$1(app_size)) - edge_offset)], null);
+
+break;
+case "top":
+return new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null,"x","x",2099068185),((new cljs.core.Keyword(null,"x","x",2099068185).cljs$core$IFn$_invoke$arity$1(app_pos) + (0.5 * new cljs.core.Keyword(null,"x","x",2099068185).cljs$core$IFn$_invoke$arity$1(app_size))) + bar_offset),new cljs.core.Keyword(null,"y","y",-1757859776),(new cljs.core.Keyword(null,"y","y",-1757859776).cljs$core$IFn$_invoke$arity$1(app_pos) + edge_offset)], null);
+
+break;
+case "left":
+return new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null,"x","x",2099068185),(new cljs.core.Keyword(null,"x","x",2099068185).cljs$core$IFn$_invoke$arity$1(app_pos) + edge_offset),new cljs.core.Keyword(null,"y","y",-1757859776),((new cljs.core.Keyword(null,"y","y",-1757859776).cljs$core$IFn$_invoke$arity$1(app_pos) + (0.5 * new cljs.core.Keyword(null,"y","y",-1757859776).cljs$core$IFn$_invoke$arity$1(app_size))) + bar_offset)], null);
+
+break;
+case "right":
+return new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null,"x","x",2099068185),((new cljs.core.Keyword(null,"x","x",2099068185).cljs$core$IFn$_invoke$arity$1(app_pos) + new cljs.core.Keyword(null,"x","x",2099068185).cljs$core$IFn$_invoke$arity$1(app_size)) - edge_offset),new cljs.core.Keyword(null,"y","y",-1757859776),((new cljs.core.Keyword(null,"y","y",-1757859776).cljs$core$IFn$_invoke$arity$1(app_pos) + (0.5 * new cljs.core.Keyword(null,"y","y",-1757859776).cljs$core$IFn$_invoke$arity$1(app_size))) + bar_offset)], null);
+
+break;
+default:
+throw (new Error(["No matching clause: ",cljs.core.str.cljs$core$IFn$_invoke$arity$1(G__78970__$1)].join('')));
+
+}
+})();
+return cljs.core.merge.cljs$core$IFn$_invoke$arity$variadic(cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([bar_pos,new cljs.core.PersistentArrayMap(null, 3, [new cljs.core.Keyword(null,"width","width",-384071477),(cljs.core.truth_(horizontal_QMARK_)?size:(0)),new cljs.core.Keyword(null,"height","height",1025178622),(cljs.core.truth_(horizontal_QMARK_)?(0):size),new cljs.core.Keyword(null,"circles","circles",-1947060917),cljs.core.mapv.cljs$core$IFn$_invoke$arity$3((function (form,form_index){
+return cljs.core.assoc.cljs$core$IFn$_invoke$arity$variadic(ellah.geometry.add_points.cljs$core$IFn$_invoke$arity$variadic(cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([bar_pos,ellah.geometry.scale_point(cljs.core.PersistentArrayMap.createAsIfByAssoc([(cljs.core.truth_(horizontal_QMARK_)?new cljs.core.Keyword(null,"x","x",2099068185):new cljs.core.Keyword(null,"y","y",-1757859776)),(((2) * ((1) - ellah.constants.formbar_outline_thickness)) * ellah.constants.formbar_radius)]),form_index)], 0)),new cljs.core.Keyword(null,"radius","radius",-2073122258),((ellah.constants.formbar_radius * ((1) - ellah.constants.formbar_outline_thickness)) * ellah.constants.formbar_form_size),cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([new cljs.core.Keyword(null,"form","form",-1624062471),form], 0));
+}),new cljs.core.Keyword(null,"forms","forms",2045992350).cljs$core$IFn$_invoke$arity$1(bar),cljs.core.range.cljs$core$IFn$_invoke$arity$0())], null)], 0));
+}),stage,sizes,offsets);
+}),bar_stages,cljs.core.range.cljs$core$IFn$_invoke$arity$0());
+}),ellah.constants.screen_sides));
 });
-ellah.graphics.formbar_form_spacing = (((2) * ellah.constants.formbar_radius) * ellah.constants.formbar_form_size);
-ellah.graphics.formbar_circle = (function ellah$graphics$formbar_circle(outer_index,inner_index){
-return new cljs.core.PersistentArrayMap(null, 3, [new cljs.core.Keyword(null,"x","x",2099068185),((0.5 * ((1) - ellah.graphics.formbar_width(outer_index))) + (inner_index * ellah.graphics.formbar_form_spacing)),new cljs.core.Keyword(null,"y","y",-1757859776),ellah.graphics.formbar_y(outer_index),new cljs.core.Keyword(null,"radius","radius",-2073122258),((ellah.constants.formbar_radius * ellah.constants.formbar_form_size) * ((1) - ellah.constants.formbar_outline_thickness))], null);
+ellah.graphics.formbar_path_at = (function ellah$graphics$formbar_path_at(pos){
+var full_arrangement = ellah.graphics.formbar_arrangement();
+return cljs.core.some((function (side){
+var arrangement = cljs.core.get.cljs$core$IFn$_invoke$arity$2(full_arrangement,side);
+var horizontal_QMARK_ = (function (){var fexpr__78971 = new cljs.core.PersistentHashSet(null, new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null,"bottom","bottom",-1550509018),null,new cljs.core.Keyword(null,"top","top",-1856271961),null], null), null);
+return (fexpr__78971.cljs$core$IFn$_invoke$arity$1 ? fexpr__78971.cljs$core$IFn$_invoke$arity$1(side) : fexpr__78971.call(null,side));
+})();
+return cljs.core.some((function (stage_index){
+var stage = cljs.core.nth.cljs$core$IFn$_invoke$arity$2(arrangement,stage_index);
+return cljs.core.some((function (bar_index){
+var bar = cljs.core.nth.cljs$core$IFn$_invoke$arity$2(stage,bar_index);
+if((((ellah.geometry.point_magnitude(ellah.geometry.subtract_points(pos,bar)) <= ellah.constants.formbar_radius)) || ((ellah.geometry.point_magnitude(ellah.geometry.subtract_points(pos,ellah.geometry.add_points.cljs$core$IFn$_invoke$arity$variadic(cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([bar,(cljs.core.truth_(horizontal_QMARK_)?new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"x","x",2099068185),new cljs.core.Keyword(null,"width","width",-384071477).cljs$core$IFn$_invoke$arity$1(bar)], null):new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"y","y",-1757859776),new cljs.core.Keyword(null,"height","height",1025178622).cljs$core$IFn$_invoke$arity$1(bar)], null))], 0)))) <= ellah.constants.formbar_radius)) || (ellah.geometry.in_rect_QMARK_((cljs.core.truth_(horizontal_QMARK_)?new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [ellah.geometry.subtract_points(bar,new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"y","y",-1757859776),ellah.constants.formbar_radius], null)),new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null,"x","x",2099068185),new cljs.core.Keyword(null,"width","width",-384071477).cljs$core$IFn$_invoke$arity$1(bar),new cljs.core.Keyword(null,"y","y",-1757859776),((2) * ellah.constants.formbar_radius)], null)], null):new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [ellah.geometry.subtract_points(bar,new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"x","x",2099068185),ellah.constants.formbar_radius], null)),new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null,"x","x",2099068185),((2) * ellah.constants.formbar_radius),new cljs.core.Keyword(null,"y","y",-1757859776),new cljs.core.Keyword(null,"height","height",1025178622).cljs$core$IFn$_invoke$arity$1(bar)], null)], null)),pos)))){
+return new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [side,stage_index,bar_index], null);
+} else {
+return null;
+}
+}),cljs.core.range.cljs$core$IFn$_invoke$arity$1(cljs.core.count(stage)));
+}),cljs.core.range.cljs$core$IFn$_invoke$arity$1(cljs.core.count(arrangement)));
+}),ellah.constants.screen_sides);
+});
+ellah.graphics.formbar_form_path_at = (function ellah$graphics$formbar_form_path_at(pos){
+var full_arrangement = ellah.graphics.formbar_arrangement();
+return cljs.core.some((function (side){
+var arrangement = cljs.core.get.cljs$core$IFn$_invoke$arity$2(full_arrangement,side);
+return cljs.core.some((function (stage_index){
+var stage = cljs.core.nth.cljs$core$IFn$_invoke$arity$2(arrangement,stage_index);
+return cljs.core.some((function (bar_index){
+var bar = cljs.core.nth.cljs$core$IFn$_invoke$arity$2(stage,bar_index);
+var map__78972 = bar;
+var map__78972__$1 = (((((!((map__78972 == null))))?(((((map__78972.cljs$lang$protocol_mask$partition0$ & (64))) || ((cljs.core.PROTOCOL_SENTINEL === map__78972.cljs$core$ISeq$))))?true:false):false))?cljs.core.apply.cljs$core$IFn$_invoke$arity$2(cljs.core.hash_map,map__78972):map__78972);
+var circles = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__78972__$1,new cljs.core.Keyword(null,"circles","circles",-1947060917));
+return cljs.core.some((function (circle_index){
+var bar_circle = cljs.core.nth.cljs$core$IFn$_invoke$arity$2(circles,circle_index);
+if(ellah.geometry.in_circle_QMARK_(bar_circle,pos)){
+return new cljs.core.PersistentVector(null, 6, 5, cljs.core.PersistentVector.EMPTY_NODE, [side,stage_index,bar_index,new cljs.core.Keyword(null,"circles","circles",-1947060917),circle_index,new cljs.core.Keyword(null,"form","form",-1624062471)], null);
+} else {
+return null;
+}
+}),cljs.core.range.cljs$core$IFn$_invoke$arity$1(cljs.core.count(circles)));
+}),cljs.core.range.cljs$core$IFn$_invoke$arity$1(cljs.core.count(stage)));
+}),cljs.core.range.cljs$core$IFn$_invoke$arity$1(cljs.core.count(arrangement)));
+}),ellah.constants.screen_sides);
 });
 ellah.graphics.get_mouse_zone = (function ellah$graphics$get_mouse_zone(){
-var vec__91098 = ellah.graphics.app_rect();
-var app_pos = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__91098,(0),null);
-var app_size = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__91098,(1),null);
-var map__91101 = cljs.core.deref(ellah.graphics.graphics_state);
-var map__91101__$1 = (((((!((map__91101 == null))))?(((((map__91101.cljs$lang$protocol_mask$partition0$ & (64))) || ((cljs.core.PROTOCOL_SENTINEL === map__91101.cljs$core$ISeq$))))?true:false):false))?cljs.core.apply.cljs$core$IFn$_invoke$arity$2(cljs.core.hash_map,map__91101):map__91101);
-var mouse = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__91101__$1,new cljs.core.Keyword(null,"mouse","mouse",478628972));
-var eval_zone_size = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__91101__$1,new cljs.core.Keyword(null,"eval-zone-size","eval-zone-size",1345284358));
-if((new cljs.core.Keyword(null,"y","y",-1757859776).cljs$core$IFn$_invoke$arity$1(mouse) >= (((new cljs.core.Keyword(null,"y","y",-1757859776).cljs$core$IFn$_invoke$arity$1(app_size) + new cljs.core.Keyword(null,"y","y",-1757859776).cljs$core$IFn$_invoke$arity$1(app_pos)) + (new cljs.core.Keyword(null,"x","x",2099068185).cljs$core$IFn$_invoke$arity$1(mouse) - new cljs.core.Keyword(null,"x","x",2099068185).cljs$core$IFn$_invoke$arity$1(app_pos))) - ellah.constants.discard_zone_size))){
+var vec__78974 = ellah.graphics.app_rect();
+var app_pos = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__78974,(0),null);
+var app_size = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__78974,(1),null);
+var map__78977 = cljs.core.deref(ellah.graphics.graphics_state);
+var map__78977__$1 = (((((!((map__78977 == null))))?(((((map__78977.cljs$lang$protocol_mask$partition0$ & (64))) || ((cljs.core.PROTOCOL_SENTINEL === map__78977.cljs$core$ISeq$))))?true:false):false))?cljs.core.apply.cljs$core$IFn$_invoke$arity$2(cljs.core.hash_map,map__78977):map__78977);
+var mouse = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__78977__$1,new cljs.core.Keyword(null,"mouse","mouse",478628972));
+var eval_zone_radius = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__78977__$1,new cljs.core.Keyword(null,"eval-zone-radius","eval-zone-radius",1772203622));
+if((ellah.geometry.point_magnitude(ellah.geometry.subtract_points(ellah.geometry.add_points.cljs$core$IFn$_invoke$arity$variadic(cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([app_pos,cljs.core.select_keys(app_size,new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"y","y",-1757859776)], null))], 0)),mouse)) <= ellah.constants.discard_zone_radius)){
 return new cljs.core.Keyword(null,"discard","discard",-1939593545);
 } else {
-if((new cljs.core.Keyword(null,"y","y",-1757859776).cljs$core$IFn$_invoke$arity$1(mouse) >= (((new cljs.core.Keyword(null,"y","y",-1757859776).cljs$core$IFn$_invoke$arity$1(app_size) + new cljs.core.Keyword(null,"y","y",-1757859776).cljs$core$IFn$_invoke$arity$1(app_pos)) + (((1) - new cljs.core.Keyword(null,"x","x",2099068185).cljs$core$IFn$_invoke$arity$1(mouse)) - new cljs.core.Keyword(null,"x","x",2099068185).cljs$core$IFn$_invoke$arity$1(app_pos))) - eval_zone_size))){
+if((ellah.geometry.point_magnitude(ellah.geometry.subtract_points(ellah.geometry.add_points.cljs$core$IFn$_invoke$arity$variadic(cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([app_pos,app_size], 0)),mouse)) <= eval_zone_radius)){
 return new cljs.core.Keyword(null,"eval","eval",-1103567905);
 } else {
-if(cljs.core.truth_(cljs.core.reduce.cljs$core$IFn$_invoke$arity$3((function (previous_true_QMARK_,formbar_index){
-var or__4126__auto__ = previous_true_QMARK_;
-if(cljs.core.truth_(or__4126__auto__)){
-return or__4126__auto__;
-} else {
-return ((ellah.geometry.in_circle_QMARK_(new cljs.core.PersistentArrayMap(null, 3, [new cljs.core.Keyword(null,"x","x",2099068185),(0.5 * ((1) - ellah.graphics.formbar_width(formbar_index))),new cljs.core.Keyword(null,"y","y",-1757859776),ellah.graphics.formbar_y(formbar_index),new cljs.core.Keyword(null,"radius","radius",-2073122258),ellah.constants.formbar_radius], null),mouse)) || (ellah.geometry.in_circle_QMARK_(new cljs.core.PersistentArrayMap(null, 3, [new cljs.core.Keyword(null,"x","x",2099068185),(0.5 * ((1) + ellah.graphics.formbar_width(formbar_index))),new cljs.core.Keyword(null,"y","y",-1757859776),ellah.graphics.formbar_y(formbar_index),new cljs.core.Keyword(null,"radius","radius",-2073122258),ellah.constants.formbar_radius], null),mouse)) || (ellah.geometry.in_rect_QMARK_(new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null,"x","x",2099068185),(0.5 * ((1) - ellah.graphics.formbar_width(formbar_index))),new cljs.core.Keyword(null,"y","y",-1757859776),(ellah.graphics.formbar_y(formbar_index) - ellah.constants.formbar_radius)], null),new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null,"x","x",2099068185),ellah.graphics.formbar_width(formbar_index),new cljs.core.Keyword(null,"y","y",-1757859776),((2) * ellah.constants.formbar_radius)], null)], null),mouse)));
-}
-}),false,cljs.core.range.cljs$core$IFn$_invoke$arity$1(cljs.core.count(new cljs.core.Keyword(null,"formbars","formbars",393026901).cljs$core$IFn$_invoke$arity$1(cljs.core.deref(ellah.graphics.graphics_state))))))){
+if(cljs.core.truth_(ellah.graphics.formbar_path_at(mouse))){
 return new cljs.core.Keyword(null,"formbar","formbar",824418093);
 } else {
 return new cljs.core.Keyword(null,"program","program",781564284);
@@ -606,14 +970,14 @@ return new cljs.core.Keyword(null,"program","program",781564284);
 });
 ellah.graphics.render_sublayouts = (function ellah$graphics$render_sublayouts(var_args){
 var args__4742__auto__ = [];
-var len__4736__auto___91363 = arguments.length;
-var i__4737__auto___91364 = (0);
+var len__4736__auto___80634 = arguments.length;
+var i__4737__auto___80635 = (0);
 while(true){
-if((i__4737__auto___91364 < len__4736__auto___91363)){
-args__4742__auto__.push((arguments[i__4737__auto___91364]));
+if((i__4737__auto___80635 < len__4736__auto___80634)){
+args__4742__auto__.push((arguments[i__4737__auto___80635]));
 
-var G__91365 = (i__4737__auto___91364 + (1));
-i__4737__auto___91364 = G__91365;
+var G__80636 = (i__4737__auto___80635 + (1));
+i__4737__auto___80635 = G__80636;
 continue;
 } else {
 }
@@ -624,56 +988,56 @@ var argseq__4743__auto__ = ((((1) < args__4742__auto__.length))?(new cljs.core.I
 return ellah.graphics.render_sublayouts.cljs$core$IFn$_invoke$arity$variadic((arguments[(0)]),argseq__4743__auto__);
 });
 
-(ellah.graphics.render_sublayouts.cljs$core$IFn$_invoke$arity$variadic = (function (layout,p__91105){
-var vec__91106 = p__91105;
-var layer = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__91106,(0),null);
-var seq__91109 = cljs.core.seq(ellah.graphics.flatten_layout(layout));
-var chunk__91110 = null;
-var count__91111 = (0);
-var i__91112 = (0);
+(ellah.graphics.render_sublayouts.cljs$core$IFn$_invoke$arity$variadic = (function (layout,p__78981){
+var vec__78982 = p__78981;
+var layer = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__78982,(0),null);
+var seq__78985 = cljs.core.seq(ellah.graphics.flatten_layout(layout));
+var chunk__78986 = null;
+var count__78987 = (0);
+var i__78988 = (0);
 while(true){
-if((i__91112 < count__91111)){
-var sublayout = chunk__91110.cljs$core$IIndexed$_nth$arity$2(null,i__91112);
+if((i__78988 < count__78987)){
+var sublayout = chunk__78986.cljs$core$IIndexed$_nth$arity$2(null,i__78988);
 ellah.graphics.render_layout.cljs$core$IFn$_invoke$arity$variadic(sublayout,cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([layer], 0));
 
 
-var G__91366 = seq__91109;
-var G__91367 = chunk__91110;
-var G__91368 = count__91111;
-var G__91369 = (i__91112 + (1));
-seq__91109 = G__91366;
-chunk__91110 = G__91367;
-count__91111 = G__91368;
-i__91112 = G__91369;
+var G__80637 = seq__78985;
+var G__80638 = chunk__78986;
+var G__80639 = count__78987;
+var G__80640 = (i__78988 + (1));
+seq__78985 = G__80637;
+chunk__78986 = G__80638;
+count__78987 = G__80639;
+i__78988 = G__80640;
 continue;
 } else {
-var temp__5753__auto__ = cljs.core.seq(seq__91109);
+var temp__5753__auto__ = cljs.core.seq(seq__78985);
 if(temp__5753__auto__){
-var seq__91109__$1 = temp__5753__auto__;
-if(cljs.core.chunked_seq_QMARK_(seq__91109__$1)){
-var c__4556__auto__ = cljs.core.chunk_first(seq__91109__$1);
-var G__91370 = cljs.core.chunk_rest(seq__91109__$1);
-var G__91371 = c__4556__auto__;
-var G__91372 = cljs.core.count(c__4556__auto__);
-var G__91373 = (0);
-seq__91109 = G__91370;
-chunk__91110 = G__91371;
-count__91111 = G__91372;
-i__91112 = G__91373;
+var seq__78985__$1 = temp__5753__auto__;
+if(cljs.core.chunked_seq_QMARK_(seq__78985__$1)){
+var c__4556__auto__ = cljs.core.chunk_first(seq__78985__$1);
+var G__80641 = cljs.core.chunk_rest(seq__78985__$1);
+var G__80642 = c__4556__auto__;
+var G__80643 = cljs.core.count(c__4556__auto__);
+var G__80644 = (0);
+seq__78985 = G__80641;
+chunk__78986 = G__80642;
+count__78987 = G__80643;
+i__78988 = G__80644;
 continue;
 } else {
-var sublayout = cljs.core.first(seq__91109__$1);
+var sublayout = cljs.core.first(seq__78985__$1);
 ellah.graphics.render_layout.cljs$core$IFn$_invoke$arity$variadic(sublayout,cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([layer], 0));
 
 
-var G__91374 = cljs.core.next(seq__91109__$1);
-var G__91375 = null;
-var G__91376 = (0);
-var G__91377 = (0);
-seq__91109 = G__91374;
-chunk__91110 = G__91375;
-count__91111 = G__91376;
-i__91112 = G__91377;
+var G__80645 = cljs.core.next(seq__78985__$1);
+var G__80646 = null;
+var G__80647 = (0);
+var G__80648 = (0);
+seq__78985 = G__80645;
+chunk__78986 = G__80646;
+count__78987 = G__80647;
+i__78988 = G__80648;
 continue;
 }
 } else {
@@ -687,27 +1051,27 @@ break;
 (ellah.graphics.render_sublayouts.cljs$lang$maxFixedArity = (1));
 
 /** @this {Function} */
-(ellah.graphics.render_sublayouts.cljs$lang$applyTo = (function (seq91103){
-var G__91104 = cljs.core.first(seq91103);
-var seq91103__$1 = cljs.core.next(seq91103);
+(ellah.graphics.render_sublayouts.cljs$lang$applyTo = (function (seq78979){
+var G__78980 = cljs.core.first(seq78979);
+var seq78979__$1 = cljs.core.next(seq78979);
 var self__4723__auto__ = this;
-return self__4723__auto__.cljs$core$IFn$_invoke$arity$variadic(G__91104,seq91103__$1);
+return self__4723__auto__.cljs$core$IFn$_invoke$arity$variadic(G__78980,seq78979__$1);
 }));
 
 ellah.graphics.mouse_dragging_QMARK_ = (function ellah$graphics$mouse_dragging_QMARK_(){
 return (new cljs.core.Keyword(null,"drag-dist","drag-dist",-1927545717).cljs$core$IFn$_invoke$arity$1(new cljs.core.Keyword(null,"mouse","mouse",478628972).cljs$core$IFn$_invoke$arity$1(cljs.core.deref(ellah.graphics.graphics_state))) > ellah.constants.min_drag_dist);
 });
 ellah.graphics.placement_form = (function ellah$graphics$placement_form(){
-var mouse_state = new cljs.core.Keyword(null,"mouse","mouse",478628972).cljs$core$IFn$_invoke$arity$1(cljs.core.deref(ellah.graphics.graphics_state));
-var map__91113 = mouse_state;
-var map__91113__$1 = (((((!((map__91113 == null))))?(((((map__91113.cljs$lang$protocol_mask$partition0$ & (64))) || ((cljs.core.PROTOCOL_SENTINEL === map__91113.cljs$core$ISeq$))))?true:false):false))?cljs.core.apply.cljs$core$IFn$_invoke$arity$2(cljs.core.hash_map,map__91113):map__91113);
-var down_QMARK_ = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__91113__$1,new cljs.core.Keyword(null,"down?","down?",1701019493));
-var down_path = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__91113__$1,new cljs.core.Keyword(null,"down-path","down-path",-1576662356));
-var down_zone = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__91113__$1,new cljs.core.Keyword(null,"down-zone","down-zone",-858806618));
-var down_formbar_indeces = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__91113__$1,new cljs.core.Keyword(null,"down-formbar-indeces","down-formbar-indeces",-1191819382));
-var vec__91114 = down_formbar_indeces;
-var down_formbar_outer_index = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__91114,(0),null);
-var down_formbar_inner_index = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__91114,(1),null);
+var map__78989 = cljs.core.deref(ellah.graphics.graphics_state);
+var map__78989__$1 = (((((!((map__78989 == null))))?(((((map__78989.cljs$lang$protocol_mask$partition0$ & (64))) || ((cljs.core.PROTOCOL_SENTINEL === map__78989.cljs$core$ISeq$))))?true:false):false))?cljs.core.apply.cljs$core$IFn$_invoke$arity$2(cljs.core.hash_map,map__78989):map__78989);
+var mouse = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__78989__$1,new cljs.core.Keyword(null,"mouse","mouse",478628972));
+var formbars = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__78989__$1,new cljs.core.Keyword(null,"formbars","formbars",393026901));
+var map__78990 = mouse;
+var map__78990__$1 = (((((!((map__78990 == null))))?(((((map__78990.cljs$lang$protocol_mask$partition0$ & (64))) || ((cljs.core.PROTOCOL_SENTINEL === map__78990.cljs$core$ISeq$))))?true:false):false))?cljs.core.apply.cljs$core$IFn$_invoke$arity$2(cljs.core.hash_map,map__78990):map__78990);
+var down_QMARK_ = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__78990__$1,new cljs.core.Keyword(null,"down?","down?",1701019493));
+var down_path = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__78990__$1,new cljs.core.Keyword(null,"down-path","down-path",-1576662356));
+var down_zone = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__78990__$1,new cljs.core.Keyword(null,"down-zone","down-zone",-858806618));
+var down_formbar_form_path = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__78990__$1,new cljs.core.Keyword(null,"down-formbar-form-path","down-formbar-form-path",-1673861711));
 if(cljs.core.truth_(down_QMARK_)){
 if(cljs.core._EQ_.cljs$core$IFn$_invoke$arity$2(down_zone,new cljs.core.Keyword(null,"program","program",781564284))){
 return ellah.vedn.get_child(new cljs.core.Keyword(null,"form","form",-1624062471).cljs$core$IFn$_invoke$arity$1(cljs.core.deref(ellah.graphics.graphics_state)),cljs.core.vec(cljs.core.concat.cljs$core$IFn$_invoke$arity$2(cljs.core.list((0)),down_path)));
@@ -715,10 +1079,14 @@ return ellah.vedn.get_child(new cljs.core.Keyword(null,"form","form",-1624062471
 if(cljs.core._EQ_.cljs$core$IFn$_invoke$arity$2(down_zone,new cljs.core.Keyword(null,"eval","eval",-1103567905))){
 return cljs.core.last(new cljs.core.Keyword(null,"eval-results","eval-results",553789722).cljs$core$IFn$_invoke$arity$1(cljs.core.deref(ellah.graphics.graphics_state)));
 } else {
-if(cljs.core.truth_(down_formbar_indeces)){
-return cljs.core.nth.cljs$core$IFn$_invoke$arity$2(new cljs.core.Keyword(null,"forms","forms",2045992350).cljs$core$IFn$_invoke$arity$1(cljs.core.nth.cljs$core$IFn$_invoke$arity$2(new cljs.core.Keyword(null,"formbars","formbars",393026901).cljs$core$IFn$_invoke$arity$1(cljs.core.deref(ellah.graphics.graphics_state)),down_formbar_outer_index)),down_formbar_inner_index);
+if(cljs.core._EQ_.cljs$core$IFn$_invoke$arity$2(down_zone,new cljs.core.Keyword(null,"discard","discard",-1939593545))){
+return cljs.core.first(new cljs.core.Keyword(null,"discard-history","discard-history",92573038).cljs$core$IFn$_invoke$arity$1(cljs.core.deref(ellah.graphics.graphics_state)));
+} else {
+if(cljs.core.truth_(down_formbar_form_path)){
+return cljs.core.get_in.cljs$core$IFn$_invoke$arity$2(ellah.graphics.formbar_arrangement(),down_formbar_form_path);
 } else {
 return null;
+}
 }
 }
 }
@@ -726,86 +1094,92 @@ return null;
 return null;
 }
 });
-ellah.graphics.formbar_insertion_indeces = (function ellah$graphics$formbar_insertion_indeces(p__91119){
-var map__91120 = p__91119;
-var map__91120__$1 = (((((!((map__91120 == null))))?(((((map__91120.cljs$lang$protocol_mask$partition0$ & (64))) || ((cljs.core.PROTOCOL_SENTINEL === map__91120.cljs$core$ISeq$))))?true:false):false))?cljs.core.apply.cljs$core$IFn$_invoke$arity$2(cljs.core.hash_map,map__91120):map__91120);
-var x = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__91120__$1,new cljs.core.Keyword(null,"x","x",2099068185));
-var y = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__91120__$1,new cljs.core.Keyword(null,"y","y",-1757859776));
-var map__91122 = cljs.core.deref(ellah.graphics.graphics_state);
-var map__91122__$1 = (((((!((map__91122 == null))))?(((((map__91122.cljs$lang$protocol_mask$partition0$ & (64))) || ((cljs.core.PROTOCOL_SENTINEL === map__91122.cljs$core$ISeq$))))?true:false):false))?cljs.core.apply.cljs$core$IFn$_invoke$arity$2(cljs.core.hash_map,map__91122):map__91122);
-var formbars = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__91122__$1,new cljs.core.Keyword(null,"formbars","formbars",393026901));
-var formbar_count = cljs.core.count(formbars);
-var outer_index = cljs.core.some((function (p1__91118_SHARP_){
-if(((ellah.graphics.formbar_y(p1__91118_SHARP_) - ellah.constants.formbar_radius) < y)){
-return p1__91118_SHARP_;
+ellah.graphics.get_formbar_insertion_index = (function ellah$graphics$get_formbar_insertion_index(){
+var map__78993 = cljs.core.deref(ellah.graphics.graphics_state);
+var map__78993__$1 = (((((!((map__78993 == null))))?(((((map__78993.cljs$lang$protocol_mask$partition0$ & (64))) || ((cljs.core.PROTOCOL_SENTINEL === map__78993.cljs$core$ISeq$))))?true:false):false))?cljs.core.apply.cljs$core$IFn$_invoke$arity$2(cljs.core.hash_map,map__78993):map__78993);
+var mouse = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__78993__$1,new cljs.core.Keyword(null,"mouse","mouse",478628972));
+var formbar_path = ellah.graphics.formbar_path_at(mouse);
+if(cljs.core.truth_(ellah.graphics.formbar_path_at)){
+var arrangement = ellah.graphics.formbar_arrangement();
+var screen_side = cljs.core.first(formbar_path);
+var bar_arrangement = cljs.core.get_in.cljs$core$IFn$_invoke$arity$2(arrangement,formbar_path);
+var form_spacing = (ellah.constants.formbar_radius * ((1) - ellah.constants.formbar_outline_thickness));
+if((cljs.core.count(new cljs.core.Keyword(null,"circles","circles",-1947060917).cljs$core$IFn$_invoke$arity$1(bar_arrangement)) === (0))){
+return (0);
+} else {
+var horizontal_QMARK_ = (function (){var fexpr__78995 = new cljs.core.PersistentHashSet(null, new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null,"bottom","bottom",-1550509018),null,new cljs.core.Keyword(null,"top","top",-1856271961),null], null), null);
+return (fexpr__78995.cljs$core$IFn$_invoke$arity$1 ? fexpr__78995.cljs$core$IFn$_invoke$arity$1(screen_side) : fexpr__78995.call(null,screen_side));
+})();
+var offset = ((cljs.core.truth_(horizontal_QMARK_)?(new cljs.core.Keyword(null,"x","x",2099068185).cljs$core$IFn$_invoke$arity$1(mouse) - new cljs.core.Keyword(null,"x","x",2099068185).cljs$core$IFn$_invoke$arity$1(bar_arrangement)):(new cljs.core.Keyword(null,"y","y",-1757859776).cljs$core$IFn$_invoke$arity$1(mouse) - new cljs.core.Keyword(null,"y","y",-1757859776).cljs$core$IFn$_invoke$arity$1(bar_arrangement))) / ((2) * form_spacing));
+if((offset < (0))){
+return (0);
+} else {
+return ((offset | (0)) + (1));
+}
+}
 } else {
 return null;
 }
-}),cljs.core.range.cljs$core$IFn$_invoke$arity$1(formbar_count));
-var width = ellah.graphics.formbar_width(outer_index);
-var x_offset = (x - ((0.5 * ((1) - width)) - ellah.constants.formbar_radius));
-var adjusted_x = ((x_offset / ellah.graphics.formbar_form_spacing) - 0.5);
-var inner_index = (((adjusted_x < (0)))?(-1):(adjusted_x | (0)));
-return new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [outer_index,inner_index], null);
 });
 ellah.graphics.render_app_state = (function ellah$graphics$render_app_state(state,control_state){
-var vec__91128 = ellah.graphics.app_rect();
-var app_pos = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__91128,(0),null);
-var app_size = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__91128,(1),null);
+var current_app_rect = ellah.graphics.app_rect();
+var vec__78998 = current_app_rect;
+var app_pos = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__78998,(0),null);
+var app_size = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__78998,(1),null);
 var mouse_zone = ellah.graphics.get_mouse_zone();
 var current_placement_form = ellah.graphics.placement_form();
-ellah.graphics.rect(app_pos,app_size,ellah.constants.background_color);
+ellah.graphics.rect.cljs$core$IFn$_invoke$arity$variadic(current_app_rect,ellah.constants.background_color,cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([new cljs.core.Keyword(null,"background","background",-863952629)], 0));
 
-var map__91131 = cljs.core.deref(ellah.graphics.graphics_state);
-var map__91131__$1 = (((((!((map__91131 == null))))?(((((map__91131.cljs$lang$protocol_mask$partition0$ & (64))) || ((cljs.core.PROTOCOL_SENTINEL === map__91131.cljs$core$ISeq$))))?true:false):false))?cljs.core.apply.cljs$core$IFn$_invoke$arity$2(cljs.core.hash_map,map__91131):map__91131);
-var mouse = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__91131__$1,new cljs.core.Keyword(null,"mouse","mouse",478628972));
+var map__79001 = cljs.core.deref(ellah.graphics.graphics_state);
+var map__79001__$1 = (((((!((map__79001 == null))))?(((((map__79001.cljs$lang$protocol_mask$partition0$ & (64))) || ((cljs.core.PROTOCOL_SENTINEL === map__79001.cljs$core$ISeq$))))?true:false):false))?cljs.core.apply.cljs$core$IFn$_invoke$arity$2(cljs.core.hash_map,map__79001):map__79001);
+var mouse = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__79001__$1,new cljs.core.Keyword(null,"mouse","mouse",478628972));
 var dragging_QMARK_ = ellah.graphics.mouse_dragging_QMARK_();
-ellah.graphics.render_sublayouts(ellah.graphics.adjusted_form_layout());
+ellah.graphics.render_sublayouts.cljs$core$IFn$_invoke$arity$variadic(ellah.graphics.adjusted_form_layout(),cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([new cljs.core.Keyword(null,"program","program",781564284)], 0));
 
 if(cljs.core.truth_(((dragging_QMARK_)?ellah.graphics.placement_form():false))){
 ellah.graphics.circle.cljs$core$IFn$_invoke$arity$variadic(cljs.core.assoc.cljs$core$IFn$_invoke$arity$3(mouse,new cljs.core.Keyword(null,"radius","radius",-2073122258),ellah.constants.drag_cursor_radius),ellah.constants.highlight_color,cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([new cljs.core.Keyword(null,"drag","drag",449951290)], 0));
 } else {
 }
 
-var layout_path_91378 = ellah.graphics.layout_path_at(ellah.graphics.adjusted_form_layout(),new cljs.core.Keyword(null,"mouse","mouse",478628972).cljs$core$IFn$_invoke$arity$1(cljs.core.deref(ellah.graphics.graphics_state)));
-var insertion_path_91379 = ellah.graphics.layout_insertion_path_at(ellah.graphics.adjusted_form_layout(),new cljs.core.Keyword(null,"mouse","mouse",478628972).cljs$core$IFn$_invoke$arity$1(cljs.core.deref(ellah.graphics.graphics_state)));
-var literal_QMARK__91380 = ((cljs.core._EQ_.cljs$core$IFn$_invoke$arity$2(cljs.core.count(layout_path_91378),cljs.core.count(insertion_path_91379))) && (cljs.core._EQ_.cljs$core$IFn$_invoke$arity$2(new cljs.core.Keyword(null,"literal","literal",1664775605),new cljs.core.Keyword(null,"type","type",1174270348).cljs$core$IFn$_invoke$arity$1(ellah.vedn.get_child(new cljs.core.Keyword(null,"form","form",-1624062471).cljs$core$IFn$_invoke$arity$1(cljs.core.deref(ellah.graphics.graphics_state)),cljs.core.vec(cljs.core.concat.cljs$core$IFn$_invoke$arity$2(cljs.core.list((0)),insertion_path_91379)))))));
-if(cljs.core.truth_((function (){var and__4115__auto__ = layout_path_91378;
+var layout_path_80649 = ellah.graphics.layout_path_at(ellah.graphics.adjusted_form_layout(),new cljs.core.Keyword(null,"mouse","mouse",478628972).cljs$core$IFn$_invoke$arity$1(cljs.core.deref(ellah.graphics.graphics_state)));
+var insertion_path_80650 = ellah.graphics.layout_insertion_path_at(ellah.graphics.adjusted_form_layout(),new cljs.core.Keyword(null,"mouse","mouse",478628972).cljs$core$IFn$_invoke$arity$1(cljs.core.deref(ellah.graphics.graphics_state)));
+var literal_QMARK__80651 = ((cljs.core._EQ_.cljs$core$IFn$_invoke$arity$2(cljs.core.count(layout_path_80649),cljs.core.count(insertion_path_80650))) && (cljs.core._EQ_.cljs$core$IFn$_invoke$arity$2(new cljs.core.Keyword(null,"literal","literal",1664775605),new cljs.core.Keyword(null,"type","type",1174270348).cljs$core$IFn$_invoke$arity$1(ellah.vedn.get_child(new cljs.core.Keyword(null,"form","form",-1624062471).cljs$core$IFn$_invoke$arity$1(cljs.core.deref(ellah.graphics.graphics_state)),cljs.core.vec(cljs.core.concat.cljs$core$IFn$_invoke$arity$2(cljs.core.list((0)),insertion_path_80650)))))));
+if(cljs.core.truth_((function (){var and__4115__auto__ = layout_path_80649;
 if(cljs.core.truth_(and__4115__auto__)){
-return (((!(dragging_QMARK_))) && (literal_QMARK__91380));
+return (((!(dragging_QMARK_))) && (literal_QMARK__80651));
 } else {
 return and__4115__auto__;
 }
 })())){
-ellah.graphics.circle(ellah.graphics.get_sublayout(ellah.graphics.adjusted_form_layout(),layout_path_91378),ellah.constants.highlight_color);
+ellah.graphics.circle.cljs$core$IFn$_invoke$arity$variadic(ellah.graphics.get_sublayout(ellah.graphics.adjusted_form_layout(),layout_path_80649),ellah.constants.highlight_color,cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([new cljs.core.Keyword(null,"program","program",781564284)], 0));
 } else {
 }
 
-if(cljs.core.truth_((function (){var and__4115__auto__ = layout_path_91378;
+if(cljs.core.truth_((function (){var and__4115__auto__ = layout_path_80649;
 if(cljs.core.truth_(and__4115__auto__)){
 return current_placement_form;
 } else {
 return and__4115__auto__;
 }
 })())){
-var sublayout_91381 = ellah.graphics.get_sublayout(ellah.graphics.adjusted_form_layout(),layout_path_91378);
+var sublayout_80652 = ellah.graphics.get_sublayout(ellah.graphics.adjusted_form_layout(),layout_path_80649);
 if(dragging_QMARK_){
-var parent_radius_91382 = new cljs.core.Keyword(null,"radius","radius",-2073122258).cljs$core$IFn$_invoke$arity$1(sublayout_91381);
-var radius_91383 = (ellah.constants.drop_form_radius_factor * new cljs.core.Keyword(null,"radius","radius",-2073122258).cljs$core$IFn$_invoke$arity$1(cljs.core.first(new cljs.core.Keyword(null,"sublayouts","sublayouts",-1203105463).cljs$core$IFn$_invoke$arity$1(sublayout_91381))));
-var child_count_91384 = cljs.core.count(new cljs.core.Keyword(null,"sublayouts","sublayouts",-1203105463).cljs$core$IFn$_invoke$arity$1(sublayout_91381));
-var angle_91385 = (- ((((cljs.core.last(insertion_path_91379) + 0.5) / child_count_91384) + 0.25) * ellah.geometry.TAU));
-var placement_pos_91386 = ellah.geometry.add_points.cljs$core$IFn$_invoke$arity$variadic(cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([sublayout_91381,ellah.geometry.scale_point(ellah.geometry.angle_point(angle_91385),(parent_radius_91382 - (ellah.constants.drop_form_offset_factor * radius_91383)))], 0));
+var parent_radius_80653 = new cljs.core.Keyword(null,"radius","radius",-2073122258).cljs$core$IFn$_invoke$arity$1(sublayout_80652);
+var radius_80654 = (ellah.constants.drop_form_radius_factor * new cljs.core.Keyword(null,"radius","radius",-2073122258).cljs$core$IFn$_invoke$arity$1(cljs.core.first(new cljs.core.Keyword(null,"sublayouts","sublayouts",-1203105463).cljs$core$IFn$_invoke$arity$1(sublayout_80652))));
+var child_count_80655 = cljs.core.count(new cljs.core.Keyword(null,"sublayouts","sublayouts",-1203105463).cljs$core$IFn$_invoke$arity$1(sublayout_80652));
+var angle_80656 = (- ((((cljs.core.last(insertion_path_80650) + 0.5) / child_count_80655) + 0.25) * ellah.geometry.TAU));
+var placement_pos_80657 = ellah.geometry.add_points.cljs$core$IFn$_invoke$arity$variadic(cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([sublayout_80652,ellah.geometry.scale_point(ellah.geometry.angle_point(angle_80656),(parent_radius_80653 - (ellah.constants.drop_form_offset_factor * radius_80654)))], 0));
 if(cljs.core._EQ_.cljs$core$IFn$_invoke$arity$2(mouse_zone,new cljs.core.Keyword(null,"program","program",781564284))){
-ellah.graphics.line.cljs$core$IFn$_invoke$arity$variadic(mouse,placement_pos_91386,ellah.constants.drag_cursor_line_width,ellah.constants.highlight_color,cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([new cljs.core.Keyword(null,"drag-forms","drag-forms",75833442)], 0));
+ellah.graphics.line.cljs$core$IFn$_invoke$arity$variadic(mouse,placement_pos_80657,ellah.constants.drag_cursor_line_width,ellah.constants.highlight_color,cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([new cljs.core.Keyword(null,"drag-forms","drag-forms",75833442)], 0));
 
-var base_sublayout_91387 = ellah.graphics.form_layout(ellah.graphics.placement_form(),cljs.core.assoc.cljs$core$IFn$_invoke$arity$3(ellah.geometry.origin,new cljs.core.Keyword(null,"radius","radius",-2073122258),(1)));
-if(literal_QMARK__91380){
-ellah.graphics.render_sublayouts.cljs$core$IFn$_invoke$arity$variadic(ellah.graphics.adjust_layout(ellah.geometry.scale_point(sublayout_91381,((1) / new cljs.core.Keyword(null,"radius","radius",-2073122258).cljs$core$IFn$_invoke$arity$1(sublayout_91381))),new cljs.core.Keyword(null,"radius","radius",-2073122258).cljs$core$IFn$_invoke$arity$1(sublayout_91381),base_sublayout_91387),cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([new cljs.core.Keyword(null,"drag-forms","drag-forms",75833442)], 0));
+var base_sublayout_80658 = ellah.graphics.form_layout(ellah.graphics.placement_form(),cljs.core.assoc.cljs$core$IFn$_invoke$arity$3(ellah.geometry.origin,new cljs.core.Keyword(null,"radius","radius",-2073122258),(1)));
+if(literal_QMARK__80651){
+ellah.graphics.render_sublayouts.cljs$core$IFn$_invoke$arity$variadic(ellah.graphics.adjust_layout(base_sublayout_80658,ellah.geometry.scale_point(sublayout_80652,((1) / new cljs.core.Keyword(null,"radius","radius",-2073122258).cljs$core$IFn$_invoke$arity$1(sublayout_80652))),new cljs.core.Keyword(null,"radius","radius",-2073122258).cljs$core$IFn$_invoke$arity$1(sublayout_80652)),cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([new cljs.core.Keyword(null,"drag-forms","drag-forms",75833442)], 0));
 } else {
-if(cljs.core._EQ_.cljs$core$IFn$_invoke$arity$2((0),cljs.core.count(new cljs.core.Keyword(null,"children","children",-940561982).cljs$core$IFn$_invoke$arity$1(ellah.vedn.get_child(new cljs.core.Keyword(null,"form","form",-1624062471).cljs$core$IFn$_invoke$arity$1(cljs.core.deref(ellah.graphics.graphics_state)),cljs.core.vec(cljs.core.concat.cljs$core$IFn$_invoke$arity$2(cljs.core.list((0)),layout_path_91378))))))){
-ellah.graphics.render_sublayouts.cljs$core$IFn$_invoke$arity$variadic(ellah.graphics.adjust_layout(ellah.geometry.scale_point(sublayout_91381,((1) / (ellah.constants.drop_form_radius_factor * new cljs.core.Keyword(null,"radius","radius",-2073122258).cljs$core$IFn$_invoke$arity$1(sublayout_91381)))),(ellah.constants.drop_form_radius_factor * new cljs.core.Keyword(null,"radius","radius",-2073122258).cljs$core$IFn$_invoke$arity$1(sublayout_91381)),base_sublayout_91387),cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([new cljs.core.Keyword(null,"drag-forms","drag-forms",75833442)], 0));
+if(cljs.core._EQ_.cljs$core$IFn$_invoke$arity$2((0),cljs.core.count(new cljs.core.Keyword(null,"children","children",-940561982).cljs$core$IFn$_invoke$arity$1(ellah.vedn.get_child(new cljs.core.Keyword(null,"form","form",-1624062471).cljs$core$IFn$_invoke$arity$1(cljs.core.deref(ellah.graphics.graphics_state)),cljs.core.vec(cljs.core.concat.cljs$core$IFn$_invoke$arity$2(cljs.core.list((0)),layout_path_80649))))))){
+ellah.graphics.render_sublayouts.cljs$core$IFn$_invoke$arity$variadic(ellah.graphics.adjust_layout(base_sublayout_80658,ellah.geometry.scale_point(sublayout_80652,((1) / (ellah.constants.drop_form_radius_factor * new cljs.core.Keyword(null,"radius","radius",-2073122258).cljs$core$IFn$_invoke$arity$1(sublayout_80652)))),(ellah.constants.drop_form_radius_factor * new cljs.core.Keyword(null,"radius","radius",-2073122258).cljs$core$IFn$_invoke$arity$1(sublayout_80652))),cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([new cljs.core.Keyword(null,"drag-forms","drag-forms",75833442)], 0));
 } else {
-ellah.graphics.render_sublayouts.cljs$core$IFn$_invoke$arity$variadic(ellah.graphics.adjust_layout(ellah.geometry.scale_point(placement_pos_91386,((1) / radius_91383)),radius_91383,base_sublayout_91387),cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([new cljs.core.Keyword(null,"drag-forms","drag-forms",75833442)], 0));
+ellah.graphics.render_sublayouts.cljs$core$IFn$_invoke$arity$variadic(ellah.graphics.adjust_layout(base_sublayout_80658,ellah.geometry.scale_point(placement_pos_80657,((1) / radius_80654)),radius_80654),cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([new cljs.core.Keyword(null,"drag-forms","drag-forms",75833442)], 0));
 }
 }
 } else {
@@ -815,273 +1189,104 @@ ellah.graphics.render_sublayouts.cljs$core$IFn$_invoke$arity$variadic(ellah.grap
 } else {
 }
 
-ellah.graphics.polygon.cljs$core$IFn$_invoke$arity$variadic(new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [ellah.geometry.add_points.cljs$core$IFn$_invoke$arity$variadic(cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([app_pos,new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null,"x","x",2099068185),(0),new cljs.core.Keyword(null,"y","y",-1757859776),new cljs.core.Keyword(null,"y","y",-1757859776).cljs$core$IFn$_invoke$arity$1(app_size)], null)], 0)),ellah.geometry.add_points.cljs$core$IFn$_invoke$arity$variadic(cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([app_pos,new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null,"x","x",2099068185),ellah.constants.discard_zone_size,new cljs.core.Keyword(null,"y","y",-1757859776),new cljs.core.Keyword(null,"y","y",-1757859776).cljs$core$IFn$_invoke$arity$1(app_size)], null)], 0)),ellah.geometry.add_points.cljs$core$IFn$_invoke$arity$variadic(cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([app_pos,new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null,"x","x",2099068185),(0),new cljs.core.Keyword(null,"y","y",-1757859776),(new cljs.core.Keyword(null,"y","y",-1757859776).cljs$core$IFn$_invoke$arity$1(app_size) - ellah.constants.discard_zone_size)], null)], 0))], null),((cljs.core._EQ_.cljs$core$IFn$_invoke$arity$2(mouse_zone,new cljs.core.Keyword(null,"discard","discard",-1939593545)))?ellah.constants.highlight_color:ellah.constants.foreground_color),cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([new cljs.core.Keyword(null,"menu","menu",352255198)], 0));
-
-ellah.graphics.polygon.cljs$core$IFn$_invoke$arity$variadic(new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [ellah.geometry.add_points.cljs$core$IFn$_invoke$arity$variadic(cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([app_pos,new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null,"x","x",2099068185),(0),new cljs.core.Keyword(null,"y","y",-1757859776),new cljs.core.Keyword(null,"y","y",-1757859776).cljs$core$IFn$_invoke$arity$1(app_size)], null)], 0)),ellah.geometry.add_points.cljs$core$IFn$_invoke$arity$variadic(cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([app_pos,new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null,"x","x",2099068185),(((1) - ellah.constants.discard_zone_bar_thickness) * ellah.constants.discard_zone_size),new cljs.core.Keyword(null,"y","y",-1757859776),new cljs.core.Keyword(null,"y","y",-1757859776).cljs$core$IFn$_invoke$arity$1(app_size)], null)], 0)),ellah.geometry.add_points.cljs$core$IFn$_invoke$arity$variadic(cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([app_pos,new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null,"x","x",2099068185),(0),new cljs.core.Keyword(null,"y","y",-1757859776),(new cljs.core.Keyword(null,"y","y",-1757859776).cljs$core$IFn$_invoke$arity$1(app_size) - (((1) - ellah.constants.discard_zone_bar_thickness) * ellah.constants.discard_zone_size))], null)], 0))], null),ellah.constants.background_color,cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([new cljs.core.Keyword(null,"menu","menu",352255198)], 0));
-
-var eval_zone_size_91388 = new cljs.core.Keyword(null,"eval-zone-size","eval-zone-size",1345284358).cljs$core$IFn$_invoke$arity$1(cljs.core.deref(ellah.graphics.graphics_state));
-ellah.graphics.polygon.cljs$core$IFn$_invoke$arity$variadic(new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [ellah.geometry.add_points.cljs$core$IFn$_invoke$arity$variadic(cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([app_pos,new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null,"x","x",2099068185),new cljs.core.Keyword(null,"x","x",2099068185).cljs$core$IFn$_invoke$arity$1(app_size),new cljs.core.Keyword(null,"y","y",-1757859776),new cljs.core.Keyword(null,"y","y",-1757859776).cljs$core$IFn$_invoke$arity$1(app_size)], null)], 0)),ellah.geometry.add_points.cljs$core$IFn$_invoke$arity$variadic(cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([app_pos,new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null,"x","x",2099068185),(new cljs.core.Keyword(null,"x","x",2099068185).cljs$core$IFn$_invoke$arity$1(app_size) - eval_zone_size_91388),new cljs.core.Keyword(null,"y","y",-1757859776),new cljs.core.Keyword(null,"y","y",-1757859776).cljs$core$IFn$_invoke$arity$1(app_size)], null)], 0)),ellah.geometry.add_points.cljs$core$IFn$_invoke$arity$variadic(cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([app_pos,new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null,"x","x",2099068185),new cljs.core.Keyword(null,"x","x",2099068185).cljs$core$IFn$_invoke$arity$1(app_size),new cljs.core.Keyword(null,"y","y",-1757859776),(new cljs.core.Keyword(null,"y","y",-1757859776).cljs$core$IFn$_invoke$arity$1(app_size) - eval_zone_size_91388)], null)], 0))], null),((cljs.core._EQ_.cljs$core$IFn$_invoke$arity$2(mouse_zone,new cljs.core.Keyword(null,"eval","eval",-1103567905)))?ellah.constants.highlight_color:ellah.constants.foreground_color),cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([new cljs.core.Keyword(null,"menu","menu",352255198)], 0));
-
-ellah.graphics.polygon.cljs$core$IFn$_invoke$arity$variadic(new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [ellah.geometry.add_points.cljs$core$IFn$_invoke$arity$variadic(cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([app_pos,app_size], 0)),ellah.geometry.add_points.cljs$core$IFn$_invoke$arity$variadic(cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([app_pos,new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null,"x","x",2099068185),(new cljs.core.Keyword(null,"x","x",2099068185).cljs$core$IFn$_invoke$arity$1(app_size) - (((1) - ellah.constants.eval_zone_bar_thickness) * eval_zone_size_91388)),new cljs.core.Keyword(null,"y","y",-1757859776),new cljs.core.Keyword(null,"y","y",-1757859776).cljs$core$IFn$_invoke$arity$1(app_size)], null)], 0)),ellah.geometry.add_points.cljs$core$IFn$_invoke$arity$variadic(cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([app_pos,new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null,"x","x",2099068185),new cljs.core.Keyword(null,"x","x",2099068185).cljs$core$IFn$_invoke$arity$1(app_size),new cljs.core.Keyword(null,"y","y",-1757859776),(new cljs.core.Keyword(null,"y","y",-1757859776).cljs$core$IFn$_invoke$arity$1(app_size) - (((1) - ellah.constants.eval_zone_bar_thickness) * eval_zone_size_91388))], null)], 0))], null),ellah.constants.background_color,cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([new cljs.core.Keyword(null,"menu","menu",352255198)], 0));
-
-var last_eval_form_91389 = cljs.core.last(new cljs.core.Keyword(null,"eval-results","eval-results",553789722).cljs$core$IFn$_invoke$arity$1(cljs.core.deref(ellah.graphics.graphics_state)));
-if(cljs.core.truth_(last_eval_form_91389)){
-var s_91390 = (((1) - ellah.constants.eval_zone_bar_thickness) * new cljs.core.Keyword(null,"eval-zone-size","eval-zone-size",1345284358).cljs$core$IFn$_invoke$arity$1(cljs.core.deref(ellah.graphics.graphics_state)));
-var radius_91391 = (s_91390 / (Math.sqrt((2)) + (2)));
-ellah.graphics.render_sublayouts.cljs$core$IFn$_invoke$arity$variadic(ellah.graphics.form_layout(last_eval_form_91389,cljs.core.assoc.cljs$core$IFn$_invoke$arity$3(ellah.geometry.subtract_points(ellah.geometry.add_points.cljs$core$IFn$_invoke$arity$variadic(cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([app_pos,app_size], 0)),ellah.geometry.scale_point(ellah.geometry.unit,radius_91391)),new cljs.core.Keyword(null,"radius","radius",-2073122258),(radius_91391 * ellah.constants.eval_zone_form_radius_factor))),cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([new cljs.core.Keyword(null,"menu","menu",352255198)], 0));
-} else {
-}
-
-var seq__91133_91392 = cljs.core.seq(cljs.core.range.cljs$core$IFn$_invoke$arity$1(cljs.core.count(new cljs.core.Keyword(null,"formbars","formbars",393026901).cljs$core$IFn$_invoke$arity$1(cljs.core.deref(ellah.graphics.graphics_state)))));
-var chunk__91134_91393 = null;
-var count__91135_91394 = (0);
-var i__91136_91395 = (0);
+var arrangement_80659 = ellah.graphics.formbar_arrangement();
+var formbar_form_path_80660 = ellah.graphics.formbar_form_path_at(mouse);
+var seq__79003_80661 = cljs.core.seq(ellah.constants.screen_sides);
+var chunk__79004_80662 = null;
+var count__79005_80663 = (0);
+var i__79006_80664 = (0);
 while(true){
-if((i__91136_91395 < count__91135_91394)){
-var formbar_index_91396 = chunk__91134_91393.cljs$core$IIndexed$_nth$arity$2(null,i__91136_91395);
-var map__91205_91397 = cljs.core.nth.cljs$core$IFn$_invoke$arity$2(new cljs.core.Keyword(null,"formbars","formbars",393026901).cljs$core$IFn$_invoke$arity$1(cljs.core.deref(ellah.graphics.graphics_state)),formbar_index_91396);
-var map__91205_91398__$1 = (((((!((map__91205_91397 == null))))?(((((map__91205_91397.cljs$lang$protocol_mask$partition0$ & (64))) || ((cljs.core.PROTOCOL_SENTINEL === map__91205_91397.cljs$core$ISeq$))))?true:false):false))?cljs.core.apply.cljs$core$IFn$_invoke$arity$2(cljs.core.hash_map,map__91205_91397):map__91205_91397);
-var forms_91399 = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__91205_91398__$1,new cljs.core.Keyword(null,"forms","forms",2045992350));
-var seq__91207_91400 = cljs.core.seq(new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null,"radius-factor","radius-factor",-1083742108),(1),new cljs.core.Keyword(null,"color","color",1011675173),ellah.constants.foreground_color], null),new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null,"radius-factor","radius-factor",-1083742108),((1) - ellah.constants.formbar_outline_thickness),new cljs.core.Keyword(null,"color","color",1011675173),ellah.constants.background_color], null)], null));
-var chunk__91208_91401 = null;
-var count__91209_91402 = (0);
-var i__91210_91403 = (0);
+if((i__79006_80664 < count__79005_80663)){
+var side_80665 = chunk__79004_80662.cljs$core$IIndexed$_nth$arity$2(null,i__79006_80664);
+var horizontal_QMARK__80666 = (function (){var fexpr__79729 = new cljs.core.PersistentHashSet(null, new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null,"bottom","bottom",-1550509018),null,new cljs.core.Keyword(null,"top","top",-1856271961),null], null), null);
+return (fexpr__79729.cljs$core$IFn$_invoke$arity$1 ? fexpr__79729.cljs$core$IFn$_invoke$arity$1(side_80665) : fexpr__79729.call(null,side_80665));
+})();
+var side_arrangement_80667 = cljs.core.get.cljs$core$IFn$_invoke$arity$2(arrangement_80659,side_80665);
+var seq__79730_80668 = cljs.core.seq(side_arrangement_80667);
+var chunk__79731_80669 = null;
+var count__79732_80670 = (0);
+var i__79733_80671 = (0);
 while(true){
-if((i__91210_91403 < count__91209_91402)){
-var map__91223_91404 = chunk__91208_91401.cljs$core$IIndexed$_nth$arity$2(null,i__91210_91403);
-var map__91223_91405__$1 = (((((!((map__91223_91404 == null))))?(((((map__91223_91404.cljs$lang$protocol_mask$partition0$ & (64))) || ((cljs.core.PROTOCOL_SENTINEL === map__91223_91404.cljs$core$ISeq$))))?true:false):false))?cljs.core.apply.cljs$core$IFn$_invoke$arity$2(cljs.core.hash_map,map__91223_91404):map__91223_91404);
-var color_91406 = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__91223_91405__$1,new cljs.core.Keyword(null,"color","color",1011675173));
-var radius_factor_91407 = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__91223_91405__$1,new cljs.core.Keyword(null,"radius-factor","radius-factor",-1083742108));
-var seq__91225_91408 = cljs.core.seq(new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [(1),(-1)], null));
-var chunk__91226_91409 = null;
-var count__91227_91410 = (0);
-var i__91228_91411 = (0);
+if((i__79733_80671 < count__79732_80670)){
+var stage_80672 = chunk__79731_80669.cljs$core$IIndexed$_nth$arity$2(null,i__79733_80671);
+var seq__79870_80673 = cljs.core.seq(stage_80672);
+var chunk__79871_80674 = null;
+var count__79872_80675 = (0);
+var i__79873_80676 = (0);
 while(true){
-if((i__91228_91411 < count__91227_91410)){
-var side_91412 = chunk__91226_91409.cljs$core$IIndexed$_nth$arity$2(null,i__91228_91411);
-ellah.graphics.circle.cljs$core$IFn$_invoke$arity$variadic(new cljs.core.PersistentArrayMap(null, 3, [new cljs.core.Keyword(null,"x","x",2099068185),(0.5 * ((1) + (side_91412 * ellah.graphics.formbar_width(formbar_index_91396)))),new cljs.core.Keyword(null,"y","y",-1757859776),ellah.graphics.formbar_y(formbar_index_91396),new cljs.core.Keyword(null,"radius","radius",-2073122258),(ellah.constants.formbar_radius * radius_factor_91407)], null),color_91406,cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([new cljs.core.Keyword(null,"formbar","formbar",824418093)], 0));
-
-
-var G__91413 = seq__91225_91408;
-var G__91414 = chunk__91226_91409;
-var G__91415 = count__91227_91410;
-var G__91416 = (i__91228_91411 + (1));
-seq__91225_91408 = G__91413;
-chunk__91226_91409 = G__91414;
-count__91227_91410 = G__91415;
-i__91228_91411 = G__91416;
-continue;
-} else {
-var temp__5753__auto___91417 = cljs.core.seq(seq__91225_91408);
-if(temp__5753__auto___91417){
-var seq__91225_91418__$1 = temp__5753__auto___91417;
-if(cljs.core.chunked_seq_QMARK_(seq__91225_91418__$1)){
-var c__4556__auto___91419 = cljs.core.chunk_first(seq__91225_91418__$1);
-var G__91420 = cljs.core.chunk_rest(seq__91225_91418__$1);
-var G__91421 = c__4556__auto___91419;
-var G__91422 = cljs.core.count(c__4556__auto___91419);
-var G__91423 = (0);
-seq__91225_91408 = G__91420;
-chunk__91226_91409 = G__91421;
-count__91227_91410 = G__91422;
-i__91228_91411 = G__91423;
-continue;
-} else {
-var side_91424 = cljs.core.first(seq__91225_91418__$1);
-ellah.graphics.circle.cljs$core$IFn$_invoke$arity$variadic(new cljs.core.PersistentArrayMap(null, 3, [new cljs.core.Keyword(null,"x","x",2099068185),(0.5 * ((1) + (side_91424 * ellah.graphics.formbar_width(formbar_index_91396)))),new cljs.core.Keyword(null,"y","y",-1757859776),ellah.graphics.formbar_y(formbar_index_91396),new cljs.core.Keyword(null,"radius","radius",-2073122258),(ellah.constants.formbar_radius * radius_factor_91407)], null),color_91406,cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([new cljs.core.Keyword(null,"formbar","formbar",824418093)], 0));
-
-
-var G__91425 = cljs.core.next(seq__91225_91418__$1);
-var G__91426 = null;
-var G__91427 = (0);
-var G__91428 = (0);
-seq__91225_91408 = G__91425;
-chunk__91226_91409 = G__91426;
-count__91227_91410 = G__91427;
-i__91228_91411 = G__91428;
-continue;
-}
-} else {
-}
-}
-break;
-}
-
-ellah.graphics.rect.cljs$core$IFn$_invoke$arity$variadic(new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null,"x","x",2099068185),(0.5 * ((1) - ellah.graphics.formbar_width(formbar_index_91396))),new cljs.core.Keyword(null,"y","y",-1757859776),(ellah.graphics.formbar_y(formbar_index_91396) - (ellah.constants.formbar_radius * radius_factor_91407))], null),new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null,"x","x",2099068185),ellah.graphics.formbar_width(formbar_index_91396),new cljs.core.Keyword(null,"y","y",-1757859776),((2) * (ellah.constants.formbar_radius * radius_factor_91407))], null),color_91406,cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([new cljs.core.Keyword(null,"formbar","formbar",824418093)], 0));
-
-
-var G__91429 = seq__91207_91400;
-var G__91430 = chunk__91208_91401;
-var G__91431 = count__91209_91402;
-var G__91432 = (i__91210_91403 + (1));
-seq__91207_91400 = G__91429;
-chunk__91208_91401 = G__91430;
-count__91209_91402 = G__91431;
-i__91210_91403 = G__91432;
-continue;
-} else {
-var temp__5753__auto___91433 = cljs.core.seq(seq__91207_91400);
-if(temp__5753__auto___91433){
-var seq__91207_91434__$1 = temp__5753__auto___91433;
-if(cljs.core.chunked_seq_QMARK_(seq__91207_91434__$1)){
-var c__4556__auto___91435 = cljs.core.chunk_first(seq__91207_91434__$1);
-var G__91436 = cljs.core.chunk_rest(seq__91207_91434__$1);
-var G__91437 = c__4556__auto___91435;
-var G__91438 = cljs.core.count(c__4556__auto___91435);
-var G__91439 = (0);
-seq__91207_91400 = G__91436;
-chunk__91208_91401 = G__91437;
-count__91209_91402 = G__91438;
-i__91210_91403 = G__91439;
-continue;
-} else {
-var map__91229_91440 = cljs.core.first(seq__91207_91434__$1);
-var map__91229_91441__$1 = (((((!((map__91229_91440 == null))))?(((((map__91229_91440.cljs$lang$protocol_mask$partition0$ & (64))) || ((cljs.core.PROTOCOL_SENTINEL === map__91229_91440.cljs$core$ISeq$))))?true:false):false))?cljs.core.apply.cljs$core$IFn$_invoke$arity$2(cljs.core.hash_map,map__91229_91440):map__91229_91440);
-var color_91442 = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__91229_91441__$1,new cljs.core.Keyword(null,"color","color",1011675173));
-var radius_factor_91443 = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__91229_91441__$1,new cljs.core.Keyword(null,"radius-factor","radius-factor",-1083742108));
-var seq__91231_91444 = cljs.core.seq(new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [(1),(-1)], null));
-var chunk__91232_91445 = null;
-var count__91233_91446 = (0);
-var i__91234_91447 = (0);
+if((i__79873_80676 < count__79872_80675)){
+var bar_80677 = chunk__79871_80674.cljs$core$IIndexed$_nth$arity$2(null,i__79873_80676);
+var seq__79906_80678 = cljs.core.seq(new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [ellah.constants.foreground_color,(1)], null),new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [ellah.constants.background_color,((1) - ellah.constants.formbar_outline_thickness)], null)], null));
+var chunk__79907_80679 = null;
+var count__79908_80680 = (0);
+var i__79909_80681 = (0);
 while(true){
-if((i__91234_91447 < count__91233_91446)){
-var side_91448 = chunk__91232_91445.cljs$core$IIndexed$_nth$arity$2(null,i__91234_91447);
-ellah.graphics.circle.cljs$core$IFn$_invoke$arity$variadic(new cljs.core.PersistentArrayMap(null, 3, [new cljs.core.Keyword(null,"x","x",2099068185),(0.5 * ((1) + (side_91448 * ellah.graphics.formbar_width(formbar_index_91396)))),new cljs.core.Keyword(null,"y","y",-1757859776),ellah.graphics.formbar_y(formbar_index_91396),new cljs.core.Keyword(null,"radius","radius",-2073122258),(ellah.constants.formbar_radius * radius_factor_91443)], null),color_91442,cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([new cljs.core.Keyword(null,"formbar","formbar",824418093)], 0));
+if((i__79909_80681 < count__79908_80680)){
+var vec__79916_80682 = chunk__79907_80679.cljs$core$IIndexed$_nth$arity$2(null,i__79909_80681);
+var color_80683 = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__79916_80682,(0),null);
+var radius_factor_80684 = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__79916_80682,(1),null);
+ellah.graphics.circle.cljs$core$IFn$_invoke$arity$variadic(cljs.core.assoc.cljs$core$IFn$_invoke$arity$3(bar_80677,new cljs.core.Keyword(null,"radius","radius",-2073122258),(ellah.constants.formbar_radius * radius_factor_80684)),color_80683,cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([new cljs.core.Keyword(null,"formbar","formbar",824418093)], 0));
+
+if(cljs.core.truth_(horizontal_QMARK__80666)){
+ellah.graphics.circle.cljs$core$IFn$_invoke$arity$variadic(cljs.core.assoc.cljs$core$IFn$_invoke$arity$3(ellah.geometry.add_points.cljs$core$IFn$_invoke$arity$variadic(cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([bar_80677,new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"x","x",2099068185),new cljs.core.Keyword(null,"width","width",-384071477).cljs$core$IFn$_invoke$arity$1(bar_80677)], null)], 0)),new cljs.core.Keyword(null,"radius","radius",-2073122258),(ellah.constants.formbar_radius * radius_factor_80684)),color_80683,cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([new cljs.core.Keyword(null,"formbar","formbar",824418093)], 0));
+
+ellah.graphics.rect.cljs$core$IFn$_invoke$arity$variadic(new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [ellah.geometry.subtract_points(bar_80677,new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"y","y",-1757859776),(ellah.constants.formbar_radius * radius_factor_80684)], null)),new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null,"x","x",2099068185),new cljs.core.Keyword(null,"width","width",-384071477).cljs$core$IFn$_invoke$arity$1(bar_80677),new cljs.core.Keyword(null,"y","y",-1757859776),(((2) * ellah.constants.formbar_radius) * radius_factor_80684)], null)], null),color_80683,cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([new cljs.core.Keyword(null,"formbar","formbar",824418093)], 0));
+} else {
+ellah.graphics.circle.cljs$core$IFn$_invoke$arity$variadic(cljs.core.assoc.cljs$core$IFn$_invoke$arity$3(ellah.geometry.add_points.cljs$core$IFn$_invoke$arity$variadic(cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([bar_80677,new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"y","y",-1757859776),new cljs.core.Keyword(null,"height","height",1025178622).cljs$core$IFn$_invoke$arity$1(bar_80677)], null)], 0)),new cljs.core.Keyword(null,"radius","radius",-2073122258),(ellah.constants.formbar_radius * radius_factor_80684)),color_80683,cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([new cljs.core.Keyword(null,"formbar","formbar",824418093)], 0));
+
+ellah.graphics.rect.cljs$core$IFn$_invoke$arity$variadic(new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [ellah.geometry.subtract_points(bar_80677,new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"x","x",2099068185),(ellah.constants.formbar_radius * radius_factor_80684)], null)),new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null,"x","x",2099068185),(((2) * ellah.constants.formbar_radius) * radius_factor_80684),new cljs.core.Keyword(null,"y","y",-1757859776),new cljs.core.Keyword(null,"height","height",1025178622).cljs$core$IFn$_invoke$arity$1(bar_80677)], null)], null),color_80683,cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([new cljs.core.Keyword(null,"formbar","formbar",824418093)], 0));
+}
 
 
-var G__91449 = seq__91231_91444;
-var G__91450 = chunk__91232_91445;
-var G__91451 = count__91233_91446;
-var G__91452 = (i__91234_91447 + (1));
-seq__91231_91444 = G__91449;
-chunk__91232_91445 = G__91450;
-count__91233_91446 = G__91451;
-i__91234_91447 = G__91452;
+var G__80685 = seq__79906_80678;
+var G__80686 = chunk__79907_80679;
+var G__80687 = count__79908_80680;
+var G__80688 = (i__79909_80681 + (1));
+seq__79906_80678 = G__80685;
+chunk__79907_80679 = G__80686;
+count__79908_80680 = G__80687;
+i__79909_80681 = G__80688;
 continue;
 } else {
-var temp__5753__auto___91453__$1 = cljs.core.seq(seq__91231_91444);
-if(temp__5753__auto___91453__$1){
-var seq__91231_91454__$1 = temp__5753__auto___91453__$1;
-if(cljs.core.chunked_seq_QMARK_(seq__91231_91454__$1)){
-var c__4556__auto___91455 = cljs.core.chunk_first(seq__91231_91454__$1);
-var G__91456 = cljs.core.chunk_rest(seq__91231_91454__$1);
-var G__91457 = c__4556__auto___91455;
-var G__91458 = cljs.core.count(c__4556__auto___91455);
-var G__91459 = (0);
-seq__91231_91444 = G__91456;
-chunk__91232_91445 = G__91457;
-count__91233_91446 = G__91458;
-i__91234_91447 = G__91459;
+var temp__5753__auto___80689 = cljs.core.seq(seq__79906_80678);
+if(temp__5753__auto___80689){
+var seq__79906_80690__$1 = temp__5753__auto___80689;
+if(cljs.core.chunked_seq_QMARK_(seq__79906_80690__$1)){
+var c__4556__auto___80691 = cljs.core.chunk_first(seq__79906_80690__$1);
+var G__80692 = cljs.core.chunk_rest(seq__79906_80690__$1);
+var G__80693 = c__4556__auto___80691;
+var G__80694 = cljs.core.count(c__4556__auto___80691);
+var G__80695 = (0);
+seq__79906_80678 = G__80692;
+chunk__79907_80679 = G__80693;
+count__79908_80680 = G__80694;
+i__79909_80681 = G__80695;
 continue;
 } else {
-var side_91460 = cljs.core.first(seq__91231_91454__$1);
-ellah.graphics.circle.cljs$core$IFn$_invoke$arity$variadic(new cljs.core.PersistentArrayMap(null, 3, [new cljs.core.Keyword(null,"x","x",2099068185),(0.5 * ((1) + (side_91460 * ellah.graphics.formbar_width(formbar_index_91396)))),new cljs.core.Keyword(null,"y","y",-1757859776),ellah.graphics.formbar_y(formbar_index_91396),new cljs.core.Keyword(null,"radius","radius",-2073122258),(ellah.constants.formbar_radius * radius_factor_91443)], null),color_91442,cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([new cljs.core.Keyword(null,"formbar","formbar",824418093)], 0));
+var vec__79919_80696 = cljs.core.first(seq__79906_80690__$1);
+var color_80697 = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__79919_80696,(0),null);
+var radius_factor_80698 = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__79919_80696,(1),null);
+ellah.graphics.circle.cljs$core$IFn$_invoke$arity$variadic(cljs.core.assoc.cljs$core$IFn$_invoke$arity$3(bar_80677,new cljs.core.Keyword(null,"radius","radius",-2073122258),(ellah.constants.formbar_radius * radius_factor_80698)),color_80697,cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([new cljs.core.Keyword(null,"formbar","formbar",824418093)], 0));
 
+if(cljs.core.truth_(horizontal_QMARK__80666)){
+ellah.graphics.circle.cljs$core$IFn$_invoke$arity$variadic(cljs.core.assoc.cljs$core$IFn$_invoke$arity$3(ellah.geometry.add_points.cljs$core$IFn$_invoke$arity$variadic(cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([bar_80677,new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"x","x",2099068185),new cljs.core.Keyword(null,"width","width",-384071477).cljs$core$IFn$_invoke$arity$1(bar_80677)], null)], 0)),new cljs.core.Keyword(null,"radius","radius",-2073122258),(ellah.constants.formbar_radius * radius_factor_80698)),color_80697,cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([new cljs.core.Keyword(null,"formbar","formbar",824418093)], 0));
 
-var G__91461 = cljs.core.next(seq__91231_91454__$1);
-var G__91462 = null;
-var G__91463 = (0);
-var G__91464 = (0);
-seq__91231_91444 = G__91461;
-chunk__91232_91445 = G__91462;
-count__91233_91446 = G__91463;
-i__91234_91447 = G__91464;
-continue;
-}
+ellah.graphics.rect.cljs$core$IFn$_invoke$arity$variadic(new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [ellah.geometry.subtract_points(bar_80677,new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"y","y",-1757859776),(ellah.constants.formbar_radius * radius_factor_80698)], null)),new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null,"x","x",2099068185),new cljs.core.Keyword(null,"width","width",-384071477).cljs$core$IFn$_invoke$arity$1(bar_80677),new cljs.core.Keyword(null,"y","y",-1757859776),(((2) * ellah.constants.formbar_radius) * radius_factor_80698)], null)], null),color_80697,cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([new cljs.core.Keyword(null,"formbar","formbar",824418093)], 0));
 } else {
-}
-}
-break;
-}
+ellah.graphics.circle.cljs$core$IFn$_invoke$arity$variadic(cljs.core.assoc.cljs$core$IFn$_invoke$arity$3(ellah.geometry.add_points.cljs$core$IFn$_invoke$arity$variadic(cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([bar_80677,new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"y","y",-1757859776),new cljs.core.Keyword(null,"height","height",1025178622).cljs$core$IFn$_invoke$arity$1(bar_80677)], null)], 0)),new cljs.core.Keyword(null,"radius","radius",-2073122258),(ellah.constants.formbar_radius * radius_factor_80698)),color_80697,cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([new cljs.core.Keyword(null,"formbar","formbar",824418093)], 0));
 
-ellah.graphics.rect.cljs$core$IFn$_invoke$arity$variadic(new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null,"x","x",2099068185),(0.5 * ((1) - ellah.graphics.formbar_width(formbar_index_91396))),new cljs.core.Keyword(null,"y","y",-1757859776),(ellah.graphics.formbar_y(formbar_index_91396) - (ellah.constants.formbar_radius * radius_factor_91443))], null),new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null,"x","x",2099068185),ellah.graphics.formbar_width(formbar_index_91396),new cljs.core.Keyword(null,"y","y",-1757859776),((2) * (ellah.constants.formbar_radius * radius_factor_91443))], null),color_91442,cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([new cljs.core.Keyword(null,"formbar","formbar",824418093)], 0));
-
-
-var G__91465 = cljs.core.next(seq__91207_91434__$1);
-var G__91466 = null;
-var G__91467 = (0);
-var G__91468 = (0);
-seq__91207_91400 = G__91465;
-chunk__91208_91401 = G__91466;
-count__91209_91402 = G__91467;
-i__91210_91403 = G__91468;
-continue;
-}
-} else {
-}
-}
-break;
+ellah.graphics.rect.cljs$core$IFn$_invoke$arity$variadic(new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [ellah.geometry.subtract_points(bar_80677,new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"x","x",2099068185),(ellah.constants.formbar_radius * radius_factor_80698)], null)),new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null,"x","x",2099068185),(((2) * ellah.constants.formbar_radius) * radius_factor_80698),new cljs.core.Keyword(null,"y","y",-1757859776),new cljs.core.Keyword(null,"height","height",1025178622).cljs$core$IFn$_invoke$arity$1(bar_80677)], null)], null),color_80697,cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([new cljs.core.Keyword(null,"formbar","formbar",824418093)], 0));
 }
 
-var seq__91235_91469 = cljs.core.seq(cljs.core.range.cljs$core$IFn$_invoke$arity$1(cljs.core.count(forms_91399)));
-var chunk__91236_91470 = null;
-var count__91237_91471 = (0);
-var i__91238_91472 = (0);
-while(true){
-if((i__91238_91472 < count__91237_91471)){
-var i_91473 = chunk__91236_91470.cljs$core$IIndexed$_nth$arity$2(null,i__91238_91472);
-var form_91474 = cljs.core.nth.cljs$core$IFn$_invoke$arity$2(forms_91399,i_91473);
-var current_circle_91475 = ellah.graphics.formbar_circle(formbar_index_91396,i_91473);
-if(ellah.geometry.in_circle_QMARK_(current_circle_91475,mouse)){
-ellah.graphics.circle.cljs$core$IFn$_invoke$arity$variadic(cljs.core.update.cljs$core$IFn$_invoke$arity$3(current_circle_91475,new cljs.core.Keyword(null,"radius","radius",-2073122258),((function (seq__91235_91469,chunk__91236_91470,count__91237_91471,i__91238_91472,seq__91133_91392,chunk__91134_91393,count__91135_91394,i__91136_91395,form_91474,current_circle_91475,i_91473,map__91205_91397,map__91205_91398__$1,forms_91399,formbar_index_91396,map__91131,map__91131__$1,mouse,dragging_QMARK_,vec__91128,app_pos,app_size,mouse_zone,current_placement_form){
-return (function (p1__91124_SHARP_){
-return (p1__91124_SHARP_ / ellah.constants.formbar_form_size);
-});})(seq__91235_91469,chunk__91236_91470,count__91237_91471,i__91238_91472,seq__91133_91392,chunk__91134_91393,count__91135_91394,i__91136_91395,form_91474,current_circle_91475,i_91473,map__91205_91397,map__91205_91398__$1,forms_91399,formbar_index_91396,map__91131,map__91131__$1,mouse,dragging_QMARK_,vec__91128,app_pos,app_size,mouse_zone,current_placement_form))
-),ellah.constants.highlight_color,cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([new cljs.core.Keyword(null,"formbar","formbar",824418093)], 0));
-} else {
-}
 
-ellah.graphics.render_sublayouts.cljs$core$IFn$_invoke$arity$variadic(ellah.graphics.form_layout(form_91474,current_circle_91475),cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([new cljs.core.Keyword(null,"formbar","formbar",824418093)], 0));
-
-
-var G__91476 = seq__91235_91469;
-var G__91477 = chunk__91236_91470;
-var G__91478 = count__91237_91471;
-var G__91479 = (i__91238_91472 + (1));
-seq__91235_91469 = G__91476;
-chunk__91236_91470 = G__91477;
-count__91237_91471 = G__91478;
-i__91238_91472 = G__91479;
-continue;
-} else {
-var temp__5753__auto___91480 = cljs.core.seq(seq__91235_91469);
-if(temp__5753__auto___91480){
-var seq__91235_91481__$1 = temp__5753__auto___91480;
-if(cljs.core.chunked_seq_QMARK_(seq__91235_91481__$1)){
-var c__4556__auto___91482 = cljs.core.chunk_first(seq__91235_91481__$1);
-var G__91483 = cljs.core.chunk_rest(seq__91235_91481__$1);
-var G__91484 = c__4556__auto___91482;
-var G__91485 = cljs.core.count(c__4556__auto___91482);
-var G__91486 = (0);
-seq__91235_91469 = G__91483;
-chunk__91236_91470 = G__91484;
-count__91237_91471 = G__91485;
-i__91238_91472 = G__91486;
-continue;
-} else {
-var i_91487 = cljs.core.first(seq__91235_91481__$1);
-var form_91488 = cljs.core.nth.cljs$core$IFn$_invoke$arity$2(forms_91399,i_91487);
-var current_circle_91489 = ellah.graphics.formbar_circle(formbar_index_91396,i_91487);
-if(ellah.geometry.in_circle_QMARK_(current_circle_91489,mouse)){
-ellah.graphics.circle.cljs$core$IFn$_invoke$arity$variadic(cljs.core.update.cljs$core$IFn$_invoke$arity$3(current_circle_91489,new cljs.core.Keyword(null,"radius","radius",-2073122258),((function (seq__91235_91469,chunk__91236_91470,count__91237_91471,i__91238_91472,seq__91133_91392,chunk__91134_91393,count__91135_91394,i__91136_91395,form_91488,current_circle_91489,i_91487,seq__91235_91481__$1,temp__5753__auto___91480,map__91205_91397,map__91205_91398__$1,forms_91399,formbar_index_91396,map__91131,map__91131__$1,mouse,dragging_QMARK_,vec__91128,app_pos,app_size,mouse_zone,current_placement_form){
-return (function (p1__91124_SHARP_){
-return (p1__91124_SHARP_ / ellah.constants.formbar_form_size);
-});})(seq__91235_91469,chunk__91236_91470,count__91237_91471,i__91238_91472,seq__91133_91392,chunk__91134_91393,count__91135_91394,i__91136_91395,form_91488,current_circle_91489,i_91487,seq__91235_91481__$1,temp__5753__auto___91480,map__91205_91397,map__91205_91398__$1,forms_91399,formbar_index_91396,map__91131,map__91131__$1,mouse,dragging_QMARK_,vec__91128,app_pos,app_size,mouse_zone,current_placement_form))
-),ellah.constants.highlight_color,cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([new cljs.core.Keyword(null,"formbar","formbar",824418093)], 0));
-} else {
-}
-
-ellah.graphics.render_sublayouts.cljs$core$IFn$_invoke$arity$variadic(ellah.graphics.form_layout(form_91488,current_circle_91489),cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([new cljs.core.Keyword(null,"formbar","formbar",824418093)], 0));
-
-
-var G__91490 = cljs.core.next(seq__91235_91481__$1);
-var G__91491 = null;
-var G__91492 = (0);
-var G__91493 = (0);
-seq__91235_91469 = G__91490;
-chunk__91236_91470 = G__91491;
-count__91237_91471 = G__91492;
-i__91238_91472 = G__91493;
+var G__80699 = cljs.core.next(seq__79906_80690__$1);
+var G__80700 = null;
+var G__80701 = (0);
+var G__80702 = (0);
+seq__79906_80678 = G__80699;
+chunk__79907_80679 = G__80700;
+count__79908_80680 = G__80701;
+i__79909_80681 = G__80702;
 continue;
 }
 } else {
@@ -1091,179 +1296,233 @@ break;
 }
 
 
-var G__91494 = seq__91133_91392;
-var G__91495 = chunk__91134_91393;
-var G__91496 = count__91135_91394;
-var G__91497 = (i__91136_91395 + (1));
-seq__91133_91392 = G__91494;
-chunk__91134_91393 = G__91495;
-count__91135_91394 = G__91496;
-i__91136_91395 = G__91497;
+var G__80703 = seq__79870_80673;
+var G__80704 = chunk__79871_80674;
+var G__80705 = count__79872_80675;
+var G__80706 = (i__79873_80676 + (1));
+seq__79870_80673 = G__80703;
+chunk__79871_80674 = G__80704;
+count__79872_80675 = G__80705;
+i__79873_80676 = G__80706;
 continue;
 } else {
-var temp__5753__auto___91498 = cljs.core.seq(seq__91133_91392);
-if(temp__5753__auto___91498){
-var seq__91133_91499__$1 = temp__5753__auto___91498;
-if(cljs.core.chunked_seq_QMARK_(seq__91133_91499__$1)){
-var c__4556__auto___91500 = cljs.core.chunk_first(seq__91133_91499__$1);
-var G__91501 = cljs.core.chunk_rest(seq__91133_91499__$1);
-var G__91502 = c__4556__auto___91500;
-var G__91503 = cljs.core.count(c__4556__auto___91500);
-var G__91504 = (0);
-seq__91133_91392 = G__91501;
-chunk__91134_91393 = G__91502;
-count__91135_91394 = G__91503;
-i__91136_91395 = G__91504;
+var temp__5753__auto___80707 = cljs.core.seq(seq__79870_80673);
+if(temp__5753__auto___80707){
+var seq__79870_80708__$1 = temp__5753__auto___80707;
+if(cljs.core.chunked_seq_QMARK_(seq__79870_80708__$1)){
+var c__4556__auto___80709 = cljs.core.chunk_first(seq__79870_80708__$1);
+var G__80710 = cljs.core.chunk_rest(seq__79870_80708__$1);
+var G__80711 = c__4556__auto___80709;
+var G__80712 = cljs.core.count(c__4556__auto___80709);
+var G__80713 = (0);
+seq__79870_80673 = G__80710;
+chunk__79871_80674 = G__80711;
+count__79872_80675 = G__80712;
+i__79873_80676 = G__80713;
 continue;
 } else {
-var formbar_index_91505 = cljs.core.first(seq__91133_91499__$1);
-var map__91239_91506 = cljs.core.nth.cljs$core$IFn$_invoke$arity$2(new cljs.core.Keyword(null,"formbars","formbars",393026901).cljs$core$IFn$_invoke$arity$1(cljs.core.deref(ellah.graphics.graphics_state)),formbar_index_91505);
-var map__91239_91507__$1 = (((((!((map__91239_91506 == null))))?(((((map__91239_91506.cljs$lang$protocol_mask$partition0$ & (64))) || ((cljs.core.PROTOCOL_SENTINEL === map__91239_91506.cljs$core$ISeq$))))?true:false):false))?cljs.core.apply.cljs$core$IFn$_invoke$arity$2(cljs.core.hash_map,map__91239_91506):map__91239_91506);
-var forms_91508 = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__91239_91507__$1,new cljs.core.Keyword(null,"forms","forms",2045992350));
-var seq__91241_91509 = cljs.core.seq(new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null,"radius-factor","radius-factor",-1083742108),(1),new cljs.core.Keyword(null,"color","color",1011675173),ellah.constants.foreground_color], null),new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null,"radius-factor","radius-factor",-1083742108),((1) - ellah.constants.formbar_outline_thickness),new cljs.core.Keyword(null,"color","color",1011675173),ellah.constants.background_color], null)], null));
-var chunk__91242_91510 = null;
-var count__91243_91511 = (0);
-var i__91244_91512 = (0);
+var bar_80714 = cljs.core.first(seq__79870_80708__$1);
+var seq__79922_80715 = cljs.core.seq(new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [ellah.constants.foreground_color,(1)], null),new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [ellah.constants.background_color,((1) - ellah.constants.formbar_outline_thickness)], null)], null));
+var chunk__79923_80716 = null;
+var count__79924_80717 = (0);
+var i__79925_80718 = (0);
 while(true){
-if((i__91244_91512 < count__91243_91511)){
-var map__91257_91513 = chunk__91242_91510.cljs$core$IIndexed$_nth$arity$2(null,i__91244_91512);
-var map__91257_91514__$1 = (((((!((map__91257_91513 == null))))?(((((map__91257_91513.cljs$lang$protocol_mask$partition0$ & (64))) || ((cljs.core.PROTOCOL_SENTINEL === map__91257_91513.cljs$core$ISeq$))))?true:false):false))?cljs.core.apply.cljs$core$IFn$_invoke$arity$2(cljs.core.hash_map,map__91257_91513):map__91257_91513);
-var color_91515 = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__91257_91514__$1,new cljs.core.Keyword(null,"color","color",1011675173));
-var radius_factor_91516 = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__91257_91514__$1,new cljs.core.Keyword(null,"radius-factor","radius-factor",-1083742108));
-var seq__91259_91517 = cljs.core.seq(new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [(1),(-1)], null));
-var chunk__91260_91518 = null;
-var count__91261_91519 = (0);
-var i__91262_91520 = (0);
+if((i__79925_80718 < count__79924_80717)){
+var vec__79932_80719 = chunk__79923_80716.cljs$core$IIndexed$_nth$arity$2(null,i__79925_80718);
+var color_80720 = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__79932_80719,(0),null);
+var radius_factor_80721 = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__79932_80719,(1),null);
+ellah.graphics.circle.cljs$core$IFn$_invoke$arity$variadic(cljs.core.assoc.cljs$core$IFn$_invoke$arity$3(bar_80714,new cljs.core.Keyword(null,"radius","radius",-2073122258),(ellah.constants.formbar_radius * radius_factor_80721)),color_80720,cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([new cljs.core.Keyword(null,"formbar","formbar",824418093)], 0));
+
+if(cljs.core.truth_(horizontal_QMARK__80666)){
+ellah.graphics.circle.cljs$core$IFn$_invoke$arity$variadic(cljs.core.assoc.cljs$core$IFn$_invoke$arity$3(ellah.geometry.add_points.cljs$core$IFn$_invoke$arity$variadic(cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([bar_80714,new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"x","x",2099068185),new cljs.core.Keyword(null,"width","width",-384071477).cljs$core$IFn$_invoke$arity$1(bar_80714)], null)], 0)),new cljs.core.Keyword(null,"radius","radius",-2073122258),(ellah.constants.formbar_radius * radius_factor_80721)),color_80720,cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([new cljs.core.Keyword(null,"formbar","formbar",824418093)], 0));
+
+ellah.graphics.rect.cljs$core$IFn$_invoke$arity$variadic(new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [ellah.geometry.subtract_points(bar_80714,new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"y","y",-1757859776),(ellah.constants.formbar_radius * radius_factor_80721)], null)),new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null,"x","x",2099068185),new cljs.core.Keyword(null,"width","width",-384071477).cljs$core$IFn$_invoke$arity$1(bar_80714),new cljs.core.Keyword(null,"y","y",-1757859776),(((2) * ellah.constants.formbar_radius) * radius_factor_80721)], null)], null),color_80720,cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([new cljs.core.Keyword(null,"formbar","formbar",824418093)], 0));
+} else {
+ellah.graphics.circle.cljs$core$IFn$_invoke$arity$variadic(cljs.core.assoc.cljs$core$IFn$_invoke$arity$3(ellah.geometry.add_points.cljs$core$IFn$_invoke$arity$variadic(cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([bar_80714,new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"y","y",-1757859776),new cljs.core.Keyword(null,"height","height",1025178622).cljs$core$IFn$_invoke$arity$1(bar_80714)], null)], 0)),new cljs.core.Keyword(null,"radius","radius",-2073122258),(ellah.constants.formbar_radius * radius_factor_80721)),color_80720,cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([new cljs.core.Keyword(null,"formbar","formbar",824418093)], 0));
+
+ellah.graphics.rect.cljs$core$IFn$_invoke$arity$variadic(new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [ellah.geometry.subtract_points(bar_80714,new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"x","x",2099068185),(ellah.constants.formbar_radius * radius_factor_80721)], null)),new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null,"x","x",2099068185),(((2) * ellah.constants.formbar_radius) * radius_factor_80721),new cljs.core.Keyword(null,"y","y",-1757859776),new cljs.core.Keyword(null,"height","height",1025178622).cljs$core$IFn$_invoke$arity$1(bar_80714)], null)], null),color_80720,cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([new cljs.core.Keyword(null,"formbar","formbar",824418093)], 0));
+}
+
+
+var G__80722 = seq__79922_80715;
+var G__80723 = chunk__79923_80716;
+var G__80724 = count__79924_80717;
+var G__80725 = (i__79925_80718 + (1));
+seq__79922_80715 = G__80722;
+chunk__79923_80716 = G__80723;
+count__79924_80717 = G__80724;
+i__79925_80718 = G__80725;
+continue;
+} else {
+var temp__5753__auto___80726__$1 = cljs.core.seq(seq__79922_80715);
+if(temp__5753__auto___80726__$1){
+var seq__79922_80727__$1 = temp__5753__auto___80726__$1;
+if(cljs.core.chunked_seq_QMARK_(seq__79922_80727__$1)){
+var c__4556__auto___80728 = cljs.core.chunk_first(seq__79922_80727__$1);
+var G__80729 = cljs.core.chunk_rest(seq__79922_80727__$1);
+var G__80730 = c__4556__auto___80728;
+var G__80731 = cljs.core.count(c__4556__auto___80728);
+var G__80732 = (0);
+seq__79922_80715 = G__80729;
+chunk__79923_80716 = G__80730;
+count__79924_80717 = G__80731;
+i__79925_80718 = G__80732;
+continue;
+} else {
+var vec__79935_80733 = cljs.core.first(seq__79922_80727__$1);
+var color_80734 = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__79935_80733,(0),null);
+var radius_factor_80735 = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__79935_80733,(1),null);
+ellah.graphics.circle.cljs$core$IFn$_invoke$arity$variadic(cljs.core.assoc.cljs$core$IFn$_invoke$arity$3(bar_80714,new cljs.core.Keyword(null,"radius","radius",-2073122258),(ellah.constants.formbar_radius * radius_factor_80735)),color_80734,cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([new cljs.core.Keyword(null,"formbar","formbar",824418093)], 0));
+
+if(cljs.core.truth_(horizontal_QMARK__80666)){
+ellah.graphics.circle.cljs$core$IFn$_invoke$arity$variadic(cljs.core.assoc.cljs$core$IFn$_invoke$arity$3(ellah.geometry.add_points.cljs$core$IFn$_invoke$arity$variadic(cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([bar_80714,new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"x","x",2099068185),new cljs.core.Keyword(null,"width","width",-384071477).cljs$core$IFn$_invoke$arity$1(bar_80714)], null)], 0)),new cljs.core.Keyword(null,"radius","radius",-2073122258),(ellah.constants.formbar_radius * radius_factor_80735)),color_80734,cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([new cljs.core.Keyword(null,"formbar","formbar",824418093)], 0));
+
+ellah.graphics.rect.cljs$core$IFn$_invoke$arity$variadic(new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [ellah.geometry.subtract_points(bar_80714,new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"y","y",-1757859776),(ellah.constants.formbar_radius * radius_factor_80735)], null)),new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null,"x","x",2099068185),new cljs.core.Keyword(null,"width","width",-384071477).cljs$core$IFn$_invoke$arity$1(bar_80714),new cljs.core.Keyword(null,"y","y",-1757859776),(((2) * ellah.constants.formbar_radius) * radius_factor_80735)], null)], null),color_80734,cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([new cljs.core.Keyword(null,"formbar","formbar",824418093)], 0));
+} else {
+ellah.graphics.circle.cljs$core$IFn$_invoke$arity$variadic(cljs.core.assoc.cljs$core$IFn$_invoke$arity$3(ellah.geometry.add_points.cljs$core$IFn$_invoke$arity$variadic(cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([bar_80714,new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"y","y",-1757859776),new cljs.core.Keyword(null,"height","height",1025178622).cljs$core$IFn$_invoke$arity$1(bar_80714)], null)], 0)),new cljs.core.Keyword(null,"radius","radius",-2073122258),(ellah.constants.formbar_radius * radius_factor_80735)),color_80734,cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([new cljs.core.Keyword(null,"formbar","formbar",824418093)], 0));
+
+ellah.graphics.rect.cljs$core$IFn$_invoke$arity$variadic(new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [ellah.geometry.subtract_points(bar_80714,new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"x","x",2099068185),(ellah.constants.formbar_radius * radius_factor_80735)], null)),new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null,"x","x",2099068185),(((2) * ellah.constants.formbar_radius) * radius_factor_80735),new cljs.core.Keyword(null,"y","y",-1757859776),new cljs.core.Keyword(null,"height","height",1025178622).cljs$core$IFn$_invoke$arity$1(bar_80714)], null)], null),color_80734,cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([new cljs.core.Keyword(null,"formbar","formbar",824418093)], 0));
+}
+
+
+var G__80736 = cljs.core.next(seq__79922_80727__$1);
+var G__80737 = null;
+var G__80738 = (0);
+var G__80739 = (0);
+seq__79922_80715 = G__80736;
+chunk__79923_80716 = G__80737;
+count__79924_80717 = G__80738;
+i__79925_80718 = G__80739;
+continue;
+}
+} else {
+}
+}
+break;
+}
+
+
+var G__80740 = cljs.core.next(seq__79870_80708__$1);
+var G__80741 = null;
+var G__80742 = (0);
+var G__80743 = (0);
+seq__79870_80673 = G__80740;
+chunk__79871_80674 = G__80741;
+count__79872_80675 = G__80742;
+i__79873_80676 = G__80743;
+continue;
+}
+} else {
+}
+}
+break;
+}
+
+
+var G__80744 = seq__79730_80668;
+var G__80745 = chunk__79731_80669;
+var G__80746 = count__79732_80670;
+var G__80747 = (i__79733_80671 + (1));
+seq__79730_80668 = G__80744;
+chunk__79731_80669 = G__80745;
+count__79732_80670 = G__80746;
+i__79733_80671 = G__80747;
+continue;
+} else {
+var temp__5753__auto___80748 = cljs.core.seq(seq__79730_80668);
+if(temp__5753__auto___80748){
+var seq__79730_80749__$1 = temp__5753__auto___80748;
+if(cljs.core.chunked_seq_QMARK_(seq__79730_80749__$1)){
+var c__4556__auto___80750 = cljs.core.chunk_first(seq__79730_80749__$1);
+var G__80751 = cljs.core.chunk_rest(seq__79730_80749__$1);
+var G__80752 = c__4556__auto___80750;
+var G__80753 = cljs.core.count(c__4556__auto___80750);
+var G__80754 = (0);
+seq__79730_80668 = G__80751;
+chunk__79731_80669 = G__80752;
+count__79732_80670 = G__80753;
+i__79733_80671 = G__80754;
+continue;
+} else {
+var stage_80755 = cljs.core.first(seq__79730_80749__$1);
+var seq__79938_80756 = cljs.core.seq(stage_80755);
+var chunk__79939_80757 = null;
+var count__79940_80758 = (0);
+var i__79941_80759 = (0);
 while(true){
-if((i__91262_91520 < count__91261_91519)){
-var side_91521 = chunk__91260_91518.cljs$core$IIndexed$_nth$arity$2(null,i__91262_91520);
-ellah.graphics.circle.cljs$core$IFn$_invoke$arity$variadic(new cljs.core.PersistentArrayMap(null, 3, [new cljs.core.Keyword(null,"x","x",2099068185),(0.5 * ((1) + (side_91521 * ellah.graphics.formbar_width(formbar_index_91505)))),new cljs.core.Keyword(null,"y","y",-1757859776),ellah.graphics.formbar_y(formbar_index_91505),new cljs.core.Keyword(null,"radius","radius",-2073122258),(ellah.constants.formbar_radius * radius_factor_91516)], null),color_91515,cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([new cljs.core.Keyword(null,"formbar","formbar",824418093)], 0));
-
-
-var G__91522 = seq__91259_91517;
-var G__91523 = chunk__91260_91518;
-var G__91524 = count__91261_91519;
-var G__91525 = (i__91262_91520 + (1));
-seq__91259_91517 = G__91522;
-chunk__91260_91518 = G__91523;
-count__91261_91519 = G__91524;
-i__91262_91520 = G__91525;
-continue;
-} else {
-var temp__5753__auto___91526__$1 = cljs.core.seq(seq__91259_91517);
-if(temp__5753__auto___91526__$1){
-var seq__91259_91527__$1 = temp__5753__auto___91526__$1;
-if(cljs.core.chunked_seq_QMARK_(seq__91259_91527__$1)){
-var c__4556__auto___91528 = cljs.core.chunk_first(seq__91259_91527__$1);
-var G__91529 = cljs.core.chunk_rest(seq__91259_91527__$1);
-var G__91530 = c__4556__auto___91528;
-var G__91531 = cljs.core.count(c__4556__auto___91528);
-var G__91532 = (0);
-seq__91259_91517 = G__91529;
-chunk__91260_91518 = G__91530;
-count__91261_91519 = G__91531;
-i__91262_91520 = G__91532;
-continue;
-} else {
-var side_91533 = cljs.core.first(seq__91259_91527__$1);
-ellah.graphics.circle.cljs$core$IFn$_invoke$arity$variadic(new cljs.core.PersistentArrayMap(null, 3, [new cljs.core.Keyword(null,"x","x",2099068185),(0.5 * ((1) + (side_91533 * ellah.graphics.formbar_width(formbar_index_91505)))),new cljs.core.Keyword(null,"y","y",-1757859776),ellah.graphics.formbar_y(formbar_index_91505),new cljs.core.Keyword(null,"radius","radius",-2073122258),(ellah.constants.formbar_radius * radius_factor_91516)], null),color_91515,cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([new cljs.core.Keyword(null,"formbar","formbar",824418093)], 0));
-
-
-var G__91534 = cljs.core.next(seq__91259_91527__$1);
-var G__91535 = null;
-var G__91536 = (0);
-var G__91537 = (0);
-seq__91259_91517 = G__91534;
-chunk__91260_91518 = G__91535;
-count__91261_91519 = G__91536;
-i__91262_91520 = G__91537;
-continue;
-}
-} else {
-}
-}
-break;
-}
-
-ellah.graphics.rect.cljs$core$IFn$_invoke$arity$variadic(new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null,"x","x",2099068185),(0.5 * ((1) - ellah.graphics.formbar_width(formbar_index_91505))),new cljs.core.Keyword(null,"y","y",-1757859776),(ellah.graphics.formbar_y(formbar_index_91505) - (ellah.constants.formbar_radius * radius_factor_91516))], null),new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null,"x","x",2099068185),ellah.graphics.formbar_width(formbar_index_91505),new cljs.core.Keyword(null,"y","y",-1757859776),((2) * (ellah.constants.formbar_radius * radius_factor_91516))], null),color_91515,cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([new cljs.core.Keyword(null,"formbar","formbar",824418093)], 0));
-
-
-var G__91538 = seq__91241_91509;
-var G__91539 = chunk__91242_91510;
-var G__91540 = count__91243_91511;
-var G__91541 = (i__91244_91512 + (1));
-seq__91241_91509 = G__91538;
-chunk__91242_91510 = G__91539;
-count__91243_91511 = G__91540;
-i__91244_91512 = G__91541;
-continue;
-} else {
-var temp__5753__auto___91542__$1 = cljs.core.seq(seq__91241_91509);
-if(temp__5753__auto___91542__$1){
-var seq__91241_91543__$1 = temp__5753__auto___91542__$1;
-if(cljs.core.chunked_seq_QMARK_(seq__91241_91543__$1)){
-var c__4556__auto___91544 = cljs.core.chunk_first(seq__91241_91543__$1);
-var G__91545 = cljs.core.chunk_rest(seq__91241_91543__$1);
-var G__91546 = c__4556__auto___91544;
-var G__91547 = cljs.core.count(c__4556__auto___91544);
-var G__91548 = (0);
-seq__91241_91509 = G__91545;
-chunk__91242_91510 = G__91546;
-count__91243_91511 = G__91547;
-i__91244_91512 = G__91548;
-continue;
-} else {
-var map__91263_91549 = cljs.core.first(seq__91241_91543__$1);
-var map__91263_91550__$1 = (((((!((map__91263_91549 == null))))?(((((map__91263_91549.cljs$lang$protocol_mask$partition0$ & (64))) || ((cljs.core.PROTOCOL_SENTINEL === map__91263_91549.cljs$core$ISeq$))))?true:false):false))?cljs.core.apply.cljs$core$IFn$_invoke$arity$2(cljs.core.hash_map,map__91263_91549):map__91263_91549);
-var color_91551 = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__91263_91550__$1,new cljs.core.Keyword(null,"color","color",1011675173));
-var radius_factor_91552 = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__91263_91550__$1,new cljs.core.Keyword(null,"radius-factor","radius-factor",-1083742108));
-var seq__91265_91553 = cljs.core.seq(new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [(1),(-1)], null));
-var chunk__91266_91554 = null;
-var count__91267_91555 = (0);
-var i__91268_91556 = (0);
+if((i__79941_80759 < count__79940_80758)){
+var bar_80760 = chunk__79939_80757.cljs$core$IIndexed$_nth$arity$2(null,i__79941_80759);
+var seq__79974_80761 = cljs.core.seq(new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [ellah.constants.foreground_color,(1)], null),new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [ellah.constants.background_color,((1) - ellah.constants.formbar_outline_thickness)], null)], null));
+var chunk__79975_80762 = null;
+var count__79976_80763 = (0);
+var i__79977_80764 = (0);
 while(true){
-if((i__91268_91556 < count__91267_91555)){
-var side_91557 = chunk__91266_91554.cljs$core$IIndexed$_nth$arity$2(null,i__91268_91556);
-ellah.graphics.circle.cljs$core$IFn$_invoke$arity$variadic(new cljs.core.PersistentArrayMap(null, 3, [new cljs.core.Keyword(null,"x","x",2099068185),(0.5 * ((1) + (side_91557 * ellah.graphics.formbar_width(formbar_index_91505)))),new cljs.core.Keyword(null,"y","y",-1757859776),ellah.graphics.formbar_y(formbar_index_91505),new cljs.core.Keyword(null,"radius","radius",-2073122258),(ellah.constants.formbar_radius * radius_factor_91552)], null),color_91551,cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([new cljs.core.Keyword(null,"formbar","formbar",824418093)], 0));
+if((i__79977_80764 < count__79976_80763)){
+var vec__79984_80765 = chunk__79975_80762.cljs$core$IIndexed$_nth$arity$2(null,i__79977_80764);
+var color_80766 = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__79984_80765,(0),null);
+var radius_factor_80767 = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__79984_80765,(1),null);
+ellah.graphics.circle.cljs$core$IFn$_invoke$arity$variadic(cljs.core.assoc.cljs$core$IFn$_invoke$arity$3(bar_80760,new cljs.core.Keyword(null,"radius","radius",-2073122258),(ellah.constants.formbar_radius * radius_factor_80767)),color_80766,cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([new cljs.core.Keyword(null,"formbar","formbar",824418093)], 0));
+
+if(cljs.core.truth_(horizontal_QMARK__80666)){
+ellah.graphics.circle.cljs$core$IFn$_invoke$arity$variadic(cljs.core.assoc.cljs$core$IFn$_invoke$arity$3(ellah.geometry.add_points.cljs$core$IFn$_invoke$arity$variadic(cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([bar_80760,new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"x","x",2099068185),new cljs.core.Keyword(null,"width","width",-384071477).cljs$core$IFn$_invoke$arity$1(bar_80760)], null)], 0)),new cljs.core.Keyword(null,"radius","radius",-2073122258),(ellah.constants.formbar_radius * radius_factor_80767)),color_80766,cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([new cljs.core.Keyword(null,"formbar","formbar",824418093)], 0));
+
+ellah.graphics.rect.cljs$core$IFn$_invoke$arity$variadic(new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [ellah.geometry.subtract_points(bar_80760,new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"y","y",-1757859776),(ellah.constants.formbar_radius * radius_factor_80767)], null)),new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null,"x","x",2099068185),new cljs.core.Keyword(null,"width","width",-384071477).cljs$core$IFn$_invoke$arity$1(bar_80760),new cljs.core.Keyword(null,"y","y",-1757859776),(((2) * ellah.constants.formbar_radius) * radius_factor_80767)], null)], null),color_80766,cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([new cljs.core.Keyword(null,"formbar","formbar",824418093)], 0));
+} else {
+ellah.graphics.circle.cljs$core$IFn$_invoke$arity$variadic(cljs.core.assoc.cljs$core$IFn$_invoke$arity$3(ellah.geometry.add_points.cljs$core$IFn$_invoke$arity$variadic(cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([bar_80760,new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"y","y",-1757859776),new cljs.core.Keyword(null,"height","height",1025178622).cljs$core$IFn$_invoke$arity$1(bar_80760)], null)], 0)),new cljs.core.Keyword(null,"radius","radius",-2073122258),(ellah.constants.formbar_radius * radius_factor_80767)),color_80766,cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([new cljs.core.Keyword(null,"formbar","formbar",824418093)], 0));
+
+ellah.graphics.rect.cljs$core$IFn$_invoke$arity$variadic(new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [ellah.geometry.subtract_points(bar_80760,new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"x","x",2099068185),(ellah.constants.formbar_radius * radius_factor_80767)], null)),new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null,"x","x",2099068185),(((2) * ellah.constants.formbar_radius) * radius_factor_80767),new cljs.core.Keyword(null,"y","y",-1757859776),new cljs.core.Keyword(null,"height","height",1025178622).cljs$core$IFn$_invoke$arity$1(bar_80760)], null)], null),color_80766,cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([new cljs.core.Keyword(null,"formbar","formbar",824418093)], 0));
+}
 
 
-var G__91558 = seq__91265_91553;
-var G__91559 = chunk__91266_91554;
-var G__91560 = count__91267_91555;
-var G__91561 = (i__91268_91556 + (1));
-seq__91265_91553 = G__91558;
-chunk__91266_91554 = G__91559;
-count__91267_91555 = G__91560;
-i__91268_91556 = G__91561;
+var G__80768 = seq__79974_80761;
+var G__80769 = chunk__79975_80762;
+var G__80770 = count__79976_80763;
+var G__80771 = (i__79977_80764 + (1));
+seq__79974_80761 = G__80768;
+chunk__79975_80762 = G__80769;
+count__79976_80763 = G__80770;
+i__79977_80764 = G__80771;
 continue;
 } else {
-var temp__5753__auto___91562__$2 = cljs.core.seq(seq__91265_91553);
-if(temp__5753__auto___91562__$2){
-var seq__91265_91563__$1 = temp__5753__auto___91562__$2;
-if(cljs.core.chunked_seq_QMARK_(seq__91265_91563__$1)){
-var c__4556__auto___91564 = cljs.core.chunk_first(seq__91265_91563__$1);
-var G__91565 = cljs.core.chunk_rest(seq__91265_91563__$1);
-var G__91566 = c__4556__auto___91564;
-var G__91567 = cljs.core.count(c__4556__auto___91564);
-var G__91568 = (0);
-seq__91265_91553 = G__91565;
-chunk__91266_91554 = G__91566;
-count__91267_91555 = G__91567;
-i__91268_91556 = G__91568;
+var temp__5753__auto___80772__$1 = cljs.core.seq(seq__79974_80761);
+if(temp__5753__auto___80772__$1){
+var seq__79974_80773__$1 = temp__5753__auto___80772__$1;
+if(cljs.core.chunked_seq_QMARK_(seq__79974_80773__$1)){
+var c__4556__auto___80774 = cljs.core.chunk_first(seq__79974_80773__$1);
+var G__80775 = cljs.core.chunk_rest(seq__79974_80773__$1);
+var G__80776 = c__4556__auto___80774;
+var G__80777 = cljs.core.count(c__4556__auto___80774);
+var G__80778 = (0);
+seq__79974_80761 = G__80775;
+chunk__79975_80762 = G__80776;
+count__79976_80763 = G__80777;
+i__79977_80764 = G__80778;
 continue;
 } else {
-var side_91569 = cljs.core.first(seq__91265_91563__$1);
-ellah.graphics.circle.cljs$core$IFn$_invoke$arity$variadic(new cljs.core.PersistentArrayMap(null, 3, [new cljs.core.Keyword(null,"x","x",2099068185),(0.5 * ((1) + (side_91569 * ellah.graphics.formbar_width(formbar_index_91505)))),new cljs.core.Keyword(null,"y","y",-1757859776),ellah.graphics.formbar_y(formbar_index_91505),new cljs.core.Keyword(null,"radius","radius",-2073122258),(ellah.constants.formbar_radius * radius_factor_91552)], null),color_91551,cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([new cljs.core.Keyword(null,"formbar","formbar",824418093)], 0));
+var vec__79987_80779 = cljs.core.first(seq__79974_80773__$1);
+var color_80780 = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__79987_80779,(0),null);
+var radius_factor_80781 = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__79987_80779,(1),null);
+ellah.graphics.circle.cljs$core$IFn$_invoke$arity$variadic(cljs.core.assoc.cljs$core$IFn$_invoke$arity$3(bar_80760,new cljs.core.Keyword(null,"radius","radius",-2073122258),(ellah.constants.formbar_radius * radius_factor_80781)),color_80780,cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([new cljs.core.Keyword(null,"formbar","formbar",824418093)], 0));
+
+if(cljs.core.truth_(horizontal_QMARK__80666)){
+ellah.graphics.circle.cljs$core$IFn$_invoke$arity$variadic(cljs.core.assoc.cljs$core$IFn$_invoke$arity$3(ellah.geometry.add_points.cljs$core$IFn$_invoke$arity$variadic(cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([bar_80760,new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"x","x",2099068185),new cljs.core.Keyword(null,"width","width",-384071477).cljs$core$IFn$_invoke$arity$1(bar_80760)], null)], 0)),new cljs.core.Keyword(null,"radius","radius",-2073122258),(ellah.constants.formbar_radius * radius_factor_80781)),color_80780,cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([new cljs.core.Keyword(null,"formbar","formbar",824418093)], 0));
+
+ellah.graphics.rect.cljs$core$IFn$_invoke$arity$variadic(new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [ellah.geometry.subtract_points(bar_80760,new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"y","y",-1757859776),(ellah.constants.formbar_radius * radius_factor_80781)], null)),new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null,"x","x",2099068185),new cljs.core.Keyword(null,"width","width",-384071477).cljs$core$IFn$_invoke$arity$1(bar_80760),new cljs.core.Keyword(null,"y","y",-1757859776),(((2) * ellah.constants.formbar_radius) * radius_factor_80781)], null)], null),color_80780,cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([new cljs.core.Keyword(null,"formbar","formbar",824418093)], 0));
+} else {
+ellah.graphics.circle.cljs$core$IFn$_invoke$arity$variadic(cljs.core.assoc.cljs$core$IFn$_invoke$arity$3(ellah.geometry.add_points.cljs$core$IFn$_invoke$arity$variadic(cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([bar_80760,new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"y","y",-1757859776),new cljs.core.Keyword(null,"height","height",1025178622).cljs$core$IFn$_invoke$arity$1(bar_80760)], null)], 0)),new cljs.core.Keyword(null,"radius","radius",-2073122258),(ellah.constants.formbar_radius * radius_factor_80781)),color_80780,cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([new cljs.core.Keyword(null,"formbar","formbar",824418093)], 0));
+
+ellah.graphics.rect.cljs$core$IFn$_invoke$arity$variadic(new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [ellah.geometry.subtract_points(bar_80760,new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"x","x",2099068185),(ellah.constants.formbar_radius * radius_factor_80781)], null)),new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null,"x","x",2099068185),(((2) * ellah.constants.formbar_radius) * radius_factor_80781),new cljs.core.Keyword(null,"y","y",-1757859776),new cljs.core.Keyword(null,"height","height",1025178622).cljs$core$IFn$_invoke$arity$1(bar_80760)], null)], null),color_80780,cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([new cljs.core.Keyword(null,"formbar","formbar",824418093)], 0));
+}
 
 
-var G__91570 = cljs.core.next(seq__91265_91563__$1);
-var G__91571 = null;
-var G__91572 = (0);
-var G__91573 = (0);
-seq__91265_91553 = G__91570;
-chunk__91266_91554 = G__91571;
-count__91267_91555 = G__91572;
-i__91268_91556 = G__91573;
+var G__80782 = cljs.core.next(seq__79974_80773__$1);
+var G__80783 = null;
+var G__80784 = (0);
+var G__80785 = (0);
+seq__79974_80761 = G__80782;
+chunk__79975_80762 = G__80783;
+count__79976_80763 = G__80784;
+i__79977_80764 = G__80785;
 continue;
 }
 } else {
@@ -1272,94 +1531,121 @@ continue;
 break;
 }
 
-ellah.graphics.rect.cljs$core$IFn$_invoke$arity$variadic(new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null,"x","x",2099068185),(0.5 * ((1) - ellah.graphics.formbar_width(formbar_index_91505))),new cljs.core.Keyword(null,"y","y",-1757859776),(ellah.graphics.formbar_y(formbar_index_91505) - (ellah.constants.formbar_radius * radius_factor_91552))], null),new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null,"x","x",2099068185),ellah.graphics.formbar_width(formbar_index_91505),new cljs.core.Keyword(null,"y","y",-1757859776),((2) * (ellah.constants.formbar_radius * radius_factor_91552))], null),color_91551,cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([new cljs.core.Keyword(null,"formbar","formbar",824418093)], 0));
 
-
-var G__91574 = cljs.core.next(seq__91241_91543__$1);
-var G__91575 = null;
-var G__91576 = (0);
-var G__91577 = (0);
-seq__91241_91509 = G__91574;
-chunk__91242_91510 = G__91575;
-count__91243_91511 = G__91576;
-i__91244_91512 = G__91577;
+var G__80786 = seq__79938_80756;
+var G__80787 = chunk__79939_80757;
+var G__80788 = count__79940_80758;
+var G__80789 = (i__79941_80759 + (1));
+seq__79938_80756 = G__80786;
+chunk__79939_80757 = G__80787;
+count__79940_80758 = G__80788;
+i__79941_80759 = G__80789;
 continue;
-}
 } else {
-}
-}
-break;
-}
-
-var seq__91269_91578 = cljs.core.seq(cljs.core.range.cljs$core$IFn$_invoke$arity$1(cljs.core.count(forms_91508)));
-var chunk__91270_91579 = null;
-var count__91271_91580 = (0);
-var i__91272_91581 = (0);
+var temp__5753__auto___80790__$1 = cljs.core.seq(seq__79938_80756);
+if(temp__5753__auto___80790__$1){
+var seq__79938_80791__$1 = temp__5753__auto___80790__$1;
+if(cljs.core.chunked_seq_QMARK_(seq__79938_80791__$1)){
+var c__4556__auto___80792 = cljs.core.chunk_first(seq__79938_80791__$1);
+var G__80793 = cljs.core.chunk_rest(seq__79938_80791__$1);
+var G__80794 = c__4556__auto___80792;
+var G__80795 = cljs.core.count(c__4556__auto___80792);
+var G__80796 = (0);
+seq__79938_80756 = G__80793;
+chunk__79939_80757 = G__80794;
+count__79940_80758 = G__80795;
+i__79941_80759 = G__80796;
+continue;
+} else {
+var bar_80797 = cljs.core.first(seq__79938_80791__$1);
+var seq__79990_80798 = cljs.core.seq(new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [ellah.constants.foreground_color,(1)], null),new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [ellah.constants.background_color,((1) - ellah.constants.formbar_outline_thickness)], null)], null));
+var chunk__79991_80799 = null;
+var count__79992_80800 = (0);
+var i__79993_80801 = (0);
 while(true){
-if((i__91272_91581 < count__91271_91580)){
-var i_91582 = chunk__91270_91579.cljs$core$IIndexed$_nth$arity$2(null,i__91272_91581);
-var form_91583 = cljs.core.nth.cljs$core$IFn$_invoke$arity$2(forms_91508,i_91582);
-var current_circle_91584 = ellah.graphics.formbar_circle(formbar_index_91505,i_91582);
-if(ellah.geometry.in_circle_QMARK_(current_circle_91584,mouse)){
-ellah.graphics.circle.cljs$core$IFn$_invoke$arity$variadic(cljs.core.update.cljs$core$IFn$_invoke$arity$3(current_circle_91584,new cljs.core.Keyword(null,"radius","radius",-2073122258),((function (seq__91269_91578,chunk__91270_91579,count__91271_91580,i__91272_91581,seq__91133_91392,chunk__91134_91393,count__91135_91394,i__91136_91395,form_91583,current_circle_91584,i_91582,map__91239_91506,map__91239_91507__$1,forms_91508,formbar_index_91505,seq__91133_91499__$1,temp__5753__auto___91498,map__91131,map__91131__$1,mouse,dragging_QMARK_,vec__91128,app_pos,app_size,mouse_zone,current_placement_form){
-return (function (p1__91124_SHARP_){
-return (p1__91124_SHARP_ / ellah.constants.formbar_form_size);
-});})(seq__91269_91578,chunk__91270_91579,count__91271_91580,i__91272_91581,seq__91133_91392,chunk__91134_91393,count__91135_91394,i__91136_91395,form_91583,current_circle_91584,i_91582,map__91239_91506,map__91239_91507__$1,forms_91508,formbar_index_91505,seq__91133_91499__$1,temp__5753__auto___91498,map__91131,map__91131__$1,mouse,dragging_QMARK_,vec__91128,app_pos,app_size,mouse_zone,current_placement_form))
-),ellah.constants.highlight_color,cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([new cljs.core.Keyword(null,"formbar","formbar",824418093)], 0));
+if((i__79993_80801 < count__79992_80800)){
+var vec__80000_80802 = chunk__79991_80799.cljs$core$IIndexed$_nth$arity$2(null,i__79993_80801);
+var color_80803 = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__80000_80802,(0),null);
+var radius_factor_80804 = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__80000_80802,(1),null);
+ellah.graphics.circle.cljs$core$IFn$_invoke$arity$variadic(cljs.core.assoc.cljs$core$IFn$_invoke$arity$3(bar_80797,new cljs.core.Keyword(null,"radius","radius",-2073122258),(ellah.constants.formbar_radius * radius_factor_80804)),color_80803,cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([new cljs.core.Keyword(null,"formbar","formbar",824418093)], 0));
+
+if(cljs.core.truth_(horizontal_QMARK__80666)){
+ellah.graphics.circle.cljs$core$IFn$_invoke$arity$variadic(cljs.core.assoc.cljs$core$IFn$_invoke$arity$3(ellah.geometry.add_points.cljs$core$IFn$_invoke$arity$variadic(cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([bar_80797,new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"x","x",2099068185),new cljs.core.Keyword(null,"width","width",-384071477).cljs$core$IFn$_invoke$arity$1(bar_80797)], null)], 0)),new cljs.core.Keyword(null,"radius","radius",-2073122258),(ellah.constants.formbar_radius * radius_factor_80804)),color_80803,cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([new cljs.core.Keyword(null,"formbar","formbar",824418093)], 0));
+
+ellah.graphics.rect.cljs$core$IFn$_invoke$arity$variadic(new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [ellah.geometry.subtract_points(bar_80797,new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"y","y",-1757859776),(ellah.constants.formbar_radius * radius_factor_80804)], null)),new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null,"x","x",2099068185),new cljs.core.Keyword(null,"width","width",-384071477).cljs$core$IFn$_invoke$arity$1(bar_80797),new cljs.core.Keyword(null,"y","y",-1757859776),(((2) * ellah.constants.formbar_radius) * radius_factor_80804)], null)], null),color_80803,cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([new cljs.core.Keyword(null,"formbar","formbar",824418093)], 0));
 } else {
+ellah.graphics.circle.cljs$core$IFn$_invoke$arity$variadic(cljs.core.assoc.cljs$core$IFn$_invoke$arity$3(ellah.geometry.add_points.cljs$core$IFn$_invoke$arity$variadic(cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([bar_80797,new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"y","y",-1757859776),new cljs.core.Keyword(null,"height","height",1025178622).cljs$core$IFn$_invoke$arity$1(bar_80797)], null)], 0)),new cljs.core.Keyword(null,"radius","radius",-2073122258),(ellah.constants.formbar_radius * radius_factor_80804)),color_80803,cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([new cljs.core.Keyword(null,"formbar","formbar",824418093)], 0));
+
+ellah.graphics.rect.cljs$core$IFn$_invoke$arity$variadic(new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [ellah.geometry.subtract_points(bar_80797,new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"x","x",2099068185),(ellah.constants.formbar_radius * radius_factor_80804)], null)),new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null,"x","x",2099068185),(((2) * ellah.constants.formbar_radius) * radius_factor_80804),new cljs.core.Keyword(null,"y","y",-1757859776),new cljs.core.Keyword(null,"height","height",1025178622).cljs$core$IFn$_invoke$arity$1(bar_80797)], null)], null),color_80803,cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([new cljs.core.Keyword(null,"formbar","formbar",824418093)], 0));
 }
 
-ellah.graphics.render_sublayouts.cljs$core$IFn$_invoke$arity$variadic(ellah.graphics.form_layout(form_91583,current_circle_91584),cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([new cljs.core.Keyword(null,"formbar","formbar",824418093)], 0));
 
-
-var G__91585 = seq__91269_91578;
-var G__91586 = chunk__91270_91579;
-var G__91587 = count__91271_91580;
-var G__91588 = (i__91272_91581 + (1));
-seq__91269_91578 = G__91585;
-chunk__91270_91579 = G__91586;
-count__91271_91580 = G__91587;
-i__91272_91581 = G__91588;
+var G__80805 = seq__79990_80798;
+var G__80806 = chunk__79991_80799;
+var G__80807 = count__79992_80800;
+var G__80808 = (i__79993_80801 + (1));
+seq__79990_80798 = G__80805;
+chunk__79991_80799 = G__80806;
+count__79992_80800 = G__80807;
+i__79993_80801 = G__80808;
 continue;
 } else {
-var temp__5753__auto___91589__$1 = cljs.core.seq(seq__91269_91578);
-if(temp__5753__auto___91589__$1){
-var seq__91269_91590__$1 = temp__5753__auto___91589__$1;
-if(cljs.core.chunked_seq_QMARK_(seq__91269_91590__$1)){
-var c__4556__auto___91591 = cljs.core.chunk_first(seq__91269_91590__$1);
-var G__91592 = cljs.core.chunk_rest(seq__91269_91590__$1);
-var G__91593 = c__4556__auto___91591;
-var G__91594 = cljs.core.count(c__4556__auto___91591);
-var G__91595 = (0);
-seq__91269_91578 = G__91592;
-chunk__91270_91579 = G__91593;
-count__91271_91580 = G__91594;
-i__91272_91581 = G__91595;
+var temp__5753__auto___80809__$2 = cljs.core.seq(seq__79990_80798);
+if(temp__5753__auto___80809__$2){
+var seq__79990_80810__$1 = temp__5753__auto___80809__$2;
+if(cljs.core.chunked_seq_QMARK_(seq__79990_80810__$1)){
+var c__4556__auto___80811 = cljs.core.chunk_first(seq__79990_80810__$1);
+var G__80812 = cljs.core.chunk_rest(seq__79990_80810__$1);
+var G__80813 = c__4556__auto___80811;
+var G__80814 = cljs.core.count(c__4556__auto___80811);
+var G__80815 = (0);
+seq__79990_80798 = G__80812;
+chunk__79991_80799 = G__80813;
+count__79992_80800 = G__80814;
+i__79993_80801 = G__80815;
 continue;
 } else {
-var i_91596 = cljs.core.first(seq__91269_91590__$1);
-var form_91597 = cljs.core.nth.cljs$core$IFn$_invoke$arity$2(forms_91508,i_91596);
-var current_circle_91598 = ellah.graphics.formbar_circle(formbar_index_91505,i_91596);
-if(ellah.geometry.in_circle_QMARK_(current_circle_91598,mouse)){
-ellah.graphics.circle.cljs$core$IFn$_invoke$arity$variadic(cljs.core.update.cljs$core$IFn$_invoke$arity$3(current_circle_91598,new cljs.core.Keyword(null,"radius","radius",-2073122258),((function (seq__91269_91578,chunk__91270_91579,count__91271_91580,i__91272_91581,seq__91133_91392,chunk__91134_91393,count__91135_91394,i__91136_91395,form_91597,current_circle_91598,i_91596,seq__91269_91590__$1,temp__5753__auto___91589__$1,map__91239_91506,map__91239_91507__$1,forms_91508,formbar_index_91505,seq__91133_91499__$1,temp__5753__auto___91498,map__91131,map__91131__$1,mouse,dragging_QMARK_,vec__91128,app_pos,app_size,mouse_zone,current_placement_form){
-return (function (p1__91124_SHARP_){
-return (p1__91124_SHARP_ / ellah.constants.formbar_form_size);
-});})(seq__91269_91578,chunk__91270_91579,count__91271_91580,i__91272_91581,seq__91133_91392,chunk__91134_91393,count__91135_91394,i__91136_91395,form_91597,current_circle_91598,i_91596,seq__91269_91590__$1,temp__5753__auto___91589__$1,map__91239_91506,map__91239_91507__$1,forms_91508,formbar_index_91505,seq__91133_91499__$1,temp__5753__auto___91498,map__91131,map__91131__$1,mouse,dragging_QMARK_,vec__91128,app_pos,app_size,mouse_zone,current_placement_form))
-),ellah.constants.highlight_color,cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([new cljs.core.Keyword(null,"formbar","formbar",824418093)], 0));
+var vec__80003_80816 = cljs.core.first(seq__79990_80810__$1);
+var color_80817 = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__80003_80816,(0),null);
+var radius_factor_80818 = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__80003_80816,(1),null);
+ellah.graphics.circle.cljs$core$IFn$_invoke$arity$variadic(cljs.core.assoc.cljs$core$IFn$_invoke$arity$3(bar_80797,new cljs.core.Keyword(null,"radius","radius",-2073122258),(ellah.constants.formbar_radius * radius_factor_80818)),color_80817,cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([new cljs.core.Keyword(null,"formbar","formbar",824418093)], 0));
+
+if(cljs.core.truth_(horizontal_QMARK__80666)){
+ellah.graphics.circle.cljs$core$IFn$_invoke$arity$variadic(cljs.core.assoc.cljs$core$IFn$_invoke$arity$3(ellah.geometry.add_points.cljs$core$IFn$_invoke$arity$variadic(cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([bar_80797,new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"x","x",2099068185),new cljs.core.Keyword(null,"width","width",-384071477).cljs$core$IFn$_invoke$arity$1(bar_80797)], null)], 0)),new cljs.core.Keyword(null,"radius","radius",-2073122258),(ellah.constants.formbar_radius * radius_factor_80818)),color_80817,cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([new cljs.core.Keyword(null,"formbar","formbar",824418093)], 0));
+
+ellah.graphics.rect.cljs$core$IFn$_invoke$arity$variadic(new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [ellah.geometry.subtract_points(bar_80797,new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"y","y",-1757859776),(ellah.constants.formbar_radius * radius_factor_80818)], null)),new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null,"x","x",2099068185),new cljs.core.Keyword(null,"width","width",-384071477).cljs$core$IFn$_invoke$arity$1(bar_80797),new cljs.core.Keyword(null,"y","y",-1757859776),(((2) * ellah.constants.formbar_radius) * radius_factor_80818)], null)], null),color_80817,cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([new cljs.core.Keyword(null,"formbar","formbar",824418093)], 0));
 } else {
+ellah.graphics.circle.cljs$core$IFn$_invoke$arity$variadic(cljs.core.assoc.cljs$core$IFn$_invoke$arity$3(ellah.geometry.add_points.cljs$core$IFn$_invoke$arity$variadic(cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([bar_80797,new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"y","y",-1757859776),new cljs.core.Keyword(null,"height","height",1025178622).cljs$core$IFn$_invoke$arity$1(bar_80797)], null)], 0)),new cljs.core.Keyword(null,"radius","radius",-2073122258),(ellah.constants.formbar_radius * radius_factor_80818)),color_80817,cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([new cljs.core.Keyword(null,"formbar","formbar",824418093)], 0));
+
+ellah.graphics.rect.cljs$core$IFn$_invoke$arity$variadic(new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [ellah.geometry.subtract_points(bar_80797,new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"x","x",2099068185),(ellah.constants.formbar_radius * radius_factor_80818)], null)),new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null,"x","x",2099068185),(((2) * ellah.constants.formbar_radius) * radius_factor_80818),new cljs.core.Keyword(null,"y","y",-1757859776),new cljs.core.Keyword(null,"height","height",1025178622).cljs$core$IFn$_invoke$arity$1(bar_80797)], null)], null),color_80817,cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([new cljs.core.Keyword(null,"formbar","formbar",824418093)], 0));
 }
 
-ellah.graphics.render_sublayouts.cljs$core$IFn$_invoke$arity$variadic(ellah.graphics.form_layout(form_91597,current_circle_91598),cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([new cljs.core.Keyword(null,"formbar","formbar",824418093)], 0));
+
+var G__80819 = cljs.core.next(seq__79990_80810__$1);
+var G__80820 = null;
+var G__80821 = (0);
+var G__80822 = (0);
+seq__79990_80798 = G__80819;
+chunk__79991_80799 = G__80820;
+count__79992_80800 = G__80821;
+i__79993_80801 = G__80822;
+continue;
+}
+} else {
+}
+}
+break;
+}
 
 
-var G__91599 = cljs.core.next(seq__91269_91590__$1);
-var G__91600 = null;
-var G__91601 = (0);
-var G__91602 = (0);
-seq__91269_91578 = G__91599;
-chunk__91270_91579 = G__91600;
-count__91271_91580 = G__91601;
-i__91272_91581 = G__91602;
+var G__80823 = cljs.core.next(seq__79938_80791__$1);
+var G__80824 = null;
+var G__80825 = (0);
+var G__80826 = (0);
+seq__79938_80756 = G__80823;
+chunk__79939_80757 = G__80824;
+count__79940_80758 = G__80825;
+i__79941_80759 = G__80826;
 continue;
 }
 } else {
@@ -1369,32 +1655,1357 @@ break;
 }
 
 
-var G__91603 = cljs.core.next(seq__91133_91499__$1);
-var G__91604 = null;
-var G__91605 = (0);
-var G__91606 = (0);
-seq__91133_91392 = G__91603;
-chunk__91134_91393 = G__91604;
-count__91135_91394 = G__91605;
-i__91136_91395 = G__91606;
+var G__80827 = cljs.core.next(seq__79730_80749__$1);
+var G__80828 = null;
+var G__80829 = (0);
+var G__80830 = (0);
+seq__79730_80668 = G__80827;
+chunk__79731_80669 = G__80828;
+count__79732_80670 = G__80829;
+i__79733_80671 = G__80830;
 continue;
 }
 } else {
 }
 }
 break;
+}
+
+if(cljs.core.truth_((function (){var and__4115__auto__ = formbar_form_path_80660;
+if(cljs.core.truth_(and__4115__auto__)){
+return cljs.core._EQ_.cljs$core$IFn$_invoke$arity$2(cljs.core.first(formbar_form_path_80660),side_80665);
+} else {
+return and__4115__auto__;
+}
+})())){
+ellah.graphics.circle.cljs$core$IFn$_invoke$arity$variadic(cljs.core.update.cljs$core$IFn$_invoke$arity$3(cljs.core.get_in.cljs$core$IFn$_invoke$arity$2(arrangement_80659,cljs.core.butlast(ellah.graphics.formbar_form_path_at(mouse))),new cljs.core.Keyword(null,"radius","radius",-2073122258),cljs.core.partial.cljs$core$IFn$_invoke$arity$2(cljs.core._STAR_,((1) / ellah.constants.formbar_form_size))),ellah.constants.highlight_color,cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([new cljs.core.Keyword(null,"formbar","formbar",824418093)], 0));
+} else {
+}
+
+var seq__80006_80831 = cljs.core.seq(side_arrangement_80667);
+var chunk__80007_80832 = null;
+var count__80008_80833 = (0);
+var i__80009_80834 = (0);
+while(true){
+if((i__80009_80834 < count__80008_80833)){
+var stage_80835 = chunk__80007_80832.cljs$core$IIndexed$_nth$arity$2(null,i__80009_80834);
+var seq__80050_80836 = cljs.core.seq(stage_80835);
+var chunk__80051_80837 = null;
+var count__80052_80838 = (0);
+var i__80053_80839 = (0);
+while(true){
+if((i__80053_80839 < count__80052_80838)){
+var bar_80840 = chunk__80051_80837.cljs$core$IIndexed$_nth$arity$2(null,i__80053_80839);
+var seq__80062_80841 = cljs.core.seq(new cljs.core.Keyword(null,"circles","circles",-1947060917).cljs$core$IFn$_invoke$arity$1(bar_80840));
+var chunk__80063_80842 = null;
+var count__80064_80843 = (0);
+var i__80065_80844 = (0);
+while(true){
+if((i__80065_80844 < count__80064_80843)){
+var bar_circle_80845 = chunk__80063_80842.cljs$core$IIndexed$_nth$arity$2(null,i__80065_80844);
+ellah.graphics.render_sublayouts.cljs$core$IFn$_invoke$arity$variadic(ellah.graphics.form_layout(new cljs.core.Keyword(null,"form","form",-1624062471).cljs$core$IFn$_invoke$arity$1(bar_circle_80845),bar_circle_80845),cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([new cljs.core.Keyword(null,"formbar","formbar",824418093)], 0));
+
+
+var G__80846 = seq__80062_80841;
+var G__80847 = chunk__80063_80842;
+var G__80848 = count__80064_80843;
+var G__80849 = (i__80065_80844 + (1));
+seq__80062_80841 = G__80846;
+chunk__80063_80842 = G__80847;
+count__80064_80843 = G__80848;
+i__80065_80844 = G__80849;
+continue;
+} else {
+var temp__5753__auto___80850 = cljs.core.seq(seq__80062_80841);
+if(temp__5753__auto___80850){
+var seq__80062_80851__$1 = temp__5753__auto___80850;
+if(cljs.core.chunked_seq_QMARK_(seq__80062_80851__$1)){
+var c__4556__auto___80852 = cljs.core.chunk_first(seq__80062_80851__$1);
+var G__80853 = cljs.core.chunk_rest(seq__80062_80851__$1);
+var G__80854 = c__4556__auto___80852;
+var G__80855 = cljs.core.count(c__4556__auto___80852);
+var G__80856 = (0);
+seq__80062_80841 = G__80853;
+chunk__80063_80842 = G__80854;
+count__80064_80843 = G__80855;
+i__80065_80844 = G__80856;
+continue;
+} else {
+var bar_circle_80857 = cljs.core.first(seq__80062_80851__$1);
+ellah.graphics.render_sublayouts.cljs$core$IFn$_invoke$arity$variadic(ellah.graphics.form_layout(new cljs.core.Keyword(null,"form","form",-1624062471).cljs$core$IFn$_invoke$arity$1(bar_circle_80857),bar_circle_80857),cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([new cljs.core.Keyword(null,"formbar","formbar",824418093)], 0));
+
+
+var G__80858 = cljs.core.next(seq__80062_80851__$1);
+var G__80859 = null;
+var G__80860 = (0);
+var G__80861 = (0);
+seq__80062_80841 = G__80858;
+chunk__80063_80842 = G__80859;
+count__80064_80843 = G__80860;
+i__80065_80844 = G__80861;
+continue;
+}
+} else {
+}
+}
+break;
+}
+
+
+var G__80862 = seq__80050_80836;
+var G__80863 = chunk__80051_80837;
+var G__80864 = count__80052_80838;
+var G__80865 = (i__80053_80839 + (1));
+seq__80050_80836 = G__80862;
+chunk__80051_80837 = G__80863;
+count__80052_80838 = G__80864;
+i__80053_80839 = G__80865;
+continue;
+} else {
+var temp__5753__auto___80866 = cljs.core.seq(seq__80050_80836);
+if(temp__5753__auto___80866){
+var seq__80050_80867__$1 = temp__5753__auto___80866;
+if(cljs.core.chunked_seq_QMARK_(seq__80050_80867__$1)){
+var c__4556__auto___80868 = cljs.core.chunk_first(seq__80050_80867__$1);
+var G__80869 = cljs.core.chunk_rest(seq__80050_80867__$1);
+var G__80870 = c__4556__auto___80868;
+var G__80871 = cljs.core.count(c__4556__auto___80868);
+var G__80872 = (0);
+seq__80050_80836 = G__80869;
+chunk__80051_80837 = G__80870;
+count__80052_80838 = G__80871;
+i__80053_80839 = G__80872;
+continue;
+} else {
+var bar_80873 = cljs.core.first(seq__80050_80867__$1);
+var seq__80066_80874 = cljs.core.seq(new cljs.core.Keyword(null,"circles","circles",-1947060917).cljs$core$IFn$_invoke$arity$1(bar_80873));
+var chunk__80067_80875 = null;
+var count__80068_80876 = (0);
+var i__80069_80877 = (0);
+while(true){
+if((i__80069_80877 < count__80068_80876)){
+var bar_circle_80878 = chunk__80067_80875.cljs$core$IIndexed$_nth$arity$2(null,i__80069_80877);
+ellah.graphics.render_sublayouts.cljs$core$IFn$_invoke$arity$variadic(ellah.graphics.form_layout(new cljs.core.Keyword(null,"form","form",-1624062471).cljs$core$IFn$_invoke$arity$1(bar_circle_80878),bar_circle_80878),cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([new cljs.core.Keyword(null,"formbar","formbar",824418093)], 0));
+
+
+var G__80879 = seq__80066_80874;
+var G__80880 = chunk__80067_80875;
+var G__80881 = count__80068_80876;
+var G__80882 = (i__80069_80877 + (1));
+seq__80066_80874 = G__80879;
+chunk__80067_80875 = G__80880;
+count__80068_80876 = G__80881;
+i__80069_80877 = G__80882;
+continue;
+} else {
+var temp__5753__auto___80883__$1 = cljs.core.seq(seq__80066_80874);
+if(temp__5753__auto___80883__$1){
+var seq__80066_80884__$1 = temp__5753__auto___80883__$1;
+if(cljs.core.chunked_seq_QMARK_(seq__80066_80884__$1)){
+var c__4556__auto___80885 = cljs.core.chunk_first(seq__80066_80884__$1);
+var G__80886 = cljs.core.chunk_rest(seq__80066_80884__$1);
+var G__80887 = c__4556__auto___80885;
+var G__80888 = cljs.core.count(c__4556__auto___80885);
+var G__80889 = (0);
+seq__80066_80874 = G__80886;
+chunk__80067_80875 = G__80887;
+count__80068_80876 = G__80888;
+i__80069_80877 = G__80889;
+continue;
+} else {
+var bar_circle_80890 = cljs.core.first(seq__80066_80884__$1);
+ellah.graphics.render_sublayouts.cljs$core$IFn$_invoke$arity$variadic(ellah.graphics.form_layout(new cljs.core.Keyword(null,"form","form",-1624062471).cljs$core$IFn$_invoke$arity$1(bar_circle_80890),bar_circle_80890),cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([new cljs.core.Keyword(null,"formbar","formbar",824418093)], 0));
+
+
+var G__80891 = cljs.core.next(seq__80066_80884__$1);
+var G__80892 = null;
+var G__80893 = (0);
+var G__80894 = (0);
+seq__80066_80874 = G__80891;
+chunk__80067_80875 = G__80892;
+count__80068_80876 = G__80893;
+i__80069_80877 = G__80894;
+continue;
+}
+} else {
+}
+}
+break;
+}
+
+
+var G__80895 = cljs.core.next(seq__80050_80867__$1);
+var G__80896 = null;
+var G__80897 = (0);
+var G__80898 = (0);
+seq__80050_80836 = G__80895;
+chunk__80051_80837 = G__80896;
+count__80052_80838 = G__80897;
+i__80053_80839 = G__80898;
+continue;
+}
+} else {
+}
+}
+break;
+}
+
+
+var G__80899 = seq__80006_80831;
+var G__80900 = chunk__80007_80832;
+var G__80901 = count__80008_80833;
+var G__80902 = (i__80009_80834 + (1));
+seq__80006_80831 = G__80899;
+chunk__80007_80832 = G__80900;
+count__80008_80833 = G__80901;
+i__80009_80834 = G__80902;
+continue;
+} else {
+var temp__5753__auto___80903 = cljs.core.seq(seq__80006_80831);
+if(temp__5753__auto___80903){
+var seq__80006_80904__$1 = temp__5753__auto___80903;
+if(cljs.core.chunked_seq_QMARK_(seq__80006_80904__$1)){
+var c__4556__auto___80905 = cljs.core.chunk_first(seq__80006_80904__$1);
+var G__80906 = cljs.core.chunk_rest(seq__80006_80904__$1);
+var G__80907 = c__4556__auto___80905;
+var G__80908 = cljs.core.count(c__4556__auto___80905);
+var G__80909 = (0);
+seq__80006_80831 = G__80906;
+chunk__80007_80832 = G__80907;
+count__80008_80833 = G__80908;
+i__80009_80834 = G__80909;
+continue;
+} else {
+var stage_80910 = cljs.core.first(seq__80006_80904__$1);
+var seq__80070_80911 = cljs.core.seq(stage_80910);
+var chunk__80071_80912 = null;
+var count__80072_80913 = (0);
+var i__80073_80914 = (0);
+while(true){
+if((i__80073_80914 < count__80072_80913)){
+var bar_80915 = chunk__80071_80912.cljs$core$IIndexed$_nth$arity$2(null,i__80073_80914);
+var seq__80082_80916 = cljs.core.seq(new cljs.core.Keyword(null,"circles","circles",-1947060917).cljs$core$IFn$_invoke$arity$1(bar_80915));
+var chunk__80083_80917 = null;
+var count__80084_80918 = (0);
+var i__80085_80919 = (0);
+while(true){
+if((i__80085_80919 < count__80084_80918)){
+var bar_circle_80920 = chunk__80083_80917.cljs$core$IIndexed$_nth$arity$2(null,i__80085_80919);
+ellah.graphics.render_sublayouts.cljs$core$IFn$_invoke$arity$variadic(ellah.graphics.form_layout(new cljs.core.Keyword(null,"form","form",-1624062471).cljs$core$IFn$_invoke$arity$1(bar_circle_80920),bar_circle_80920),cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([new cljs.core.Keyword(null,"formbar","formbar",824418093)], 0));
+
+
+var G__80921 = seq__80082_80916;
+var G__80922 = chunk__80083_80917;
+var G__80923 = count__80084_80918;
+var G__80924 = (i__80085_80919 + (1));
+seq__80082_80916 = G__80921;
+chunk__80083_80917 = G__80922;
+count__80084_80918 = G__80923;
+i__80085_80919 = G__80924;
+continue;
+} else {
+var temp__5753__auto___80925__$1 = cljs.core.seq(seq__80082_80916);
+if(temp__5753__auto___80925__$1){
+var seq__80082_80926__$1 = temp__5753__auto___80925__$1;
+if(cljs.core.chunked_seq_QMARK_(seq__80082_80926__$1)){
+var c__4556__auto___80927 = cljs.core.chunk_first(seq__80082_80926__$1);
+var G__80928 = cljs.core.chunk_rest(seq__80082_80926__$1);
+var G__80929 = c__4556__auto___80927;
+var G__80930 = cljs.core.count(c__4556__auto___80927);
+var G__80931 = (0);
+seq__80082_80916 = G__80928;
+chunk__80083_80917 = G__80929;
+count__80084_80918 = G__80930;
+i__80085_80919 = G__80931;
+continue;
+} else {
+var bar_circle_80932 = cljs.core.first(seq__80082_80926__$1);
+ellah.graphics.render_sublayouts.cljs$core$IFn$_invoke$arity$variadic(ellah.graphics.form_layout(new cljs.core.Keyword(null,"form","form",-1624062471).cljs$core$IFn$_invoke$arity$1(bar_circle_80932),bar_circle_80932),cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([new cljs.core.Keyword(null,"formbar","formbar",824418093)], 0));
+
+
+var G__80933 = cljs.core.next(seq__80082_80926__$1);
+var G__80934 = null;
+var G__80935 = (0);
+var G__80936 = (0);
+seq__80082_80916 = G__80933;
+chunk__80083_80917 = G__80934;
+count__80084_80918 = G__80935;
+i__80085_80919 = G__80936;
+continue;
+}
+} else {
+}
+}
+break;
+}
+
+
+var G__80937 = seq__80070_80911;
+var G__80938 = chunk__80071_80912;
+var G__80939 = count__80072_80913;
+var G__80940 = (i__80073_80914 + (1));
+seq__80070_80911 = G__80937;
+chunk__80071_80912 = G__80938;
+count__80072_80913 = G__80939;
+i__80073_80914 = G__80940;
+continue;
+} else {
+var temp__5753__auto___80941__$1 = cljs.core.seq(seq__80070_80911);
+if(temp__5753__auto___80941__$1){
+var seq__80070_80942__$1 = temp__5753__auto___80941__$1;
+if(cljs.core.chunked_seq_QMARK_(seq__80070_80942__$1)){
+var c__4556__auto___80943 = cljs.core.chunk_first(seq__80070_80942__$1);
+var G__80944 = cljs.core.chunk_rest(seq__80070_80942__$1);
+var G__80945 = c__4556__auto___80943;
+var G__80946 = cljs.core.count(c__4556__auto___80943);
+var G__80947 = (0);
+seq__80070_80911 = G__80944;
+chunk__80071_80912 = G__80945;
+count__80072_80913 = G__80946;
+i__80073_80914 = G__80947;
+continue;
+} else {
+var bar_80948 = cljs.core.first(seq__80070_80942__$1);
+var seq__80086_80949 = cljs.core.seq(new cljs.core.Keyword(null,"circles","circles",-1947060917).cljs$core$IFn$_invoke$arity$1(bar_80948));
+var chunk__80087_80950 = null;
+var count__80088_80951 = (0);
+var i__80089_80952 = (0);
+while(true){
+if((i__80089_80952 < count__80088_80951)){
+var bar_circle_80953 = chunk__80087_80950.cljs$core$IIndexed$_nth$arity$2(null,i__80089_80952);
+ellah.graphics.render_sublayouts.cljs$core$IFn$_invoke$arity$variadic(ellah.graphics.form_layout(new cljs.core.Keyword(null,"form","form",-1624062471).cljs$core$IFn$_invoke$arity$1(bar_circle_80953),bar_circle_80953),cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([new cljs.core.Keyword(null,"formbar","formbar",824418093)], 0));
+
+
+var G__80954 = seq__80086_80949;
+var G__80955 = chunk__80087_80950;
+var G__80956 = count__80088_80951;
+var G__80957 = (i__80089_80952 + (1));
+seq__80086_80949 = G__80954;
+chunk__80087_80950 = G__80955;
+count__80088_80951 = G__80956;
+i__80089_80952 = G__80957;
+continue;
+} else {
+var temp__5753__auto___80958__$2 = cljs.core.seq(seq__80086_80949);
+if(temp__5753__auto___80958__$2){
+var seq__80086_80959__$1 = temp__5753__auto___80958__$2;
+if(cljs.core.chunked_seq_QMARK_(seq__80086_80959__$1)){
+var c__4556__auto___80960 = cljs.core.chunk_first(seq__80086_80959__$1);
+var G__80961 = cljs.core.chunk_rest(seq__80086_80959__$1);
+var G__80962 = c__4556__auto___80960;
+var G__80963 = cljs.core.count(c__4556__auto___80960);
+var G__80964 = (0);
+seq__80086_80949 = G__80961;
+chunk__80087_80950 = G__80962;
+count__80088_80951 = G__80963;
+i__80089_80952 = G__80964;
+continue;
+} else {
+var bar_circle_80965 = cljs.core.first(seq__80086_80959__$1);
+ellah.graphics.render_sublayouts.cljs$core$IFn$_invoke$arity$variadic(ellah.graphics.form_layout(new cljs.core.Keyword(null,"form","form",-1624062471).cljs$core$IFn$_invoke$arity$1(bar_circle_80965),bar_circle_80965),cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([new cljs.core.Keyword(null,"formbar","formbar",824418093)], 0));
+
+
+var G__80966 = cljs.core.next(seq__80086_80959__$1);
+var G__80967 = null;
+var G__80968 = (0);
+var G__80969 = (0);
+seq__80086_80949 = G__80966;
+chunk__80087_80950 = G__80967;
+count__80088_80951 = G__80968;
+i__80089_80952 = G__80969;
+continue;
+}
+} else {
+}
+}
+break;
+}
+
+
+var G__80970 = cljs.core.next(seq__80070_80942__$1);
+var G__80971 = null;
+var G__80972 = (0);
+var G__80973 = (0);
+seq__80070_80911 = G__80970;
+chunk__80071_80912 = G__80971;
+count__80072_80913 = G__80972;
+i__80073_80914 = G__80973;
+continue;
+}
+} else {
+}
+}
+break;
+}
+
+
+var G__80974 = cljs.core.next(seq__80006_80904__$1);
+var G__80975 = null;
+var G__80976 = (0);
+var G__80977 = (0);
+seq__80006_80831 = G__80974;
+chunk__80007_80832 = G__80975;
+count__80008_80833 = G__80976;
+i__80009_80834 = G__80977;
+continue;
+}
+} else {
+}
+}
+break;
+}
+
+
+var G__80978 = seq__79003_80661;
+var G__80979 = chunk__79004_80662;
+var G__80980 = count__79005_80663;
+var G__80981 = (i__79006_80664 + (1));
+seq__79003_80661 = G__80978;
+chunk__79004_80662 = G__80979;
+count__79005_80663 = G__80980;
+i__79006_80664 = G__80981;
+continue;
+} else {
+var temp__5753__auto___80982 = cljs.core.seq(seq__79003_80661);
+if(temp__5753__auto___80982){
+var seq__79003_80983__$1 = temp__5753__auto___80982;
+if(cljs.core.chunked_seq_QMARK_(seq__79003_80983__$1)){
+var c__4556__auto___80984 = cljs.core.chunk_first(seq__79003_80983__$1);
+var G__80985 = cljs.core.chunk_rest(seq__79003_80983__$1);
+var G__80986 = c__4556__auto___80984;
+var G__80987 = cljs.core.count(c__4556__auto___80984);
+var G__80988 = (0);
+seq__79003_80661 = G__80985;
+chunk__79004_80662 = G__80986;
+count__79005_80663 = G__80987;
+i__79006_80664 = G__80988;
+continue;
+} else {
+var side_80989 = cljs.core.first(seq__79003_80983__$1);
+var horizontal_QMARK__80990 = (function (){var fexpr__80090 = new cljs.core.PersistentHashSet(null, new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null,"bottom","bottom",-1550509018),null,new cljs.core.Keyword(null,"top","top",-1856271961),null], null), null);
+return (fexpr__80090.cljs$core$IFn$_invoke$arity$1 ? fexpr__80090.cljs$core$IFn$_invoke$arity$1(side_80989) : fexpr__80090.call(null,side_80989));
+})();
+var side_arrangement_80991 = cljs.core.get.cljs$core$IFn$_invoke$arity$2(arrangement_80659,side_80989);
+var seq__80091_80992 = cljs.core.seq(side_arrangement_80991);
+var chunk__80092_80993 = null;
+var count__80093_80994 = (0);
+var i__80094_80995 = (0);
+while(true){
+if((i__80094_80995 < count__80093_80994)){
+var stage_80996 = chunk__80092_80993.cljs$core$IIndexed$_nth$arity$2(null,i__80094_80995);
+var seq__80231_80997 = cljs.core.seq(stage_80996);
+var chunk__80232_80998 = null;
+var count__80233_80999 = (0);
+var i__80234_81000 = (0);
+while(true){
+if((i__80234_81000 < count__80233_80999)){
+var bar_81001 = chunk__80232_80998.cljs$core$IIndexed$_nth$arity$2(null,i__80234_81000);
+var seq__80267_81002 = cljs.core.seq(new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [ellah.constants.foreground_color,(1)], null),new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [ellah.constants.background_color,((1) - ellah.constants.formbar_outline_thickness)], null)], null));
+var chunk__80268_81003 = null;
+var count__80269_81004 = (0);
+var i__80270_81005 = (0);
+while(true){
+if((i__80270_81005 < count__80269_81004)){
+var vec__80277_81006 = chunk__80268_81003.cljs$core$IIndexed$_nth$arity$2(null,i__80270_81005);
+var color_81007 = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__80277_81006,(0),null);
+var radius_factor_81008 = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__80277_81006,(1),null);
+ellah.graphics.circle.cljs$core$IFn$_invoke$arity$variadic(cljs.core.assoc.cljs$core$IFn$_invoke$arity$3(bar_81001,new cljs.core.Keyword(null,"radius","radius",-2073122258),(ellah.constants.formbar_radius * radius_factor_81008)),color_81007,cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([new cljs.core.Keyword(null,"formbar","formbar",824418093)], 0));
+
+if(cljs.core.truth_(horizontal_QMARK__80990)){
+ellah.graphics.circle.cljs$core$IFn$_invoke$arity$variadic(cljs.core.assoc.cljs$core$IFn$_invoke$arity$3(ellah.geometry.add_points.cljs$core$IFn$_invoke$arity$variadic(cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([bar_81001,new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"x","x",2099068185),new cljs.core.Keyword(null,"width","width",-384071477).cljs$core$IFn$_invoke$arity$1(bar_81001)], null)], 0)),new cljs.core.Keyword(null,"radius","radius",-2073122258),(ellah.constants.formbar_radius * radius_factor_81008)),color_81007,cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([new cljs.core.Keyword(null,"formbar","formbar",824418093)], 0));
+
+ellah.graphics.rect.cljs$core$IFn$_invoke$arity$variadic(new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [ellah.geometry.subtract_points(bar_81001,new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"y","y",-1757859776),(ellah.constants.formbar_radius * radius_factor_81008)], null)),new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null,"x","x",2099068185),new cljs.core.Keyword(null,"width","width",-384071477).cljs$core$IFn$_invoke$arity$1(bar_81001),new cljs.core.Keyword(null,"y","y",-1757859776),(((2) * ellah.constants.formbar_radius) * radius_factor_81008)], null)], null),color_81007,cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([new cljs.core.Keyword(null,"formbar","formbar",824418093)], 0));
+} else {
+ellah.graphics.circle.cljs$core$IFn$_invoke$arity$variadic(cljs.core.assoc.cljs$core$IFn$_invoke$arity$3(ellah.geometry.add_points.cljs$core$IFn$_invoke$arity$variadic(cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([bar_81001,new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"y","y",-1757859776),new cljs.core.Keyword(null,"height","height",1025178622).cljs$core$IFn$_invoke$arity$1(bar_81001)], null)], 0)),new cljs.core.Keyword(null,"radius","radius",-2073122258),(ellah.constants.formbar_radius * radius_factor_81008)),color_81007,cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([new cljs.core.Keyword(null,"formbar","formbar",824418093)], 0));
+
+ellah.graphics.rect.cljs$core$IFn$_invoke$arity$variadic(new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [ellah.geometry.subtract_points(bar_81001,new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"x","x",2099068185),(ellah.constants.formbar_radius * radius_factor_81008)], null)),new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null,"x","x",2099068185),(((2) * ellah.constants.formbar_radius) * radius_factor_81008),new cljs.core.Keyword(null,"y","y",-1757859776),new cljs.core.Keyword(null,"height","height",1025178622).cljs$core$IFn$_invoke$arity$1(bar_81001)], null)], null),color_81007,cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([new cljs.core.Keyword(null,"formbar","formbar",824418093)], 0));
+}
+
+
+var G__81009 = seq__80267_81002;
+var G__81010 = chunk__80268_81003;
+var G__81011 = count__80269_81004;
+var G__81012 = (i__80270_81005 + (1));
+seq__80267_81002 = G__81009;
+chunk__80268_81003 = G__81010;
+count__80269_81004 = G__81011;
+i__80270_81005 = G__81012;
+continue;
+} else {
+var temp__5753__auto___81013__$1 = cljs.core.seq(seq__80267_81002);
+if(temp__5753__auto___81013__$1){
+var seq__80267_81014__$1 = temp__5753__auto___81013__$1;
+if(cljs.core.chunked_seq_QMARK_(seq__80267_81014__$1)){
+var c__4556__auto___81015 = cljs.core.chunk_first(seq__80267_81014__$1);
+var G__81016 = cljs.core.chunk_rest(seq__80267_81014__$1);
+var G__81017 = c__4556__auto___81015;
+var G__81018 = cljs.core.count(c__4556__auto___81015);
+var G__81019 = (0);
+seq__80267_81002 = G__81016;
+chunk__80268_81003 = G__81017;
+count__80269_81004 = G__81018;
+i__80270_81005 = G__81019;
+continue;
+} else {
+var vec__80280_81020 = cljs.core.first(seq__80267_81014__$1);
+var color_81021 = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__80280_81020,(0),null);
+var radius_factor_81022 = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__80280_81020,(1),null);
+ellah.graphics.circle.cljs$core$IFn$_invoke$arity$variadic(cljs.core.assoc.cljs$core$IFn$_invoke$arity$3(bar_81001,new cljs.core.Keyword(null,"radius","radius",-2073122258),(ellah.constants.formbar_radius * radius_factor_81022)),color_81021,cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([new cljs.core.Keyword(null,"formbar","formbar",824418093)], 0));
+
+if(cljs.core.truth_(horizontal_QMARK__80990)){
+ellah.graphics.circle.cljs$core$IFn$_invoke$arity$variadic(cljs.core.assoc.cljs$core$IFn$_invoke$arity$3(ellah.geometry.add_points.cljs$core$IFn$_invoke$arity$variadic(cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([bar_81001,new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"x","x",2099068185),new cljs.core.Keyword(null,"width","width",-384071477).cljs$core$IFn$_invoke$arity$1(bar_81001)], null)], 0)),new cljs.core.Keyword(null,"radius","radius",-2073122258),(ellah.constants.formbar_radius * radius_factor_81022)),color_81021,cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([new cljs.core.Keyword(null,"formbar","formbar",824418093)], 0));
+
+ellah.graphics.rect.cljs$core$IFn$_invoke$arity$variadic(new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [ellah.geometry.subtract_points(bar_81001,new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"y","y",-1757859776),(ellah.constants.formbar_radius * radius_factor_81022)], null)),new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null,"x","x",2099068185),new cljs.core.Keyword(null,"width","width",-384071477).cljs$core$IFn$_invoke$arity$1(bar_81001),new cljs.core.Keyword(null,"y","y",-1757859776),(((2) * ellah.constants.formbar_radius) * radius_factor_81022)], null)], null),color_81021,cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([new cljs.core.Keyword(null,"formbar","formbar",824418093)], 0));
+} else {
+ellah.graphics.circle.cljs$core$IFn$_invoke$arity$variadic(cljs.core.assoc.cljs$core$IFn$_invoke$arity$3(ellah.geometry.add_points.cljs$core$IFn$_invoke$arity$variadic(cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([bar_81001,new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"y","y",-1757859776),new cljs.core.Keyword(null,"height","height",1025178622).cljs$core$IFn$_invoke$arity$1(bar_81001)], null)], 0)),new cljs.core.Keyword(null,"radius","radius",-2073122258),(ellah.constants.formbar_radius * radius_factor_81022)),color_81021,cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([new cljs.core.Keyword(null,"formbar","formbar",824418093)], 0));
+
+ellah.graphics.rect.cljs$core$IFn$_invoke$arity$variadic(new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [ellah.geometry.subtract_points(bar_81001,new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"x","x",2099068185),(ellah.constants.formbar_radius * radius_factor_81022)], null)),new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null,"x","x",2099068185),(((2) * ellah.constants.formbar_radius) * radius_factor_81022),new cljs.core.Keyword(null,"y","y",-1757859776),new cljs.core.Keyword(null,"height","height",1025178622).cljs$core$IFn$_invoke$arity$1(bar_81001)], null)], null),color_81021,cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([new cljs.core.Keyword(null,"formbar","formbar",824418093)], 0));
+}
+
+
+var G__81023 = cljs.core.next(seq__80267_81014__$1);
+var G__81024 = null;
+var G__81025 = (0);
+var G__81026 = (0);
+seq__80267_81002 = G__81023;
+chunk__80268_81003 = G__81024;
+count__80269_81004 = G__81025;
+i__80270_81005 = G__81026;
+continue;
+}
+} else {
+}
+}
+break;
+}
+
+
+var G__81027 = seq__80231_80997;
+var G__81028 = chunk__80232_80998;
+var G__81029 = count__80233_80999;
+var G__81030 = (i__80234_81000 + (1));
+seq__80231_80997 = G__81027;
+chunk__80232_80998 = G__81028;
+count__80233_80999 = G__81029;
+i__80234_81000 = G__81030;
+continue;
+} else {
+var temp__5753__auto___81031__$1 = cljs.core.seq(seq__80231_80997);
+if(temp__5753__auto___81031__$1){
+var seq__80231_81032__$1 = temp__5753__auto___81031__$1;
+if(cljs.core.chunked_seq_QMARK_(seq__80231_81032__$1)){
+var c__4556__auto___81033 = cljs.core.chunk_first(seq__80231_81032__$1);
+var G__81034 = cljs.core.chunk_rest(seq__80231_81032__$1);
+var G__81035 = c__4556__auto___81033;
+var G__81036 = cljs.core.count(c__4556__auto___81033);
+var G__81037 = (0);
+seq__80231_80997 = G__81034;
+chunk__80232_80998 = G__81035;
+count__80233_80999 = G__81036;
+i__80234_81000 = G__81037;
+continue;
+} else {
+var bar_81038 = cljs.core.first(seq__80231_81032__$1);
+var seq__80283_81039 = cljs.core.seq(new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [ellah.constants.foreground_color,(1)], null),new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [ellah.constants.background_color,((1) - ellah.constants.formbar_outline_thickness)], null)], null));
+var chunk__80284_81040 = null;
+var count__80285_81041 = (0);
+var i__80286_81042 = (0);
+while(true){
+if((i__80286_81042 < count__80285_81041)){
+var vec__80293_81043 = chunk__80284_81040.cljs$core$IIndexed$_nth$arity$2(null,i__80286_81042);
+var color_81044 = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__80293_81043,(0),null);
+var radius_factor_81045 = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__80293_81043,(1),null);
+ellah.graphics.circle.cljs$core$IFn$_invoke$arity$variadic(cljs.core.assoc.cljs$core$IFn$_invoke$arity$3(bar_81038,new cljs.core.Keyword(null,"radius","radius",-2073122258),(ellah.constants.formbar_radius * radius_factor_81045)),color_81044,cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([new cljs.core.Keyword(null,"formbar","formbar",824418093)], 0));
+
+if(cljs.core.truth_(horizontal_QMARK__80990)){
+ellah.graphics.circle.cljs$core$IFn$_invoke$arity$variadic(cljs.core.assoc.cljs$core$IFn$_invoke$arity$3(ellah.geometry.add_points.cljs$core$IFn$_invoke$arity$variadic(cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([bar_81038,new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"x","x",2099068185),new cljs.core.Keyword(null,"width","width",-384071477).cljs$core$IFn$_invoke$arity$1(bar_81038)], null)], 0)),new cljs.core.Keyword(null,"radius","radius",-2073122258),(ellah.constants.formbar_radius * radius_factor_81045)),color_81044,cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([new cljs.core.Keyword(null,"formbar","formbar",824418093)], 0));
+
+ellah.graphics.rect.cljs$core$IFn$_invoke$arity$variadic(new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [ellah.geometry.subtract_points(bar_81038,new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"y","y",-1757859776),(ellah.constants.formbar_radius * radius_factor_81045)], null)),new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null,"x","x",2099068185),new cljs.core.Keyword(null,"width","width",-384071477).cljs$core$IFn$_invoke$arity$1(bar_81038),new cljs.core.Keyword(null,"y","y",-1757859776),(((2) * ellah.constants.formbar_radius) * radius_factor_81045)], null)], null),color_81044,cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([new cljs.core.Keyword(null,"formbar","formbar",824418093)], 0));
+} else {
+ellah.graphics.circle.cljs$core$IFn$_invoke$arity$variadic(cljs.core.assoc.cljs$core$IFn$_invoke$arity$3(ellah.geometry.add_points.cljs$core$IFn$_invoke$arity$variadic(cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([bar_81038,new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"y","y",-1757859776),new cljs.core.Keyword(null,"height","height",1025178622).cljs$core$IFn$_invoke$arity$1(bar_81038)], null)], 0)),new cljs.core.Keyword(null,"radius","radius",-2073122258),(ellah.constants.formbar_radius * radius_factor_81045)),color_81044,cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([new cljs.core.Keyword(null,"formbar","formbar",824418093)], 0));
+
+ellah.graphics.rect.cljs$core$IFn$_invoke$arity$variadic(new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [ellah.geometry.subtract_points(bar_81038,new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"x","x",2099068185),(ellah.constants.formbar_radius * radius_factor_81045)], null)),new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null,"x","x",2099068185),(((2) * ellah.constants.formbar_radius) * radius_factor_81045),new cljs.core.Keyword(null,"y","y",-1757859776),new cljs.core.Keyword(null,"height","height",1025178622).cljs$core$IFn$_invoke$arity$1(bar_81038)], null)], null),color_81044,cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([new cljs.core.Keyword(null,"formbar","formbar",824418093)], 0));
+}
+
+
+var G__81046 = seq__80283_81039;
+var G__81047 = chunk__80284_81040;
+var G__81048 = count__80285_81041;
+var G__81049 = (i__80286_81042 + (1));
+seq__80283_81039 = G__81046;
+chunk__80284_81040 = G__81047;
+count__80285_81041 = G__81048;
+i__80286_81042 = G__81049;
+continue;
+} else {
+var temp__5753__auto___81050__$2 = cljs.core.seq(seq__80283_81039);
+if(temp__5753__auto___81050__$2){
+var seq__80283_81051__$1 = temp__5753__auto___81050__$2;
+if(cljs.core.chunked_seq_QMARK_(seq__80283_81051__$1)){
+var c__4556__auto___81052 = cljs.core.chunk_first(seq__80283_81051__$1);
+var G__81053 = cljs.core.chunk_rest(seq__80283_81051__$1);
+var G__81054 = c__4556__auto___81052;
+var G__81055 = cljs.core.count(c__4556__auto___81052);
+var G__81056 = (0);
+seq__80283_81039 = G__81053;
+chunk__80284_81040 = G__81054;
+count__80285_81041 = G__81055;
+i__80286_81042 = G__81056;
+continue;
+} else {
+var vec__80296_81057 = cljs.core.first(seq__80283_81051__$1);
+var color_81058 = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__80296_81057,(0),null);
+var radius_factor_81059 = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__80296_81057,(1),null);
+ellah.graphics.circle.cljs$core$IFn$_invoke$arity$variadic(cljs.core.assoc.cljs$core$IFn$_invoke$arity$3(bar_81038,new cljs.core.Keyword(null,"radius","radius",-2073122258),(ellah.constants.formbar_radius * radius_factor_81059)),color_81058,cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([new cljs.core.Keyword(null,"formbar","formbar",824418093)], 0));
+
+if(cljs.core.truth_(horizontal_QMARK__80990)){
+ellah.graphics.circle.cljs$core$IFn$_invoke$arity$variadic(cljs.core.assoc.cljs$core$IFn$_invoke$arity$3(ellah.geometry.add_points.cljs$core$IFn$_invoke$arity$variadic(cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([bar_81038,new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"x","x",2099068185),new cljs.core.Keyword(null,"width","width",-384071477).cljs$core$IFn$_invoke$arity$1(bar_81038)], null)], 0)),new cljs.core.Keyword(null,"radius","radius",-2073122258),(ellah.constants.formbar_radius * radius_factor_81059)),color_81058,cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([new cljs.core.Keyword(null,"formbar","formbar",824418093)], 0));
+
+ellah.graphics.rect.cljs$core$IFn$_invoke$arity$variadic(new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [ellah.geometry.subtract_points(bar_81038,new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"y","y",-1757859776),(ellah.constants.formbar_radius * radius_factor_81059)], null)),new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null,"x","x",2099068185),new cljs.core.Keyword(null,"width","width",-384071477).cljs$core$IFn$_invoke$arity$1(bar_81038),new cljs.core.Keyword(null,"y","y",-1757859776),(((2) * ellah.constants.formbar_radius) * radius_factor_81059)], null)], null),color_81058,cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([new cljs.core.Keyword(null,"formbar","formbar",824418093)], 0));
+} else {
+ellah.graphics.circle.cljs$core$IFn$_invoke$arity$variadic(cljs.core.assoc.cljs$core$IFn$_invoke$arity$3(ellah.geometry.add_points.cljs$core$IFn$_invoke$arity$variadic(cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([bar_81038,new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"y","y",-1757859776),new cljs.core.Keyword(null,"height","height",1025178622).cljs$core$IFn$_invoke$arity$1(bar_81038)], null)], 0)),new cljs.core.Keyword(null,"radius","radius",-2073122258),(ellah.constants.formbar_radius * radius_factor_81059)),color_81058,cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([new cljs.core.Keyword(null,"formbar","formbar",824418093)], 0));
+
+ellah.graphics.rect.cljs$core$IFn$_invoke$arity$variadic(new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [ellah.geometry.subtract_points(bar_81038,new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"x","x",2099068185),(ellah.constants.formbar_radius * radius_factor_81059)], null)),new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null,"x","x",2099068185),(((2) * ellah.constants.formbar_radius) * radius_factor_81059),new cljs.core.Keyword(null,"y","y",-1757859776),new cljs.core.Keyword(null,"height","height",1025178622).cljs$core$IFn$_invoke$arity$1(bar_81038)], null)], null),color_81058,cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([new cljs.core.Keyword(null,"formbar","formbar",824418093)], 0));
+}
+
+
+var G__81060 = cljs.core.next(seq__80283_81051__$1);
+var G__81061 = null;
+var G__81062 = (0);
+var G__81063 = (0);
+seq__80283_81039 = G__81060;
+chunk__80284_81040 = G__81061;
+count__80285_81041 = G__81062;
+i__80286_81042 = G__81063;
+continue;
+}
+} else {
+}
+}
+break;
+}
+
+
+var G__81064 = cljs.core.next(seq__80231_81032__$1);
+var G__81065 = null;
+var G__81066 = (0);
+var G__81067 = (0);
+seq__80231_80997 = G__81064;
+chunk__80232_80998 = G__81065;
+count__80233_80999 = G__81066;
+i__80234_81000 = G__81067;
+continue;
+}
+} else {
+}
+}
+break;
+}
+
+
+var G__81068 = seq__80091_80992;
+var G__81069 = chunk__80092_80993;
+var G__81070 = count__80093_80994;
+var G__81071 = (i__80094_80995 + (1));
+seq__80091_80992 = G__81068;
+chunk__80092_80993 = G__81069;
+count__80093_80994 = G__81070;
+i__80094_80995 = G__81071;
+continue;
+} else {
+var temp__5753__auto___81072__$1 = cljs.core.seq(seq__80091_80992);
+if(temp__5753__auto___81072__$1){
+var seq__80091_81073__$1 = temp__5753__auto___81072__$1;
+if(cljs.core.chunked_seq_QMARK_(seq__80091_81073__$1)){
+var c__4556__auto___81074 = cljs.core.chunk_first(seq__80091_81073__$1);
+var G__81075 = cljs.core.chunk_rest(seq__80091_81073__$1);
+var G__81076 = c__4556__auto___81074;
+var G__81077 = cljs.core.count(c__4556__auto___81074);
+var G__81078 = (0);
+seq__80091_80992 = G__81075;
+chunk__80092_80993 = G__81076;
+count__80093_80994 = G__81077;
+i__80094_80995 = G__81078;
+continue;
+} else {
+var stage_81079 = cljs.core.first(seq__80091_81073__$1);
+var seq__80299_81080 = cljs.core.seq(stage_81079);
+var chunk__80300_81081 = null;
+var count__80301_81082 = (0);
+var i__80302_81083 = (0);
+while(true){
+if((i__80302_81083 < count__80301_81082)){
+var bar_81084 = chunk__80300_81081.cljs$core$IIndexed$_nth$arity$2(null,i__80302_81083);
+var seq__80335_81085 = cljs.core.seq(new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [ellah.constants.foreground_color,(1)], null),new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [ellah.constants.background_color,((1) - ellah.constants.formbar_outline_thickness)], null)], null));
+var chunk__80336_81086 = null;
+var count__80337_81087 = (0);
+var i__80338_81088 = (0);
+while(true){
+if((i__80338_81088 < count__80337_81087)){
+var vec__80345_81089 = chunk__80336_81086.cljs$core$IIndexed$_nth$arity$2(null,i__80338_81088);
+var color_81090 = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__80345_81089,(0),null);
+var radius_factor_81091 = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__80345_81089,(1),null);
+ellah.graphics.circle.cljs$core$IFn$_invoke$arity$variadic(cljs.core.assoc.cljs$core$IFn$_invoke$arity$3(bar_81084,new cljs.core.Keyword(null,"radius","radius",-2073122258),(ellah.constants.formbar_radius * radius_factor_81091)),color_81090,cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([new cljs.core.Keyword(null,"formbar","formbar",824418093)], 0));
+
+if(cljs.core.truth_(horizontal_QMARK__80990)){
+ellah.graphics.circle.cljs$core$IFn$_invoke$arity$variadic(cljs.core.assoc.cljs$core$IFn$_invoke$arity$3(ellah.geometry.add_points.cljs$core$IFn$_invoke$arity$variadic(cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([bar_81084,new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"x","x",2099068185),new cljs.core.Keyword(null,"width","width",-384071477).cljs$core$IFn$_invoke$arity$1(bar_81084)], null)], 0)),new cljs.core.Keyword(null,"radius","radius",-2073122258),(ellah.constants.formbar_radius * radius_factor_81091)),color_81090,cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([new cljs.core.Keyword(null,"formbar","formbar",824418093)], 0));
+
+ellah.graphics.rect.cljs$core$IFn$_invoke$arity$variadic(new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [ellah.geometry.subtract_points(bar_81084,new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"y","y",-1757859776),(ellah.constants.formbar_radius * radius_factor_81091)], null)),new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null,"x","x",2099068185),new cljs.core.Keyword(null,"width","width",-384071477).cljs$core$IFn$_invoke$arity$1(bar_81084),new cljs.core.Keyword(null,"y","y",-1757859776),(((2) * ellah.constants.formbar_radius) * radius_factor_81091)], null)], null),color_81090,cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([new cljs.core.Keyword(null,"formbar","formbar",824418093)], 0));
+} else {
+ellah.graphics.circle.cljs$core$IFn$_invoke$arity$variadic(cljs.core.assoc.cljs$core$IFn$_invoke$arity$3(ellah.geometry.add_points.cljs$core$IFn$_invoke$arity$variadic(cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([bar_81084,new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"y","y",-1757859776),new cljs.core.Keyword(null,"height","height",1025178622).cljs$core$IFn$_invoke$arity$1(bar_81084)], null)], 0)),new cljs.core.Keyword(null,"radius","radius",-2073122258),(ellah.constants.formbar_radius * radius_factor_81091)),color_81090,cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([new cljs.core.Keyword(null,"formbar","formbar",824418093)], 0));
+
+ellah.graphics.rect.cljs$core$IFn$_invoke$arity$variadic(new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [ellah.geometry.subtract_points(bar_81084,new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"x","x",2099068185),(ellah.constants.formbar_radius * radius_factor_81091)], null)),new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null,"x","x",2099068185),(((2) * ellah.constants.formbar_radius) * radius_factor_81091),new cljs.core.Keyword(null,"y","y",-1757859776),new cljs.core.Keyword(null,"height","height",1025178622).cljs$core$IFn$_invoke$arity$1(bar_81084)], null)], null),color_81090,cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([new cljs.core.Keyword(null,"formbar","formbar",824418093)], 0));
+}
+
+
+var G__81092 = seq__80335_81085;
+var G__81093 = chunk__80336_81086;
+var G__81094 = count__80337_81087;
+var G__81095 = (i__80338_81088 + (1));
+seq__80335_81085 = G__81092;
+chunk__80336_81086 = G__81093;
+count__80337_81087 = G__81094;
+i__80338_81088 = G__81095;
+continue;
+} else {
+var temp__5753__auto___81096__$2 = cljs.core.seq(seq__80335_81085);
+if(temp__5753__auto___81096__$2){
+var seq__80335_81097__$1 = temp__5753__auto___81096__$2;
+if(cljs.core.chunked_seq_QMARK_(seq__80335_81097__$1)){
+var c__4556__auto___81098 = cljs.core.chunk_first(seq__80335_81097__$1);
+var G__81099 = cljs.core.chunk_rest(seq__80335_81097__$1);
+var G__81100 = c__4556__auto___81098;
+var G__81101 = cljs.core.count(c__4556__auto___81098);
+var G__81102 = (0);
+seq__80335_81085 = G__81099;
+chunk__80336_81086 = G__81100;
+count__80337_81087 = G__81101;
+i__80338_81088 = G__81102;
+continue;
+} else {
+var vec__80348_81103 = cljs.core.first(seq__80335_81097__$1);
+var color_81104 = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__80348_81103,(0),null);
+var radius_factor_81105 = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__80348_81103,(1),null);
+ellah.graphics.circle.cljs$core$IFn$_invoke$arity$variadic(cljs.core.assoc.cljs$core$IFn$_invoke$arity$3(bar_81084,new cljs.core.Keyword(null,"radius","radius",-2073122258),(ellah.constants.formbar_radius * radius_factor_81105)),color_81104,cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([new cljs.core.Keyword(null,"formbar","formbar",824418093)], 0));
+
+if(cljs.core.truth_(horizontal_QMARK__80990)){
+ellah.graphics.circle.cljs$core$IFn$_invoke$arity$variadic(cljs.core.assoc.cljs$core$IFn$_invoke$arity$3(ellah.geometry.add_points.cljs$core$IFn$_invoke$arity$variadic(cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([bar_81084,new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"x","x",2099068185),new cljs.core.Keyword(null,"width","width",-384071477).cljs$core$IFn$_invoke$arity$1(bar_81084)], null)], 0)),new cljs.core.Keyword(null,"radius","radius",-2073122258),(ellah.constants.formbar_radius * radius_factor_81105)),color_81104,cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([new cljs.core.Keyword(null,"formbar","formbar",824418093)], 0));
+
+ellah.graphics.rect.cljs$core$IFn$_invoke$arity$variadic(new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [ellah.geometry.subtract_points(bar_81084,new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"y","y",-1757859776),(ellah.constants.formbar_radius * radius_factor_81105)], null)),new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null,"x","x",2099068185),new cljs.core.Keyword(null,"width","width",-384071477).cljs$core$IFn$_invoke$arity$1(bar_81084),new cljs.core.Keyword(null,"y","y",-1757859776),(((2) * ellah.constants.formbar_radius) * radius_factor_81105)], null)], null),color_81104,cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([new cljs.core.Keyword(null,"formbar","formbar",824418093)], 0));
+} else {
+ellah.graphics.circle.cljs$core$IFn$_invoke$arity$variadic(cljs.core.assoc.cljs$core$IFn$_invoke$arity$3(ellah.geometry.add_points.cljs$core$IFn$_invoke$arity$variadic(cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([bar_81084,new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"y","y",-1757859776),new cljs.core.Keyword(null,"height","height",1025178622).cljs$core$IFn$_invoke$arity$1(bar_81084)], null)], 0)),new cljs.core.Keyword(null,"radius","radius",-2073122258),(ellah.constants.formbar_radius * radius_factor_81105)),color_81104,cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([new cljs.core.Keyword(null,"formbar","formbar",824418093)], 0));
+
+ellah.graphics.rect.cljs$core$IFn$_invoke$arity$variadic(new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [ellah.geometry.subtract_points(bar_81084,new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"x","x",2099068185),(ellah.constants.formbar_radius * radius_factor_81105)], null)),new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null,"x","x",2099068185),(((2) * ellah.constants.formbar_radius) * radius_factor_81105),new cljs.core.Keyword(null,"y","y",-1757859776),new cljs.core.Keyword(null,"height","height",1025178622).cljs$core$IFn$_invoke$arity$1(bar_81084)], null)], null),color_81104,cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([new cljs.core.Keyword(null,"formbar","formbar",824418093)], 0));
+}
+
+
+var G__81106 = cljs.core.next(seq__80335_81097__$1);
+var G__81107 = null;
+var G__81108 = (0);
+var G__81109 = (0);
+seq__80335_81085 = G__81106;
+chunk__80336_81086 = G__81107;
+count__80337_81087 = G__81108;
+i__80338_81088 = G__81109;
+continue;
+}
+} else {
+}
+}
+break;
+}
+
+
+var G__81110 = seq__80299_81080;
+var G__81111 = chunk__80300_81081;
+var G__81112 = count__80301_81082;
+var G__81113 = (i__80302_81083 + (1));
+seq__80299_81080 = G__81110;
+chunk__80300_81081 = G__81111;
+count__80301_81082 = G__81112;
+i__80302_81083 = G__81113;
+continue;
+} else {
+var temp__5753__auto___81114__$2 = cljs.core.seq(seq__80299_81080);
+if(temp__5753__auto___81114__$2){
+var seq__80299_81115__$1 = temp__5753__auto___81114__$2;
+if(cljs.core.chunked_seq_QMARK_(seq__80299_81115__$1)){
+var c__4556__auto___81116 = cljs.core.chunk_first(seq__80299_81115__$1);
+var G__81117 = cljs.core.chunk_rest(seq__80299_81115__$1);
+var G__81118 = c__4556__auto___81116;
+var G__81119 = cljs.core.count(c__4556__auto___81116);
+var G__81120 = (0);
+seq__80299_81080 = G__81117;
+chunk__80300_81081 = G__81118;
+count__80301_81082 = G__81119;
+i__80302_81083 = G__81120;
+continue;
+} else {
+var bar_81121 = cljs.core.first(seq__80299_81115__$1);
+var seq__80351_81122 = cljs.core.seq(new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [ellah.constants.foreground_color,(1)], null),new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [ellah.constants.background_color,((1) - ellah.constants.formbar_outline_thickness)], null)], null));
+var chunk__80352_81123 = null;
+var count__80353_81124 = (0);
+var i__80354_81125 = (0);
+while(true){
+if((i__80354_81125 < count__80353_81124)){
+var vec__80361_81126 = chunk__80352_81123.cljs$core$IIndexed$_nth$arity$2(null,i__80354_81125);
+var color_81127 = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__80361_81126,(0),null);
+var radius_factor_81128 = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__80361_81126,(1),null);
+ellah.graphics.circle.cljs$core$IFn$_invoke$arity$variadic(cljs.core.assoc.cljs$core$IFn$_invoke$arity$3(bar_81121,new cljs.core.Keyword(null,"radius","radius",-2073122258),(ellah.constants.formbar_radius * radius_factor_81128)),color_81127,cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([new cljs.core.Keyword(null,"formbar","formbar",824418093)], 0));
+
+if(cljs.core.truth_(horizontal_QMARK__80990)){
+ellah.graphics.circle.cljs$core$IFn$_invoke$arity$variadic(cljs.core.assoc.cljs$core$IFn$_invoke$arity$3(ellah.geometry.add_points.cljs$core$IFn$_invoke$arity$variadic(cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([bar_81121,new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"x","x",2099068185),new cljs.core.Keyword(null,"width","width",-384071477).cljs$core$IFn$_invoke$arity$1(bar_81121)], null)], 0)),new cljs.core.Keyword(null,"radius","radius",-2073122258),(ellah.constants.formbar_radius * radius_factor_81128)),color_81127,cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([new cljs.core.Keyword(null,"formbar","formbar",824418093)], 0));
+
+ellah.graphics.rect.cljs$core$IFn$_invoke$arity$variadic(new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [ellah.geometry.subtract_points(bar_81121,new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"y","y",-1757859776),(ellah.constants.formbar_radius * radius_factor_81128)], null)),new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null,"x","x",2099068185),new cljs.core.Keyword(null,"width","width",-384071477).cljs$core$IFn$_invoke$arity$1(bar_81121),new cljs.core.Keyword(null,"y","y",-1757859776),(((2) * ellah.constants.formbar_radius) * radius_factor_81128)], null)], null),color_81127,cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([new cljs.core.Keyword(null,"formbar","formbar",824418093)], 0));
+} else {
+ellah.graphics.circle.cljs$core$IFn$_invoke$arity$variadic(cljs.core.assoc.cljs$core$IFn$_invoke$arity$3(ellah.geometry.add_points.cljs$core$IFn$_invoke$arity$variadic(cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([bar_81121,new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"y","y",-1757859776),new cljs.core.Keyword(null,"height","height",1025178622).cljs$core$IFn$_invoke$arity$1(bar_81121)], null)], 0)),new cljs.core.Keyword(null,"radius","radius",-2073122258),(ellah.constants.formbar_radius * radius_factor_81128)),color_81127,cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([new cljs.core.Keyword(null,"formbar","formbar",824418093)], 0));
+
+ellah.graphics.rect.cljs$core$IFn$_invoke$arity$variadic(new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [ellah.geometry.subtract_points(bar_81121,new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"x","x",2099068185),(ellah.constants.formbar_radius * radius_factor_81128)], null)),new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null,"x","x",2099068185),(((2) * ellah.constants.formbar_radius) * radius_factor_81128),new cljs.core.Keyword(null,"y","y",-1757859776),new cljs.core.Keyword(null,"height","height",1025178622).cljs$core$IFn$_invoke$arity$1(bar_81121)], null)], null),color_81127,cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([new cljs.core.Keyword(null,"formbar","formbar",824418093)], 0));
+}
+
+
+var G__81129 = seq__80351_81122;
+var G__81130 = chunk__80352_81123;
+var G__81131 = count__80353_81124;
+var G__81132 = (i__80354_81125 + (1));
+seq__80351_81122 = G__81129;
+chunk__80352_81123 = G__81130;
+count__80353_81124 = G__81131;
+i__80354_81125 = G__81132;
+continue;
+} else {
+var temp__5753__auto___81133__$3 = cljs.core.seq(seq__80351_81122);
+if(temp__5753__auto___81133__$3){
+var seq__80351_81134__$1 = temp__5753__auto___81133__$3;
+if(cljs.core.chunked_seq_QMARK_(seq__80351_81134__$1)){
+var c__4556__auto___81135 = cljs.core.chunk_first(seq__80351_81134__$1);
+var G__81136 = cljs.core.chunk_rest(seq__80351_81134__$1);
+var G__81137 = c__4556__auto___81135;
+var G__81138 = cljs.core.count(c__4556__auto___81135);
+var G__81139 = (0);
+seq__80351_81122 = G__81136;
+chunk__80352_81123 = G__81137;
+count__80353_81124 = G__81138;
+i__80354_81125 = G__81139;
+continue;
+} else {
+var vec__80364_81140 = cljs.core.first(seq__80351_81134__$1);
+var color_81141 = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__80364_81140,(0),null);
+var radius_factor_81142 = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__80364_81140,(1),null);
+ellah.graphics.circle.cljs$core$IFn$_invoke$arity$variadic(cljs.core.assoc.cljs$core$IFn$_invoke$arity$3(bar_81121,new cljs.core.Keyword(null,"radius","radius",-2073122258),(ellah.constants.formbar_radius * radius_factor_81142)),color_81141,cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([new cljs.core.Keyword(null,"formbar","formbar",824418093)], 0));
+
+if(cljs.core.truth_(horizontal_QMARK__80990)){
+ellah.graphics.circle.cljs$core$IFn$_invoke$arity$variadic(cljs.core.assoc.cljs$core$IFn$_invoke$arity$3(ellah.geometry.add_points.cljs$core$IFn$_invoke$arity$variadic(cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([bar_81121,new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"x","x",2099068185),new cljs.core.Keyword(null,"width","width",-384071477).cljs$core$IFn$_invoke$arity$1(bar_81121)], null)], 0)),new cljs.core.Keyword(null,"radius","radius",-2073122258),(ellah.constants.formbar_radius * radius_factor_81142)),color_81141,cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([new cljs.core.Keyword(null,"formbar","formbar",824418093)], 0));
+
+ellah.graphics.rect.cljs$core$IFn$_invoke$arity$variadic(new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [ellah.geometry.subtract_points(bar_81121,new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"y","y",-1757859776),(ellah.constants.formbar_radius * radius_factor_81142)], null)),new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null,"x","x",2099068185),new cljs.core.Keyword(null,"width","width",-384071477).cljs$core$IFn$_invoke$arity$1(bar_81121),new cljs.core.Keyword(null,"y","y",-1757859776),(((2) * ellah.constants.formbar_radius) * radius_factor_81142)], null)], null),color_81141,cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([new cljs.core.Keyword(null,"formbar","formbar",824418093)], 0));
+} else {
+ellah.graphics.circle.cljs$core$IFn$_invoke$arity$variadic(cljs.core.assoc.cljs$core$IFn$_invoke$arity$3(ellah.geometry.add_points.cljs$core$IFn$_invoke$arity$variadic(cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([bar_81121,new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"y","y",-1757859776),new cljs.core.Keyword(null,"height","height",1025178622).cljs$core$IFn$_invoke$arity$1(bar_81121)], null)], 0)),new cljs.core.Keyword(null,"radius","radius",-2073122258),(ellah.constants.formbar_radius * radius_factor_81142)),color_81141,cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([new cljs.core.Keyword(null,"formbar","formbar",824418093)], 0));
+
+ellah.graphics.rect.cljs$core$IFn$_invoke$arity$variadic(new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [ellah.geometry.subtract_points(bar_81121,new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"x","x",2099068185),(ellah.constants.formbar_radius * radius_factor_81142)], null)),new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null,"x","x",2099068185),(((2) * ellah.constants.formbar_radius) * radius_factor_81142),new cljs.core.Keyword(null,"y","y",-1757859776),new cljs.core.Keyword(null,"height","height",1025178622).cljs$core$IFn$_invoke$arity$1(bar_81121)], null)], null),color_81141,cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([new cljs.core.Keyword(null,"formbar","formbar",824418093)], 0));
+}
+
+
+var G__81143 = cljs.core.next(seq__80351_81134__$1);
+var G__81144 = null;
+var G__81145 = (0);
+var G__81146 = (0);
+seq__80351_81122 = G__81143;
+chunk__80352_81123 = G__81144;
+count__80353_81124 = G__81145;
+i__80354_81125 = G__81146;
+continue;
+}
+} else {
+}
+}
+break;
+}
+
+
+var G__81147 = cljs.core.next(seq__80299_81115__$1);
+var G__81148 = null;
+var G__81149 = (0);
+var G__81150 = (0);
+seq__80299_81080 = G__81147;
+chunk__80300_81081 = G__81148;
+count__80301_81082 = G__81149;
+i__80302_81083 = G__81150;
+continue;
+}
+} else {
+}
+}
+break;
+}
+
+
+var G__81151 = cljs.core.next(seq__80091_81073__$1);
+var G__81152 = null;
+var G__81153 = (0);
+var G__81154 = (0);
+seq__80091_80992 = G__81151;
+chunk__80092_80993 = G__81152;
+count__80093_80994 = G__81153;
+i__80094_80995 = G__81154;
+continue;
+}
+} else {
+}
+}
+break;
+}
+
+if(cljs.core.truth_((function (){var and__4115__auto__ = formbar_form_path_80660;
+if(cljs.core.truth_(and__4115__auto__)){
+return cljs.core._EQ_.cljs$core$IFn$_invoke$arity$2(cljs.core.first(formbar_form_path_80660),side_80989);
+} else {
+return and__4115__auto__;
+}
+})())){
+ellah.graphics.circle.cljs$core$IFn$_invoke$arity$variadic(cljs.core.update.cljs$core$IFn$_invoke$arity$3(cljs.core.get_in.cljs$core$IFn$_invoke$arity$2(arrangement_80659,cljs.core.butlast(ellah.graphics.formbar_form_path_at(mouse))),new cljs.core.Keyword(null,"radius","radius",-2073122258),cljs.core.partial.cljs$core$IFn$_invoke$arity$2(cljs.core._STAR_,((1) / ellah.constants.formbar_form_size))),ellah.constants.highlight_color,cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([new cljs.core.Keyword(null,"formbar","formbar",824418093)], 0));
+} else {
+}
+
+var seq__80367_81155 = cljs.core.seq(side_arrangement_80991);
+var chunk__80368_81156 = null;
+var count__80369_81157 = (0);
+var i__80370_81158 = (0);
+while(true){
+if((i__80370_81158 < count__80369_81157)){
+var stage_81159 = chunk__80368_81156.cljs$core$IIndexed$_nth$arity$2(null,i__80370_81158);
+var seq__80411_81160 = cljs.core.seq(stage_81159);
+var chunk__80412_81161 = null;
+var count__80413_81162 = (0);
+var i__80414_81163 = (0);
+while(true){
+if((i__80414_81163 < count__80413_81162)){
+var bar_81164 = chunk__80412_81161.cljs$core$IIndexed$_nth$arity$2(null,i__80414_81163);
+var seq__80423_81165 = cljs.core.seq(new cljs.core.Keyword(null,"circles","circles",-1947060917).cljs$core$IFn$_invoke$arity$1(bar_81164));
+var chunk__80424_81166 = null;
+var count__80425_81167 = (0);
+var i__80426_81168 = (0);
+while(true){
+if((i__80426_81168 < count__80425_81167)){
+var bar_circle_81169 = chunk__80424_81166.cljs$core$IIndexed$_nth$arity$2(null,i__80426_81168);
+ellah.graphics.render_sublayouts.cljs$core$IFn$_invoke$arity$variadic(ellah.graphics.form_layout(new cljs.core.Keyword(null,"form","form",-1624062471).cljs$core$IFn$_invoke$arity$1(bar_circle_81169),bar_circle_81169),cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([new cljs.core.Keyword(null,"formbar","formbar",824418093)], 0));
+
+
+var G__81170 = seq__80423_81165;
+var G__81171 = chunk__80424_81166;
+var G__81172 = count__80425_81167;
+var G__81173 = (i__80426_81168 + (1));
+seq__80423_81165 = G__81170;
+chunk__80424_81166 = G__81171;
+count__80425_81167 = G__81172;
+i__80426_81168 = G__81173;
+continue;
+} else {
+var temp__5753__auto___81174__$1 = cljs.core.seq(seq__80423_81165);
+if(temp__5753__auto___81174__$1){
+var seq__80423_81175__$1 = temp__5753__auto___81174__$1;
+if(cljs.core.chunked_seq_QMARK_(seq__80423_81175__$1)){
+var c__4556__auto___81176 = cljs.core.chunk_first(seq__80423_81175__$1);
+var G__81177 = cljs.core.chunk_rest(seq__80423_81175__$1);
+var G__81178 = c__4556__auto___81176;
+var G__81179 = cljs.core.count(c__4556__auto___81176);
+var G__81180 = (0);
+seq__80423_81165 = G__81177;
+chunk__80424_81166 = G__81178;
+count__80425_81167 = G__81179;
+i__80426_81168 = G__81180;
+continue;
+} else {
+var bar_circle_81181 = cljs.core.first(seq__80423_81175__$1);
+ellah.graphics.render_sublayouts.cljs$core$IFn$_invoke$arity$variadic(ellah.graphics.form_layout(new cljs.core.Keyword(null,"form","form",-1624062471).cljs$core$IFn$_invoke$arity$1(bar_circle_81181),bar_circle_81181),cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([new cljs.core.Keyword(null,"formbar","formbar",824418093)], 0));
+
+
+var G__81182 = cljs.core.next(seq__80423_81175__$1);
+var G__81183 = null;
+var G__81184 = (0);
+var G__81185 = (0);
+seq__80423_81165 = G__81182;
+chunk__80424_81166 = G__81183;
+count__80425_81167 = G__81184;
+i__80426_81168 = G__81185;
+continue;
+}
+} else {
+}
+}
+break;
+}
+
+
+var G__81186 = seq__80411_81160;
+var G__81187 = chunk__80412_81161;
+var G__81188 = count__80413_81162;
+var G__81189 = (i__80414_81163 + (1));
+seq__80411_81160 = G__81186;
+chunk__80412_81161 = G__81187;
+count__80413_81162 = G__81188;
+i__80414_81163 = G__81189;
+continue;
+} else {
+var temp__5753__auto___81190__$1 = cljs.core.seq(seq__80411_81160);
+if(temp__5753__auto___81190__$1){
+var seq__80411_81191__$1 = temp__5753__auto___81190__$1;
+if(cljs.core.chunked_seq_QMARK_(seq__80411_81191__$1)){
+var c__4556__auto___81192 = cljs.core.chunk_first(seq__80411_81191__$1);
+var G__81193 = cljs.core.chunk_rest(seq__80411_81191__$1);
+var G__81194 = c__4556__auto___81192;
+var G__81195 = cljs.core.count(c__4556__auto___81192);
+var G__81196 = (0);
+seq__80411_81160 = G__81193;
+chunk__80412_81161 = G__81194;
+count__80413_81162 = G__81195;
+i__80414_81163 = G__81196;
+continue;
+} else {
+var bar_81197 = cljs.core.first(seq__80411_81191__$1);
+var seq__80427_81198 = cljs.core.seq(new cljs.core.Keyword(null,"circles","circles",-1947060917).cljs$core$IFn$_invoke$arity$1(bar_81197));
+var chunk__80428_81199 = null;
+var count__80429_81200 = (0);
+var i__80430_81201 = (0);
+while(true){
+if((i__80430_81201 < count__80429_81200)){
+var bar_circle_81202 = chunk__80428_81199.cljs$core$IIndexed$_nth$arity$2(null,i__80430_81201);
+ellah.graphics.render_sublayouts.cljs$core$IFn$_invoke$arity$variadic(ellah.graphics.form_layout(new cljs.core.Keyword(null,"form","form",-1624062471).cljs$core$IFn$_invoke$arity$1(bar_circle_81202),bar_circle_81202),cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([new cljs.core.Keyword(null,"formbar","formbar",824418093)], 0));
+
+
+var G__81203 = seq__80427_81198;
+var G__81204 = chunk__80428_81199;
+var G__81205 = count__80429_81200;
+var G__81206 = (i__80430_81201 + (1));
+seq__80427_81198 = G__81203;
+chunk__80428_81199 = G__81204;
+count__80429_81200 = G__81205;
+i__80430_81201 = G__81206;
+continue;
+} else {
+var temp__5753__auto___81207__$2 = cljs.core.seq(seq__80427_81198);
+if(temp__5753__auto___81207__$2){
+var seq__80427_81208__$1 = temp__5753__auto___81207__$2;
+if(cljs.core.chunked_seq_QMARK_(seq__80427_81208__$1)){
+var c__4556__auto___81209 = cljs.core.chunk_first(seq__80427_81208__$1);
+var G__81210 = cljs.core.chunk_rest(seq__80427_81208__$1);
+var G__81211 = c__4556__auto___81209;
+var G__81212 = cljs.core.count(c__4556__auto___81209);
+var G__81213 = (0);
+seq__80427_81198 = G__81210;
+chunk__80428_81199 = G__81211;
+count__80429_81200 = G__81212;
+i__80430_81201 = G__81213;
+continue;
+} else {
+var bar_circle_81214 = cljs.core.first(seq__80427_81208__$1);
+ellah.graphics.render_sublayouts.cljs$core$IFn$_invoke$arity$variadic(ellah.graphics.form_layout(new cljs.core.Keyword(null,"form","form",-1624062471).cljs$core$IFn$_invoke$arity$1(bar_circle_81214),bar_circle_81214),cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([new cljs.core.Keyword(null,"formbar","formbar",824418093)], 0));
+
+
+var G__81215 = cljs.core.next(seq__80427_81208__$1);
+var G__81216 = null;
+var G__81217 = (0);
+var G__81218 = (0);
+seq__80427_81198 = G__81215;
+chunk__80428_81199 = G__81216;
+count__80429_81200 = G__81217;
+i__80430_81201 = G__81218;
+continue;
+}
+} else {
+}
+}
+break;
+}
+
+
+var G__81219 = cljs.core.next(seq__80411_81191__$1);
+var G__81220 = null;
+var G__81221 = (0);
+var G__81222 = (0);
+seq__80411_81160 = G__81219;
+chunk__80412_81161 = G__81220;
+count__80413_81162 = G__81221;
+i__80414_81163 = G__81222;
+continue;
+}
+} else {
+}
+}
+break;
+}
+
+
+var G__81223 = seq__80367_81155;
+var G__81224 = chunk__80368_81156;
+var G__81225 = count__80369_81157;
+var G__81226 = (i__80370_81158 + (1));
+seq__80367_81155 = G__81223;
+chunk__80368_81156 = G__81224;
+count__80369_81157 = G__81225;
+i__80370_81158 = G__81226;
+continue;
+} else {
+var temp__5753__auto___81227__$1 = cljs.core.seq(seq__80367_81155);
+if(temp__5753__auto___81227__$1){
+var seq__80367_81228__$1 = temp__5753__auto___81227__$1;
+if(cljs.core.chunked_seq_QMARK_(seq__80367_81228__$1)){
+var c__4556__auto___81229 = cljs.core.chunk_first(seq__80367_81228__$1);
+var G__81230 = cljs.core.chunk_rest(seq__80367_81228__$1);
+var G__81231 = c__4556__auto___81229;
+var G__81232 = cljs.core.count(c__4556__auto___81229);
+var G__81233 = (0);
+seq__80367_81155 = G__81230;
+chunk__80368_81156 = G__81231;
+count__80369_81157 = G__81232;
+i__80370_81158 = G__81233;
+continue;
+} else {
+var stage_81234 = cljs.core.first(seq__80367_81228__$1);
+var seq__80431_81235 = cljs.core.seq(stage_81234);
+var chunk__80432_81236 = null;
+var count__80433_81237 = (0);
+var i__80434_81238 = (0);
+while(true){
+if((i__80434_81238 < count__80433_81237)){
+var bar_81239 = chunk__80432_81236.cljs$core$IIndexed$_nth$arity$2(null,i__80434_81238);
+var seq__80443_81240 = cljs.core.seq(new cljs.core.Keyword(null,"circles","circles",-1947060917).cljs$core$IFn$_invoke$arity$1(bar_81239));
+var chunk__80444_81241 = null;
+var count__80445_81242 = (0);
+var i__80446_81243 = (0);
+while(true){
+if((i__80446_81243 < count__80445_81242)){
+var bar_circle_81244 = chunk__80444_81241.cljs$core$IIndexed$_nth$arity$2(null,i__80446_81243);
+ellah.graphics.render_sublayouts.cljs$core$IFn$_invoke$arity$variadic(ellah.graphics.form_layout(new cljs.core.Keyword(null,"form","form",-1624062471).cljs$core$IFn$_invoke$arity$1(bar_circle_81244),bar_circle_81244),cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([new cljs.core.Keyword(null,"formbar","formbar",824418093)], 0));
+
+
+var G__81245 = seq__80443_81240;
+var G__81246 = chunk__80444_81241;
+var G__81247 = count__80445_81242;
+var G__81248 = (i__80446_81243 + (1));
+seq__80443_81240 = G__81245;
+chunk__80444_81241 = G__81246;
+count__80445_81242 = G__81247;
+i__80446_81243 = G__81248;
+continue;
+} else {
+var temp__5753__auto___81249__$2 = cljs.core.seq(seq__80443_81240);
+if(temp__5753__auto___81249__$2){
+var seq__80443_81250__$1 = temp__5753__auto___81249__$2;
+if(cljs.core.chunked_seq_QMARK_(seq__80443_81250__$1)){
+var c__4556__auto___81251 = cljs.core.chunk_first(seq__80443_81250__$1);
+var G__81252 = cljs.core.chunk_rest(seq__80443_81250__$1);
+var G__81253 = c__4556__auto___81251;
+var G__81254 = cljs.core.count(c__4556__auto___81251);
+var G__81255 = (0);
+seq__80443_81240 = G__81252;
+chunk__80444_81241 = G__81253;
+count__80445_81242 = G__81254;
+i__80446_81243 = G__81255;
+continue;
+} else {
+var bar_circle_81256 = cljs.core.first(seq__80443_81250__$1);
+ellah.graphics.render_sublayouts.cljs$core$IFn$_invoke$arity$variadic(ellah.graphics.form_layout(new cljs.core.Keyword(null,"form","form",-1624062471).cljs$core$IFn$_invoke$arity$1(bar_circle_81256),bar_circle_81256),cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([new cljs.core.Keyword(null,"formbar","formbar",824418093)], 0));
+
+
+var G__81257 = cljs.core.next(seq__80443_81250__$1);
+var G__81258 = null;
+var G__81259 = (0);
+var G__81260 = (0);
+seq__80443_81240 = G__81257;
+chunk__80444_81241 = G__81258;
+count__80445_81242 = G__81259;
+i__80446_81243 = G__81260;
+continue;
+}
+} else {
+}
+}
+break;
+}
+
+
+var G__81261 = seq__80431_81235;
+var G__81262 = chunk__80432_81236;
+var G__81263 = count__80433_81237;
+var G__81264 = (i__80434_81238 + (1));
+seq__80431_81235 = G__81261;
+chunk__80432_81236 = G__81262;
+count__80433_81237 = G__81263;
+i__80434_81238 = G__81264;
+continue;
+} else {
+var temp__5753__auto___81265__$2 = cljs.core.seq(seq__80431_81235);
+if(temp__5753__auto___81265__$2){
+var seq__80431_81266__$1 = temp__5753__auto___81265__$2;
+if(cljs.core.chunked_seq_QMARK_(seq__80431_81266__$1)){
+var c__4556__auto___81267 = cljs.core.chunk_first(seq__80431_81266__$1);
+var G__81268 = cljs.core.chunk_rest(seq__80431_81266__$1);
+var G__81269 = c__4556__auto___81267;
+var G__81270 = cljs.core.count(c__4556__auto___81267);
+var G__81271 = (0);
+seq__80431_81235 = G__81268;
+chunk__80432_81236 = G__81269;
+count__80433_81237 = G__81270;
+i__80434_81238 = G__81271;
+continue;
+} else {
+var bar_81272 = cljs.core.first(seq__80431_81266__$1);
+var seq__80447_81273 = cljs.core.seq(new cljs.core.Keyword(null,"circles","circles",-1947060917).cljs$core$IFn$_invoke$arity$1(bar_81272));
+var chunk__80448_81274 = null;
+var count__80449_81275 = (0);
+var i__80450_81276 = (0);
+while(true){
+if((i__80450_81276 < count__80449_81275)){
+var bar_circle_81277 = chunk__80448_81274.cljs$core$IIndexed$_nth$arity$2(null,i__80450_81276);
+ellah.graphics.render_sublayouts.cljs$core$IFn$_invoke$arity$variadic(ellah.graphics.form_layout(new cljs.core.Keyword(null,"form","form",-1624062471).cljs$core$IFn$_invoke$arity$1(bar_circle_81277),bar_circle_81277),cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([new cljs.core.Keyword(null,"formbar","formbar",824418093)], 0));
+
+
+var G__81278 = seq__80447_81273;
+var G__81279 = chunk__80448_81274;
+var G__81280 = count__80449_81275;
+var G__81281 = (i__80450_81276 + (1));
+seq__80447_81273 = G__81278;
+chunk__80448_81274 = G__81279;
+count__80449_81275 = G__81280;
+i__80450_81276 = G__81281;
+continue;
+} else {
+var temp__5753__auto___81282__$3 = cljs.core.seq(seq__80447_81273);
+if(temp__5753__auto___81282__$3){
+var seq__80447_81283__$1 = temp__5753__auto___81282__$3;
+if(cljs.core.chunked_seq_QMARK_(seq__80447_81283__$1)){
+var c__4556__auto___81284 = cljs.core.chunk_first(seq__80447_81283__$1);
+var G__81285 = cljs.core.chunk_rest(seq__80447_81283__$1);
+var G__81286 = c__4556__auto___81284;
+var G__81287 = cljs.core.count(c__4556__auto___81284);
+var G__81288 = (0);
+seq__80447_81273 = G__81285;
+chunk__80448_81274 = G__81286;
+count__80449_81275 = G__81287;
+i__80450_81276 = G__81288;
+continue;
+} else {
+var bar_circle_81289 = cljs.core.first(seq__80447_81283__$1);
+ellah.graphics.render_sublayouts.cljs$core$IFn$_invoke$arity$variadic(ellah.graphics.form_layout(new cljs.core.Keyword(null,"form","form",-1624062471).cljs$core$IFn$_invoke$arity$1(bar_circle_81289),bar_circle_81289),cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([new cljs.core.Keyword(null,"formbar","formbar",824418093)], 0));
+
+
+var G__81290 = cljs.core.next(seq__80447_81283__$1);
+var G__81291 = null;
+var G__81292 = (0);
+var G__81293 = (0);
+seq__80447_81273 = G__81290;
+chunk__80448_81274 = G__81291;
+count__80449_81275 = G__81292;
+i__80450_81276 = G__81293;
+continue;
+}
+} else {
+}
+}
+break;
+}
+
+
+var G__81294 = cljs.core.next(seq__80431_81266__$1);
+var G__81295 = null;
+var G__81296 = (0);
+var G__81297 = (0);
+seq__80431_81235 = G__81294;
+chunk__80432_81236 = G__81295;
+count__80433_81237 = G__81296;
+i__80434_81238 = G__81297;
+continue;
+}
+} else {
+}
+}
+break;
+}
+
+
+var G__81298 = cljs.core.next(seq__80367_81228__$1);
+var G__81299 = null;
+var G__81300 = (0);
+var G__81301 = (0);
+seq__80367_81155 = G__81298;
+chunk__80368_81156 = G__81299;
+count__80369_81157 = G__81300;
+i__80370_81158 = G__81301;
+continue;
+}
+} else {
+}
+}
+break;
+}
+
+
+var G__81302 = cljs.core.next(seq__79003_80983__$1);
+var G__81303 = null;
+var G__81304 = (0);
+var G__81305 = (0);
+seq__79003_80661 = G__81302;
+chunk__79004_80662 = G__81303;
+count__79005_80663 = G__81304;
+i__79006_80664 = G__81305;
+continue;
+}
+} else {
+}
+}
+break;
+}
+
+ellah.graphics.circle.cljs$core$IFn$_invoke$arity$variadic(cljs.core.assoc.cljs$core$IFn$_invoke$arity$3(ellah.geometry.add_points.cljs$core$IFn$_invoke$arity$variadic(cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([app_pos,cljs.core.select_keys(app_size,new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"y","y",-1757859776)], null))], 0)),new cljs.core.Keyword(null,"radius","radius",-2073122258),ellah.constants.discard_zone_radius),((cljs.core._EQ_.cljs$core$IFn$_invoke$arity$2(mouse_zone,new cljs.core.Keyword(null,"discard","discard",-1939593545)))?ellah.constants.highlight_color:ellah.constants.foreground_color),cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([new cljs.core.Keyword(null,"menu","menu",352255198)], 0));
+
+ellah.graphics.circle.cljs$core$IFn$_invoke$arity$variadic(cljs.core.assoc.cljs$core$IFn$_invoke$arity$3(ellah.geometry.add_points.cljs$core$IFn$_invoke$arity$variadic(cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([app_pos,cljs.core.select_keys(app_size,new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"y","y",-1757859776)], null))], 0)),new cljs.core.Keyword(null,"radius","radius",-2073122258),(((1) - ellah.constants.discard_zone_bar_thickness) * ellah.constants.discard_zone_radius)),ellah.constants.background_color,cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([new cljs.core.Keyword(null,"menu","menu",352255198)], 0));
+
+var last_discard_81306 = cljs.core.first(new cljs.core.Keyword(null,"discard-history","discard-history",92573038).cljs$core$IFn$_invoke$arity$1(cljs.core.deref(ellah.graphics.graphics_state)));
+if(cljs.core.truth_(last_discard_81306)){
+var radius_81307 = ((((1) - ellah.constants.eval_zone_bar_thickness) * ellah.constants.discard_zone_radius) / (Math.sqrt((2)) + (1)));
+ellah.graphics.render_sublayouts.cljs$core$IFn$_invoke$arity$variadic(ellah.graphics.form_layout(last_discard_81306,cljs.core.assoc.cljs$core$IFn$_invoke$arity$3(cljs.core.update.cljs$core$IFn$_invoke$arity$3(cljs.core.update.cljs$core$IFn$_invoke$arity$3(app_pos,new cljs.core.Keyword(null,"y","y",-1757859776),cljs.core.partial.cljs$core$IFn$_invoke$arity$2(cljs.core._PLUS_,(new cljs.core.Keyword(null,"y","y",-1757859776).cljs$core$IFn$_invoke$arity$1(app_size) - radius_81307))),new cljs.core.Keyword(null,"x","x",2099068185),cljs.core.partial.cljs$core$IFn$_invoke$arity$2(cljs.core._PLUS_,radius_81307)),new cljs.core.Keyword(null,"radius","radius",-2073122258),(radius_81307 * ellah.constants.discard_zone_form_radius_factor))),cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([new cljs.core.Keyword(null,"menu","menu",352255198)], 0));
+
+} else {
+}
+
+var eval_zone_radius_81308 = new cljs.core.Keyword(null,"eval-zone-radius","eval-zone-radius",1772203622).cljs$core$IFn$_invoke$arity$1(cljs.core.deref(ellah.graphics.graphics_state));
+ellah.graphics.circle.cljs$core$IFn$_invoke$arity$variadic(cljs.core.assoc.cljs$core$IFn$_invoke$arity$3(ellah.geometry.add_points.cljs$core$IFn$_invoke$arity$variadic(cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([app_pos,app_size], 0)),new cljs.core.Keyword(null,"radius","radius",-2073122258),eval_zone_radius_81308),((cljs.core._EQ_.cljs$core$IFn$_invoke$arity$2(mouse_zone,new cljs.core.Keyword(null,"eval","eval",-1103567905)))?ellah.constants.highlight_color:ellah.constants.foreground_color),cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([new cljs.core.Keyword(null,"menu","menu",352255198)], 0));
+
+ellah.graphics.circle.cljs$core$IFn$_invoke$arity$variadic(cljs.core.assoc.cljs$core$IFn$_invoke$arity$3(ellah.geometry.add_points.cljs$core$IFn$_invoke$arity$variadic(cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([app_pos,app_size], 0)),new cljs.core.Keyword(null,"radius","radius",-2073122258),(((1) - ellah.constants.discard_zone_bar_thickness) * eval_zone_radius_81308)),ellah.constants.background_color,cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([new cljs.core.Keyword(null,"menu","menu",352255198)], 0));
+
+var last_eval_form_81309 = cljs.core.last(new cljs.core.Keyword(null,"eval-results","eval-results",553789722).cljs$core$IFn$_invoke$arity$1(cljs.core.deref(ellah.graphics.graphics_state)));
+if(cljs.core.truth_(last_eval_form_81309)){
+var radius_81310 = ((((1) - ellah.constants.eval_zone_bar_thickness) * new cljs.core.Keyword(null,"eval-zone-radius","eval-zone-radius",1772203622).cljs$core$IFn$_invoke$arity$1(cljs.core.deref(ellah.graphics.graphics_state))) / (Math.sqrt((2)) + (1)));
+ellah.graphics.render_sublayouts.cljs$core$IFn$_invoke$arity$variadic(ellah.graphics.form_layout(last_eval_form_81309,cljs.core.assoc.cljs$core$IFn$_invoke$arity$3(ellah.geometry.subtract_points(ellah.geometry.add_points.cljs$core$IFn$_invoke$arity$variadic(cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([app_pos,app_size], 0)),ellah.geometry.scale_point(ellah.geometry.unit,radius_81310)),new cljs.core.Keyword(null,"radius","radius",-2073122258),(radius_81310 * ellah.constants.eval_zone_form_radius_factor))),cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([new cljs.core.Keyword(null,"menu","menu",352255198)], 0));
+} else {
 }
 
 if(cljs.core.truth_(((cljs.core._EQ_.cljs$core$IFn$_invoke$arity$2(mouse_zone,new cljs.core.Keyword(null,"formbar","formbar",824418093)))?current_placement_form:false))){
-var insertion_indeces = ellah.graphics.formbar_insertion_indeces(mouse);
-var base_circle = cljs.core.apply.cljs$core$IFn$_invoke$arity$2(ellah.graphics.formbar_circle,insertion_indeces);
-return ellah.graphics.render_sublayouts.cljs$core$IFn$_invoke$arity$variadic(ellah.graphics.form_layout(current_placement_form,cljs.core.update.cljs$core$IFn$_invoke$arity$3(cljs.core.update.cljs$core$IFn$_invoke$arity$3(cljs.core.update.cljs$core$IFn$_invoke$arity$3(base_circle,new cljs.core.Keyword(null,"x","x",2099068185),(function (p1__91125_SHARP_){
-return (p1__91125_SHARP_ + (0.5 * ellah.graphics.formbar_form_spacing));
-})),new cljs.core.Keyword(null,"y","y",-1757859776),(function (p1__91126_SHARP_){
-return (p1__91126_SHARP_ - ((0.5 * ellah.graphics.formbar_form_spacing) * ellah.constants.formbar_placement_offset));
-})),new cljs.core.Keyword(null,"radius","radius",-2073122258),(function (p1__91127_SHARP_){
-return (p1__91127_SHARP_ * ellah.constants.formbar_placement_size);
-}))),cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([new cljs.core.Keyword(null,"formbar","formbar",824418093)], 0));
+var formbar_path = ellah.graphics.formbar_path_at(mouse);
+if(cljs.core.truth_(formbar_path)){
+var arrangement = ellah.graphics.formbar_arrangement();
+var screen_side = cljs.core.first(formbar_path);
+var bar_arrangement = cljs.core.get_in.cljs$core$IFn$_invoke$arity$2(arrangement,formbar_path);
+var form_spacing = (ellah.constants.formbar_radius * ((1) - ellah.constants.formbar_outline_thickness));
+var insertion_index = ellah.graphics.get_formbar_insertion_index();
+var placement_circle = (((cljs.core.count(new cljs.core.Keyword(null,"circles","circles",-1947060917).cljs$core$IFn$_invoke$arity$1(bar_arrangement)) === (0)))?cljs.core.assoc.cljs$core$IFn$_invoke$arity$3(bar_arrangement,new cljs.core.Keyword(null,"radius","radius",-2073122258),(form_spacing * ellah.constants.formbar_placement_size)):(function (){var horizontal_QMARK_ = (function (){var fexpr__80451 = new cljs.core.PersistentHashSet(null, new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null,"bottom","bottom",-1550509018),null,new cljs.core.Keyword(null,"top","top",-1856271961),null], null), null);
+return (fexpr__80451.cljs$core$IFn$_invoke$arity$1 ? fexpr__80451.cljs$core$IFn$_invoke$arity$1(screen_side) : fexpr__80451.call(null,screen_side));
+})();
+return cljs.core.update.cljs$core$IFn$_invoke$arity$3(cljs.core.update.cljs$core$IFn$_invoke$arity$3(cljs.core.assoc.cljs$core$IFn$_invoke$arity$3(bar_arrangement,new cljs.core.Keyword(null,"radius","radius",-2073122258),(form_spacing * ellah.constants.formbar_placement_size)),(cljs.core.truth_(horizontal_QMARK_)?new cljs.core.Keyword(null,"x","x",2099068185):new cljs.core.Keyword(null,"y","y",-1757859776)),(function (p1__78996_SHARP_){
+return (p1__78996_SHARP_ + (((insertion_index - 0.5) * (2)) * form_spacing));
+})),(cljs.core.truth_(horizontal_QMARK_)?new cljs.core.Keyword(null,"y","y",-1757859776):new cljs.core.Keyword(null,"x","x",2099068185)),(function (p1__78997_SHARP_){
+var G__80454 = p1__78997_SHARP_;
+var G__80455 = (form_spacing * ellah.constants.formbar_placement_offset);
+var fexpr__80453 = (cljs.core.truth_((function (){var fexpr__80456 = new cljs.core.PersistentHashSet(null, new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null,"top","top",-1856271961),null,new cljs.core.Keyword(null,"left","left",-399115937),null], null), null);
+return (fexpr__80456.cljs$core$IFn$_invoke$arity$1 ? fexpr__80456.cljs$core$IFn$_invoke$arity$1(screen_side) : fexpr__80456.call(null,screen_side));
+})())?cljs.core._PLUS_:cljs.core._);
+return (fexpr__80453.cljs$core$IFn$_invoke$arity$2 ? fexpr__80453.cljs$core$IFn$_invoke$arity$2(G__80454,G__80455) : fexpr__80453.call(null,G__80454,G__80455));
+}));
+})());
+return ellah.graphics.render_sublayouts.cljs$core$IFn$_invoke$arity$variadic(ellah.graphics.form_layout(ellah.graphics.placement_form(),placement_circle),cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([new cljs.core.Keyword(null,"formbar","formbar",824418093)], 0));
+} else {
+return null;
+}
 } else {
 return null;
 }
@@ -1410,76 +3021,74 @@ var size = ellah.graphics.app_size();
 return new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null,"x","x",2099068185),((x - (0.5 * (width - size))) / size),new cljs.core.Keyword(null,"y","y",-1757859776),((y - (0.5 * (height - size))) / size)], null);
 });
 ellah.graphics.update_graphics = (function ellah$graphics$update_graphics(app_state,control_state){
-ellah.util.log.cljs$core$IFn$_invoke$arity$variadic(cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([new cljs.core.Keyword(null,"down-zone","down-zone",-858806618).cljs$core$IFn$_invoke$arity$1(new cljs.core.Keyword(null,"mouse","mouse",478628972).cljs$core$IFn$_invoke$arity$1(cljs.core.deref(ellah.graphics.graphics_state))),ellah.graphics.placement_form()], 0));
-
 var app = new cljs.core.Keyword(null,"app","app",-560961707).cljs$core$IFn$_invoke$arity$1(cljs.core.deref(ellah.graphics.graphics_state));
 var delta = (app.ticker.elapsedMS / (1000));
-var map__91276 = ellah.constants.camera_speed(new cljs.core.Keyword(null,"camera-move-diff","camera-move-diff",-592839139).cljs$core$IFn$_invoke$arity$1(cljs.core.deref(ellah.graphics.graphics_state)));
-var map__91276__$1 = (((((!((map__91276 == null))))?(((((map__91276.cljs$lang$protocol_mask$partition0$ & (64))) || ((cljs.core.PROTOCOL_SENTINEL === map__91276.cljs$core$ISeq$))))?true:false):false))?cljs.core.apply.cljs$core$IFn$_invoke$arity$2(cljs.core.hash_map,map__91276):map__91276);
-var move = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__91276__$1,new cljs.core.Keyword(null,"move","move",-2110884309));
-var zoom = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__91276__$1,new cljs.core.Keyword(null,"zoom","zoom",-1827487038));
-ellah.graphics.update_attr_BANG_(new cljs.core.Keyword(null,"camera-pos","camera-pos",666924233),(function (p1__91273_SHARP_){
-return ellah.geometry.tween_points(ellah.graphics.ideal_camera_pos(),p1__91273_SHARP_,Math.pow(move,delta));
+var map__80460 = ellah.constants.camera_speed(new cljs.core.Keyword(null,"camera-move-diff","camera-move-diff",-592839139).cljs$core$IFn$_invoke$arity$1(cljs.core.deref(ellah.graphics.graphics_state)));
+var map__80460__$1 = (((((!((map__80460 == null))))?(((((map__80460.cljs$lang$protocol_mask$partition0$ & (64))) || ((cljs.core.PROTOCOL_SENTINEL === map__80460.cljs$core$ISeq$))))?true:false):false))?cljs.core.apply.cljs$core$IFn$_invoke$arity$2(cljs.core.hash_map,map__80460):map__80460);
+var move = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__80460__$1,new cljs.core.Keyword(null,"move","move",-2110884309));
+var zoom = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__80460__$1,new cljs.core.Keyword(null,"zoom","zoom",-1827487038));
+ellah.graphics.update_attr_BANG_(new cljs.core.Keyword(null,"camera-pos","camera-pos",666924233),(function (p1__80457_SHARP_){
+return ellah.geometry.tween_points(ellah.graphics.ideal_camera_pos(),p1__80457_SHARP_,Math.pow(move,delta));
 }));
 
-ellah.graphics.update_attr_BANG_(new cljs.core.Keyword(null,"camera-zoom","camera-zoom",-1214902147),(function (p1__91274_SHARP_){
-return Math.pow(Math.E,ellah.util.tween(Math.log(ellah.graphics.ideal_camera_zoom()),Math.log(p1__91274_SHARP_),Math.pow(zoom,delta)));
+ellah.graphics.update_attr_BANG_(new cljs.core.Keyword(null,"camera-zoom","camera-zoom",-1214902147),(function (p1__80458_SHARP_){
+return Math.pow(Math.E,ellah.util.tween(Math.log(ellah.graphics.ideal_camera_zoom()),Math.log(p1__80458_SHARP_),Math.pow(zoom,delta)));
 }));
 
-ellah.graphics.update_attr_BANG_(new cljs.core.Keyword(null,"eval-zone-size","eval-zone-size",1345284358),(function (size){
+ellah.graphics.update_attr_BANG_(new cljs.core.Keyword(null,"eval-zone-radius","eval-zone-radius",1772203622),(function (size){
 var p = Math.pow(ellah.constants.eval_zone_speed,delta);
-return ((p * size) + (((1) - p) * ((cljs.core._EQ_.cljs$core$IFn$_invoke$arity$2(ellah.graphics.get_mouse_zone(),new cljs.core.Keyword(null,"eval","eval",-1103567905)))?ellah.constants.eval_zone_max_size:ellah.constants.eval_zone_min_size)));
+return ((p * size) + (((1) - p) * ((cljs.core._EQ_.cljs$core$IFn$_invoke$arity$2(ellah.graphics.get_mouse_zone(),new cljs.core.Keyword(null,"eval","eval",-1103567905)))?ellah.constants.eval_zone_max_radius:ellah.constants.eval_zone_min_radius)));
 }));
 
 ellah.graphics.resize();
 
-var seq__91278_91607 = cljs.core.seq(ellah.constants.ui_layers);
-var chunk__91279_91608 = null;
-var count__91280_91609 = (0);
-var i__91281_91610 = (0);
+var seq__80462_81311 = cljs.core.seq(ellah.constants.ui_layers);
+var chunk__80463_81312 = null;
+var count__80464_81313 = (0);
+var i__80465_81314 = (0);
 while(true){
-if((i__91281_91610 < count__91280_91609)){
-var layer_91611 = chunk__91279_91608.cljs$core$IIndexed$_nth$arity$2(null,i__91281_91610);
-ellah.graphics.get_graphics.cljs$core$IFn$_invoke$arity$variadic(cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([layer_91611], 0)).clear();
+if((i__80465_81314 < count__80464_81313)){
+var layer_81315 = chunk__80463_81312.cljs$core$IIndexed$_nth$arity$2(null,i__80465_81314);
+ellah.graphics.get_graphics.cljs$core$IFn$_invoke$arity$variadic(cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([layer_81315], 0)).clear();
 
 
-var G__91612 = seq__91278_91607;
-var G__91613 = chunk__91279_91608;
-var G__91614 = count__91280_91609;
-var G__91615 = (i__91281_91610 + (1));
-seq__91278_91607 = G__91612;
-chunk__91279_91608 = G__91613;
-count__91280_91609 = G__91614;
-i__91281_91610 = G__91615;
+var G__81316 = seq__80462_81311;
+var G__81317 = chunk__80463_81312;
+var G__81318 = count__80464_81313;
+var G__81319 = (i__80465_81314 + (1));
+seq__80462_81311 = G__81316;
+chunk__80463_81312 = G__81317;
+count__80464_81313 = G__81318;
+i__80465_81314 = G__81319;
 continue;
 } else {
-var temp__5753__auto___91616 = cljs.core.seq(seq__91278_91607);
-if(temp__5753__auto___91616){
-var seq__91278_91617__$1 = temp__5753__auto___91616;
-if(cljs.core.chunked_seq_QMARK_(seq__91278_91617__$1)){
-var c__4556__auto___91618 = cljs.core.chunk_first(seq__91278_91617__$1);
-var G__91619 = cljs.core.chunk_rest(seq__91278_91617__$1);
-var G__91620 = c__4556__auto___91618;
-var G__91621 = cljs.core.count(c__4556__auto___91618);
-var G__91622 = (0);
-seq__91278_91607 = G__91619;
-chunk__91279_91608 = G__91620;
-count__91280_91609 = G__91621;
-i__91281_91610 = G__91622;
+var temp__5753__auto___81320 = cljs.core.seq(seq__80462_81311);
+if(temp__5753__auto___81320){
+var seq__80462_81321__$1 = temp__5753__auto___81320;
+if(cljs.core.chunked_seq_QMARK_(seq__80462_81321__$1)){
+var c__4556__auto___81322 = cljs.core.chunk_first(seq__80462_81321__$1);
+var G__81323 = cljs.core.chunk_rest(seq__80462_81321__$1);
+var G__81324 = c__4556__auto___81322;
+var G__81325 = cljs.core.count(c__4556__auto___81322);
+var G__81326 = (0);
+seq__80462_81311 = G__81323;
+chunk__80463_81312 = G__81324;
+count__80464_81313 = G__81325;
+i__80465_81314 = G__81326;
 continue;
 } else {
-var layer_91623 = cljs.core.first(seq__91278_91617__$1);
-ellah.graphics.get_graphics.cljs$core$IFn$_invoke$arity$variadic(cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([layer_91623], 0)).clear();
+var layer_81327 = cljs.core.first(seq__80462_81321__$1);
+ellah.graphics.get_graphics.cljs$core$IFn$_invoke$arity$variadic(cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([layer_81327], 0)).clear();
 
 
-var G__91624 = cljs.core.next(seq__91278_91617__$1);
-var G__91625 = null;
-var G__91626 = (0);
-var G__91627 = (0);
-seq__91278_91607 = G__91624;
-chunk__91279_91608 = G__91625;
-count__91280_91609 = G__91626;
-i__91281_91610 = G__91627;
+var G__81328 = cljs.core.next(seq__80462_81321__$1);
+var G__81329 = null;
+var G__81330 = (0);
+var G__81331 = (0);
+seq__80462_81311 = G__81328;
+chunk__80463_81312 = G__81329;
+count__80464_81313 = G__81330;
+i__80465_81314 = G__81331;
 continue;
 }
 } else {
@@ -1488,60 +3097,60 @@ continue;
 break;
 }
 
-var stage_91628 = app.stage;
-var texts_91629 = new cljs.core.Keyword(null,"texts","texts",-2031072472).cljs$core$IFn$_invoke$arity$1(cljs.core.deref(ellah.graphics.graphics_state));
-if(cljs.core.truth_(texts_91629)){
-var seq__91282_91630 = cljs.core.seq(cljs.core.vals(texts_91629));
-var chunk__91283_91631 = null;
-var count__91284_91632 = (0);
-var i__91285_91633 = (0);
+var stage_81332 = app.stage;
+var texts_81333 = new cljs.core.Keyword(null,"texts","texts",-2031072472).cljs$core$IFn$_invoke$arity$1(cljs.core.deref(ellah.graphics.graphics_state));
+if(cljs.core.truth_(texts_81333)){
+var seq__80466_81334 = cljs.core.seq(cljs.core.vals(texts_81333));
+var chunk__80467_81335 = null;
+var count__80468_81336 = (0);
+var i__80469_81337 = (0);
 while(true){
-if((i__91285_91633 < count__91284_91632)){
-var text_container_91634 = chunk__91283_91631.cljs$core$IIndexed$_nth$arity$2(null,i__91285_91633);
-stage_91628.removeChild(text_container_91634);
+if((i__80469_81337 < count__80468_81336)){
+var text_container_81338 = chunk__80467_81335.cljs$core$IIndexed$_nth$arity$2(null,i__80469_81337);
+stage_81332.removeChild(text_container_81338);
 
-text_container_91634.destroy(cljs.core.clj__GT_js(new cljs.core.PersistentArrayMap(null, 3, [new cljs.core.Keyword(null,"children","children",-940561982),true,new cljs.core.Keyword(null,"texture","texture",-266291651),true,new cljs.core.Keyword(null,"baseTexture","baseTexture",719523960),true], null)));
+text_container_81338.destroy(cljs.core.clj__GT_js(new cljs.core.PersistentArrayMap(null, 3, [new cljs.core.Keyword(null,"children","children",-940561982),true,new cljs.core.Keyword(null,"texture","texture",-266291651),true,new cljs.core.Keyword(null,"baseTexture","baseTexture",719523960),true], null)));
 
 
-var G__91635 = seq__91282_91630;
-var G__91636 = chunk__91283_91631;
-var G__91637 = count__91284_91632;
-var G__91638 = (i__91285_91633 + (1));
-seq__91282_91630 = G__91635;
-chunk__91283_91631 = G__91636;
-count__91284_91632 = G__91637;
-i__91285_91633 = G__91638;
+var G__81339 = seq__80466_81334;
+var G__81340 = chunk__80467_81335;
+var G__81341 = count__80468_81336;
+var G__81342 = (i__80469_81337 + (1));
+seq__80466_81334 = G__81339;
+chunk__80467_81335 = G__81340;
+count__80468_81336 = G__81341;
+i__80469_81337 = G__81342;
 continue;
 } else {
-var temp__5753__auto___91639 = cljs.core.seq(seq__91282_91630);
-if(temp__5753__auto___91639){
-var seq__91282_91640__$1 = temp__5753__auto___91639;
-if(cljs.core.chunked_seq_QMARK_(seq__91282_91640__$1)){
-var c__4556__auto___91641 = cljs.core.chunk_first(seq__91282_91640__$1);
-var G__91642 = cljs.core.chunk_rest(seq__91282_91640__$1);
-var G__91643 = c__4556__auto___91641;
-var G__91644 = cljs.core.count(c__4556__auto___91641);
-var G__91645 = (0);
-seq__91282_91630 = G__91642;
-chunk__91283_91631 = G__91643;
-count__91284_91632 = G__91644;
-i__91285_91633 = G__91645;
+var temp__5753__auto___81343 = cljs.core.seq(seq__80466_81334);
+if(temp__5753__auto___81343){
+var seq__80466_81344__$1 = temp__5753__auto___81343;
+if(cljs.core.chunked_seq_QMARK_(seq__80466_81344__$1)){
+var c__4556__auto___81345 = cljs.core.chunk_first(seq__80466_81344__$1);
+var G__81346 = cljs.core.chunk_rest(seq__80466_81344__$1);
+var G__81347 = c__4556__auto___81345;
+var G__81348 = cljs.core.count(c__4556__auto___81345);
+var G__81349 = (0);
+seq__80466_81334 = G__81346;
+chunk__80467_81335 = G__81347;
+count__80468_81336 = G__81348;
+i__80469_81337 = G__81349;
 continue;
 } else {
-var text_container_91646 = cljs.core.first(seq__91282_91640__$1);
-stage_91628.removeChild(text_container_91646);
+var text_container_81350 = cljs.core.first(seq__80466_81344__$1);
+stage_81332.removeChild(text_container_81350);
 
-text_container_91646.destroy(cljs.core.clj__GT_js(new cljs.core.PersistentArrayMap(null, 3, [new cljs.core.Keyword(null,"children","children",-940561982),true,new cljs.core.Keyword(null,"texture","texture",-266291651),true,new cljs.core.Keyword(null,"baseTexture","baseTexture",719523960),true], null)));
+text_container_81350.destroy(cljs.core.clj__GT_js(new cljs.core.PersistentArrayMap(null, 3, [new cljs.core.Keyword(null,"children","children",-940561982),true,new cljs.core.Keyword(null,"texture","texture",-266291651),true,new cljs.core.Keyword(null,"baseTexture","baseTexture",719523960),true], null)));
 
 
-var G__91647 = cljs.core.next(seq__91282_91640__$1);
-var G__91648 = null;
-var G__91649 = (0);
-var G__91650 = (0);
-seq__91282_91630 = G__91647;
-chunk__91283_91631 = G__91648;
-count__91284_91632 = G__91649;
-i__91285_91633 = G__91650;
+var G__81351 = cljs.core.next(seq__80466_81344__$1);
+var G__81352 = null;
+var G__81353 = (0);
+var G__81354 = (0);
+seq__80466_81334 = G__81351;
+chunk__80467_81335 = G__81352;
+count__80468_81336 = G__81353;
+i__80469_81337 = G__81354;
 continue;
 }
 } else {
@@ -1552,75 +3161,75 @@ break;
 } else {
 }
 
-var seq__91286_91651 = cljs.core.seq(cljs.core.mapv.cljs$core$IFn$_invoke$arity$3(cljs.core.vector,ellah.constants.ui_layers,cljs.core.range.cljs$core$IFn$_invoke$arity$0()));
-var chunk__91287_91652 = null;
-var count__91288_91653 = (0);
-var i__91289_91654 = (0);
+var seq__80470_81355 = cljs.core.seq(cljs.core.mapv.cljs$core$IFn$_invoke$arity$3(cljs.core.vector,ellah.constants.ui_layers,cljs.core.range.cljs$core$IFn$_invoke$arity$0()));
+var chunk__80471_81356 = null;
+var count__80472_81357 = (0);
+var i__80473_81358 = (0);
 while(true){
-if((i__91289_91654 < count__91288_91653)){
-var vec__91296_91655 = chunk__91287_91652.cljs$core$IIndexed$_nth$arity$2(null,i__91289_91654);
-var layer_91656 = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__91296_91655,(0),null);
-var z_91657 = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__91296_91655,(1),null);
-var container_91658 = (new module$node_modules$pixi_DOT_js$dist$cjs$pixi.Container());
-ellah.graphics.update_attr_BANG_(new cljs.core.Keyword(null,"texts","texts",-2031072472),((function (seq__91286_91651,chunk__91287_91652,count__91288_91653,i__91289_91654,container_91658,vec__91296_91655,layer_91656,z_91657,stage_91628,texts_91629,app,delta,map__91276,map__91276__$1,move,zoom){
-return (function (p1__91275_SHARP_){
-return cljs.core.assoc.cljs$core$IFn$_invoke$arity$3(p1__91275_SHARP_,layer_91656,container_91658);
-});})(seq__91286_91651,chunk__91287_91652,count__91288_91653,i__91289_91654,container_91658,vec__91296_91655,layer_91656,z_91657,stage_91628,texts_91629,app,delta,map__91276,map__91276__$1,move,zoom))
+if((i__80473_81358 < count__80472_81357)){
+var vec__80480_81359 = chunk__80471_81356.cljs$core$IIndexed$_nth$arity$2(null,i__80473_81358);
+var layer_81360 = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__80480_81359,(0),null);
+var z_81361 = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__80480_81359,(1),null);
+var container_81362 = (new module$node_modules$pixi_DOT_js$dist$cjs$pixi.Container());
+ellah.graphics.update_attr_BANG_(new cljs.core.Keyword(null,"texts","texts",-2031072472),((function (seq__80470_81355,chunk__80471_81356,count__80472_81357,i__80473_81358,container_81362,vec__80480_81359,layer_81360,z_81361,stage_81332,texts_81333,app,delta,map__80460,map__80460__$1,move,zoom){
+return (function (p1__80459_SHARP_){
+return cljs.core.assoc.cljs$core$IFn$_invoke$arity$3(p1__80459_SHARP_,layer_81360,container_81362);
+});})(seq__80470_81355,chunk__80471_81356,count__80472_81357,i__80473_81358,container_81362,vec__80480_81359,layer_81360,z_81361,stage_81332,texts_81333,app,delta,map__80460,map__80460__$1,move,zoom))
 );
 
-(container_91658.zIndex = (0.5 + z_91657));
+(container_81362.zIndex = (0.5 + z_81361));
 
-stage_91628.addChild(container_91658);
+stage_81332.addChild(container_81362);
 
 
-var G__91659 = seq__91286_91651;
-var G__91660 = chunk__91287_91652;
-var G__91661 = count__91288_91653;
-var G__91662 = (i__91289_91654 + (1));
-seq__91286_91651 = G__91659;
-chunk__91287_91652 = G__91660;
-count__91288_91653 = G__91661;
-i__91289_91654 = G__91662;
+var G__81363 = seq__80470_81355;
+var G__81364 = chunk__80471_81356;
+var G__81365 = count__80472_81357;
+var G__81366 = (i__80473_81358 + (1));
+seq__80470_81355 = G__81363;
+chunk__80471_81356 = G__81364;
+count__80472_81357 = G__81365;
+i__80473_81358 = G__81366;
 continue;
 } else {
-var temp__5753__auto___91663 = cljs.core.seq(seq__91286_91651);
-if(temp__5753__auto___91663){
-var seq__91286_91664__$1 = temp__5753__auto___91663;
-if(cljs.core.chunked_seq_QMARK_(seq__91286_91664__$1)){
-var c__4556__auto___91665 = cljs.core.chunk_first(seq__91286_91664__$1);
-var G__91666 = cljs.core.chunk_rest(seq__91286_91664__$1);
-var G__91667 = c__4556__auto___91665;
-var G__91668 = cljs.core.count(c__4556__auto___91665);
-var G__91669 = (0);
-seq__91286_91651 = G__91666;
-chunk__91287_91652 = G__91667;
-count__91288_91653 = G__91668;
-i__91289_91654 = G__91669;
+var temp__5753__auto___81367 = cljs.core.seq(seq__80470_81355);
+if(temp__5753__auto___81367){
+var seq__80470_81368__$1 = temp__5753__auto___81367;
+if(cljs.core.chunked_seq_QMARK_(seq__80470_81368__$1)){
+var c__4556__auto___81369 = cljs.core.chunk_first(seq__80470_81368__$1);
+var G__81370 = cljs.core.chunk_rest(seq__80470_81368__$1);
+var G__81371 = c__4556__auto___81369;
+var G__81372 = cljs.core.count(c__4556__auto___81369);
+var G__81373 = (0);
+seq__80470_81355 = G__81370;
+chunk__80471_81356 = G__81371;
+count__80472_81357 = G__81372;
+i__80473_81358 = G__81373;
 continue;
 } else {
-var vec__91299_91670 = cljs.core.first(seq__91286_91664__$1);
-var layer_91671 = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__91299_91670,(0),null);
-var z_91672 = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__91299_91670,(1),null);
-var container_91673 = (new module$node_modules$pixi_DOT_js$dist$cjs$pixi.Container());
-ellah.graphics.update_attr_BANG_(new cljs.core.Keyword(null,"texts","texts",-2031072472),((function (seq__91286_91651,chunk__91287_91652,count__91288_91653,i__91289_91654,container_91673,vec__91299_91670,layer_91671,z_91672,seq__91286_91664__$1,temp__5753__auto___91663,stage_91628,texts_91629,app,delta,map__91276,map__91276__$1,move,zoom){
-return (function (p1__91275_SHARP_){
-return cljs.core.assoc.cljs$core$IFn$_invoke$arity$3(p1__91275_SHARP_,layer_91671,container_91673);
-});})(seq__91286_91651,chunk__91287_91652,count__91288_91653,i__91289_91654,container_91673,vec__91299_91670,layer_91671,z_91672,seq__91286_91664__$1,temp__5753__auto___91663,stage_91628,texts_91629,app,delta,map__91276,map__91276__$1,move,zoom))
+var vec__80483_81374 = cljs.core.first(seq__80470_81368__$1);
+var layer_81375 = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__80483_81374,(0),null);
+var z_81376 = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__80483_81374,(1),null);
+var container_81377 = (new module$node_modules$pixi_DOT_js$dist$cjs$pixi.Container());
+ellah.graphics.update_attr_BANG_(new cljs.core.Keyword(null,"texts","texts",-2031072472),((function (seq__80470_81355,chunk__80471_81356,count__80472_81357,i__80473_81358,container_81377,vec__80483_81374,layer_81375,z_81376,seq__80470_81368__$1,temp__5753__auto___81367,stage_81332,texts_81333,app,delta,map__80460,map__80460__$1,move,zoom){
+return (function (p1__80459_SHARP_){
+return cljs.core.assoc.cljs$core$IFn$_invoke$arity$3(p1__80459_SHARP_,layer_81375,container_81377);
+});})(seq__80470_81355,chunk__80471_81356,count__80472_81357,i__80473_81358,container_81377,vec__80483_81374,layer_81375,z_81376,seq__80470_81368__$1,temp__5753__auto___81367,stage_81332,texts_81333,app,delta,map__80460,map__80460__$1,move,zoom))
 );
 
-(container_91673.zIndex = (0.5 + z_91672));
+(container_81377.zIndex = (0.5 + z_81376));
 
-stage_91628.addChild(container_91673);
+stage_81332.addChild(container_81377);
 
 
-var G__91674 = cljs.core.next(seq__91286_91664__$1);
-var G__91675 = null;
-var G__91676 = (0);
-var G__91677 = (0);
-seq__91286_91651 = G__91674;
-chunk__91287_91652 = G__91675;
-count__91288_91653 = G__91676;
-i__91289_91654 = G__91677;
+var G__81378 = cljs.core.next(seq__80470_81368__$1);
+var G__81379 = null;
+var G__81380 = (0);
+var G__81381 = (0);
+seq__80470_81355 = G__81378;
+chunk__80471_81356 = G__81379;
+count__80472_81357 = G__81380;
+i__80473_81358 = G__81381;
 continue;
 }
 } else {
@@ -1632,8 +3241,8 @@ break;
 return ellah.graphics.render_app_state(app_state,control_state);
 });
 ellah.graphics.log_eval_result = (function ellah$graphics$log_eval_result(result){
-return ellah.graphics.update_attr_BANG_(new cljs.core.Keyword(null,"eval-results","eval-results",553789722),(function (p1__91302_SHARP_){
-return cljs.core.conj.cljs$core$IFn$_invoke$arity$2(p1__91302_SHARP_,cljs.core.first(new cljs.core.Keyword(null,"children","children",-940561982).cljs$core$IFn$_invoke$arity$1(ellah.vedn.clj__GT_vedn(cljs.core.str.cljs$core$IFn$_invoke$arity$1(result)))));
+return ellah.graphics.update_attr_BANG_(new cljs.core.Keyword(null,"eval-results","eval-results",553789722),(function (p1__80486_SHARP_){
+return cljs.core.conj.cljs$core$IFn$_invoke$arity$2(p1__80486_SHARP_,cljs.core.first(new cljs.core.Keyword(null,"children","children",-940561982).cljs$core$IFn$_invoke$arity$1(ellah.vedn.clj__GT_vedn(cljs.core.str.cljs$core$IFn$_invoke$arity$1(result)))));
 }));
 });
 ellah.graphics.update_mouse_pos = (function ellah$graphics$update_mouse_pos(event){
@@ -1649,123 +3258,67 @@ var diff = ellah.geometry.subtract_points(state,current_pos);
 return cljs.core.assoc.cljs$core$IFn$_invoke$arity$3(cljs.core.merge.cljs$core$IFn$_invoke$arity$variadic(cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([state,current_pos], 0)),new cljs.core.Keyword(null,"drag-dist","drag-dist",-1927545717),(cljs.core.truth_(new cljs.core.Keyword(null,"down?","down?",1701019493).cljs$core$IFn$_invoke$arity$1(state))?(ellah.geometry.point_magnitude(diff) + new cljs.core.Keyword(null,"drag-dist","drag-dist",-1927545717).cljs$core$IFn$_invoke$arity$1(state)):null));
 }));
 });
+ellah.graphics.track_discard = (function ellah$graphics$track_discard(form){
+return ellah.graphics.update_attr_BANG_(new cljs.core.Keyword(null,"discard-history","discard-history",92573038),(function (p1__80487_SHARP_){
+return cljs.core.conj.cljs$core$IFn$_invoke$arity$2(p1__80487_SHARP_,form);
+}));
+});
+ellah.graphics.delete_formbar_form_at = (function ellah$graphics$delete_formbar_form_at(path){
+var vec__80489 = path;
+var side = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__80489,(0),null);
+var stage = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__80489,(1),null);
+var substage = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__80489,(2),null);
+var _ = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__80489,(3),null);
+var form_index = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__80489,(4),null);
+return cljs.core.swap_BANG_.cljs$core$IFn$_invoke$arity$2(ellah.graphics.graphics_state,(function (state){
+return cljs.core.update_in.cljs$core$IFn$_invoke$arity$3(state,new cljs.core.PersistentVector(null, 5, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"formbars","formbars",393026901),side,stage,substage,new cljs.core.Keyword(null,"forms","forms",2045992350)], null),(function (p1__80488_SHARP_){
+return ellah.vedn.vector_remove(p1__80488_SHARP_,form_index);
+}));
+}));
+});
 ellah.graphics.on_click_down = (function ellah$graphics$on_click_down(event){
 ellah.graphics.update_mouse_pos(event);
 
-var map__91304 = cljs.core.deref(ellah.graphics.graphics_state);
-var map__91304__$1 = (((((!((map__91304 == null))))?(((((map__91304.cljs$lang$protocol_mask$partition0$ & (64))) || ((cljs.core.PROTOCOL_SENTINEL === map__91304.cljs$core$ISeq$))))?true:false):false))?cljs.core.apply.cljs$core$IFn$_invoke$arity$2(cljs.core.hash_map,map__91304):map__91304);
-var formbars = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__91304__$1,new cljs.core.Keyword(null,"formbars","formbars",393026901));
-var mouse = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__91304__$1,new cljs.core.Keyword(null,"mouse","mouse",478628972));
+var map__80492 = cljs.core.deref(ellah.graphics.graphics_state);
+var map__80492__$1 = (((((!((map__80492 == null))))?(((((map__80492.cljs$lang$protocol_mask$partition0$ & (64))) || ((cljs.core.PROTOCOL_SENTINEL === map__80492.cljs$core$ISeq$))))?true:false):false))?cljs.core.apply.cljs$core$IFn$_invoke$arity$2(cljs.core.hash_map,map__80492):map__80492);
+var mouse = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__80492__$1,new cljs.core.Keyword(null,"mouse","mouse",478628972));
 var layout = ellah.graphics.adjusted_form_layout();
 var layout_path = ellah.graphics.layout_path_at(layout,mouse);
 var zone = ellah.graphics.get_mouse_zone();
-var formbar_zone_indeces = ((cljs.core._EQ_.cljs$core$IFn$_invoke$arity$2(zone,new cljs.core.Keyword(null,"formbar","formbar",824418093)))?cljs.core.some((function (p1__91303_SHARP_){
-if(ellah.geometry.in_circle_QMARK_(cljs.core.apply.cljs$core$IFn$_invoke$arity$2(ellah.graphics.formbar_circle,p1__91303_SHARP_),mouse)){
-return p1__91303_SHARP_;
-} else {
-return null;
-}
-}),(function (){var iter__4529__auto__ = (function ellah$graphics$on_click_down_$_iter__91306(s__91307){
-return (new cljs.core.LazySeq(null,(function (){
-var s__91307__$1 = s__91307;
-while(true){
-var temp__5753__auto__ = cljs.core.seq(s__91307__$1);
-if(temp__5753__auto__){
-var xs__6308__auto__ = temp__5753__auto__;
-var i = cljs.core.first(xs__6308__auto__);
-var iterys__4525__auto__ = ((function (s__91307__$1,i,xs__6308__auto__,temp__5753__auto__,map__91304,map__91304__$1,formbars,mouse,layout,layout_path,zone){
-return (function ellah$graphics$on_click_down_$_iter__91306_$_iter__91308(s__91309){
-return (new cljs.core.LazySeq(null,((function (s__91307__$1,i,xs__6308__auto__,temp__5753__auto__,map__91304,map__91304__$1,formbars,mouse,layout,layout_path,zone){
-return (function (){
-var s__91309__$1 = s__91309;
-while(true){
-var temp__5753__auto____$1 = cljs.core.seq(s__91309__$1);
-if(temp__5753__auto____$1){
-var s__91309__$2 = temp__5753__auto____$1;
-if(cljs.core.chunked_seq_QMARK_(s__91309__$2)){
-var c__4527__auto__ = cljs.core.chunk_first(s__91309__$2);
-var size__4528__auto__ = cljs.core.count(c__4527__auto__);
-var b__91311 = cljs.core.chunk_buffer(size__4528__auto__);
-if((function (){var i__91310 = (0);
-while(true){
-if((i__91310 < size__4528__auto__)){
-var i2 = cljs.core._nth(c__4527__auto__,i__91310);
-cljs.core.chunk_append(b__91311,new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [i,i2], null));
-
-var G__91678 = (i__91310 + (1));
-i__91310 = G__91678;
-continue;
-} else {
-return true;
-}
-break;
-}
-})()){
-return cljs.core.chunk_cons(cljs.core.chunk(b__91311),ellah$graphics$on_click_down_$_iter__91306_$_iter__91308(cljs.core.chunk_rest(s__91309__$2)));
-} else {
-return cljs.core.chunk_cons(cljs.core.chunk(b__91311),null);
-}
-} else {
-var i2 = cljs.core.first(s__91309__$2);
-return cljs.core.cons(new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [i,i2], null),ellah$graphics$on_click_down_$_iter__91306_$_iter__91308(cljs.core.rest(s__91309__$2)));
-}
-} else {
-return null;
-}
-break;
-}
-});})(s__91307__$1,i,xs__6308__auto__,temp__5753__auto__,map__91304,map__91304__$1,formbars,mouse,layout,layout_path,zone))
-,null,null));
-});})(s__91307__$1,i,xs__6308__auto__,temp__5753__auto__,map__91304,map__91304__$1,formbars,mouse,layout,layout_path,zone))
-;
-var fs__4526__auto__ = cljs.core.seq(iterys__4525__auto__(cljs.core.range.cljs$core$IFn$_invoke$arity$1(cljs.core.count(new cljs.core.Keyword(null,"forms","forms",2045992350).cljs$core$IFn$_invoke$arity$1(cljs.core.nth.cljs$core$IFn$_invoke$arity$2(formbars,i))))));
-if(fs__4526__auto__){
-return cljs.core.concat.cljs$core$IFn$_invoke$arity$2(fs__4526__auto__,ellah$graphics$on_click_down_$_iter__91306(cljs.core.rest(s__91307__$1)));
-} else {
-var G__91679 = cljs.core.rest(s__91307__$1);
-s__91307__$1 = G__91679;
-continue;
-}
-} else {
-return null;
-}
-break;
-}
-}),null,null));
-});
-return iter__4529__auto__(cljs.core.range.cljs$core$IFn$_invoke$arity$1(cljs.core.count(formbars)));
-})()):null);
 return ellah.graphics.update_attr_BANG_(new cljs.core.Keyword(null,"mouse","mouse",478628972),(function (state){
-return cljs.core.assoc.cljs$core$IFn$_invoke$arity$variadic(state,new cljs.core.Keyword(null,"down?","down?",1701019493),true,cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([new cljs.core.Keyword(null,"down-path","down-path",-1576662356),layout_path,new cljs.core.Keyword(null,"down-zone","down-zone",-858806618),zone,new cljs.core.Keyword(null,"down-formbar-indeces","down-formbar-indeces",-1191819382),formbar_zone_indeces], 0));
+return cljs.core.assoc.cljs$core$IFn$_invoke$arity$variadic(state,new cljs.core.Keyword(null,"down?","down?",1701019493),true,cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([new cljs.core.Keyword(null,"down-path","down-path",-1576662356),layout_path,new cljs.core.Keyword(null,"down-zone","down-zone",-858806618),zone,new cljs.core.Keyword(null,"down-formbar-form-path","down-formbar-form-path",-1673861711),ellah.graphics.formbar_form_path_at(mouse)], 0));
 }));
 });
 ellah.graphics.on_click_up = (function ellah$graphics$on_click_up(event){
 ellah.graphics.update_mouse_pos(event);
 
-var mouse_state = new cljs.core.Keyword(null,"mouse","mouse",478628972).cljs$core$IFn$_invoke$arity$1(cljs.core.deref(ellah.graphics.graphics_state));
+var map__80496 = cljs.core.deref(ellah.graphics.graphics_state);
+var map__80496__$1 = (((((!((map__80496 == null))))?(((((map__80496.cljs$lang$protocol_mask$partition0$ & (64))) || ((cljs.core.PROTOCOL_SENTINEL === map__80496.cljs$core$ISeq$))))?true:false):false))?cljs.core.apply.cljs$core$IFn$_invoke$arity$2(cljs.core.hash_map,map__80496):map__80496);
+var mouse = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__80496__$1,new cljs.core.Keyword(null,"mouse","mouse",478628972));
+var selected_layout_path = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__80496__$1,new cljs.core.Keyword(null,"selected-layout-path","selected-layout-path",1007788705));
 var layout = ellah.graphics.adjusted_form_layout();
-var layout_path = ellah.graphics.layout_path_at(layout,mouse_state);
-var map__91315 = mouse_state;
-var map__91315__$1 = (((((!((map__91315 == null))))?(((((map__91315.cljs$lang$protocol_mask$partition0$ & (64))) || ((cljs.core.PROTOCOL_SENTINEL === map__91315.cljs$core$ISeq$))))?true:false):false))?cljs.core.apply.cljs$core$IFn$_invoke$arity$2(cljs.core.hash_map,map__91315):map__91315);
-var down_zone = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__91315__$1,new cljs.core.Keyword(null,"down-zone","down-zone",-858806618));
-var down_path = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__91315__$1,new cljs.core.Keyword(null,"down-path","down-path",-1576662356));
+var layout_path = ellah.graphics.layout_path_at(layout,mouse);
+var map__80497 = mouse;
+var map__80497__$1 = (((((!((map__80497 == null))))?(((((map__80497.cljs$lang$protocol_mask$partition0$ & (64))) || ((cljs.core.PROTOCOL_SENTINEL === map__80497.cljs$core$ISeq$))))?true:false):false))?cljs.core.apply.cljs$core$IFn$_invoke$arity$2(cljs.core.hash_map,map__80497):map__80497);
+var down_zone = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__80497__$1,new cljs.core.Keyword(null,"down-zone","down-zone",-858806618));
+var down_path = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__80497__$1,new cljs.core.Keyword(null,"down-path","down-path",-1576662356));
 if(ellah.graphics.mouse_dragging_QMARK_()){
-var G__91317_91680 = ellah.graphics.get_mouse_zone();
-var G__91317_91681__$1 = (((G__91317_91680 instanceof cljs.core.Keyword))?G__91317_91680.fqn:null);
-switch (G__91317_91681__$1) {
+var G__80500_81382 = ellah.graphics.get_mouse_zone();
+var G__80500_81383__$1 = (((G__80500_81382 instanceof cljs.core.Keyword))?G__80500_81382.fqn:null);
+switch (G__80500_81383__$1) {
 case "program":
-var insertion_path_91683 = ellah.graphics.layout_insertion_path_at(layout,mouse_state);
-var current_placement_form_91684 = ellah.graphics.placement_form();
-if(cljs.core.truth_(current_placement_form_91684)){
+var insertion_path_81385 = ellah.graphics.layout_insertion_path_at(layout,mouse);
+var current_placement_form_81386 = ellah.graphics.placement_form();
+if(cljs.core.truth_(current_placement_form_81386)){
 ellah.graphics.update_attr_BANG_(new cljs.core.Keyword(null,"form","form",-1624062471),(function (form){
-if(cljs.core._EQ_.cljs$core$IFn$_invoke$arity$2(cljs.core.count(layout_path),cljs.core.count(insertion_path_91683))){
-if(cljs.core._EQ_.cljs$core$IFn$_invoke$arity$2(new cljs.core.Keyword(null,"literal","literal",1664775605),new cljs.core.Keyword(null,"type","type",1174270348).cljs$core$IFn$_invoke$arity$1(ellah.vedn.get_child(form,cljs.core.vec(cljs.core.concat.cljs$core$IFn$_invoke$arity$2(cljs.core.list((0)),insertion_path_91683)))))){
-return ellah.vedn.replace_child(form,cljs.core.vec(cljs.core.concat.cljs$core$IFn$_invoke$arity$2(cljs.core.list((0)),layout_path)),current_placement_form_91684);
+if(cljs.core._EQ_.cljs$core$IFn$_invoke$arity$2(cljs.core.count(layout_path),cljs.core.count(insertion_path_81385))){
+if(cljs.core._EQ_.cljs$core$IFn$_invoke$arity$2(new cljs.core.Keyword(null,"literal","literal",1664775605),new cljs.core.Keyword(null,"type","type",1174270348).cljs$core$IFn$_invoke$arity$1(ellah.vedn.get_child(form,cljs.core.vec(cljs.core.concat.cljs$core$IFn$_invoke$arity$2(cljs.core.list((0)),insertion_path_81385)))))){
+return ellah.vedn.replace_child(form,cljs.core.vec(cljs.core.concat.cljs$core$IFn$_invoke$arity$2(cljs.core.list((0)),layout_path)),current_placement_form_81386);
 } else {
-return ellah.vedn.insert_child(form,cljs.core.vec(cljs.core.concat.cljs$core$IFn$_invoke$arity$variadic(cljs.core.list((0)),insertion_path_91683,cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([cljs.core.list((0))], 0))),current_placement_form_91684);
+return ellah.vedn.insert_child(form,cljs.core.vec(cljs.core.concat.cljs$core$IFn$_invoke$arity$variadic(cljs.core.list((0)),insertion_path_81385,cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([cljs.core.list((0))], 0))),current_placement_form_81386);
 }
 } else {
-return ellah.vedn.insert_child(form,cljs.core.vec(cljs.core.concat.cljs$core$IFn$_invoke$arity$2(cljs.core.list((0)),insertion_path_91683)),current_placement_form_91684);
+return ellah.vedn.insert_child(form,cljs.core.vec(cljs.core.concat.cljs$core$IFn$_invoke$arity$2(cljs.core.list((0)),insertion_path_81385)),current_placement_form_81386);
 }
 }));
 } else {
@@ -1773,27 +3326,44 @@ return ellah.vedn.insert_child(form,cljs.core.vec(cljs.core.concat.cljs$core$IFn
 
 break;
 case "discard":
-var G__91318_91685 = down_zone;
-var G__91318_91686__$1 = (((G__91318_91685 instanceof cljs.core.Keyword))?G__91318_91685.fqn:null);
-switch (G__91318_91686__$1) {
+var G__80501_81387 = down_zone;
+var G__80501_81388__$1 = (((G__80501_81387 instanceof cljs.core.Keyword))?G__80501_81387.fqn:null);
+switch (G__80501_81388__$1) {
 case "program":
 if(cljs.core.truth_(down_path)){
-ellah.graphics.update_attr_BANG_(new cljs.core.Keyword(null,"form","form",-1624062471),(function (p1__91312_SHARP_){
-return ellah.vedn.remove_child(p1__91312_SHARP_,cljs.core.vec(cljs.core.concat.cljs$core$IFn$_invoke$arity$2(cljs.core.list((0)),down_path)));
+if(cljs.core.empty_QMARK_(down_path)){
+ellah.graphics.track_discard(cljs.core.first(new cljs.core.Keyword(null,"children","children",-940561982).cljs$core$IFn$_invoke$arity$1(new cljs.core.Keyword(null,"form","form",-1624062471).cljs$core$IFn$_invoke$arity$1(cljs.core.deref(ellah.graphics.graphics_state)))));
+
+ellah.graphics.set_attr_BANG_(new cljs.core.Keyword(null,"form","form",-1624062471),new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null,"type","type",1174270348),new cljs.core.Keyword(null,"vector","vector",1902966158),new cljs.core.Keyword(null,"children","children",-940561982),new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null,"type","type",1174270348),new cljs.core.Keyword(null,"list","list",765357683),new cljs.core.Keyword(null,"children","children",-940561982),cljs.core.PersistentVector.EMPTY], null)], null)], null));
+
+ellah.graphics.set_attr_BANG_(new cljs.core.Keyword(null,"selected-layout-path","selected-layout-path",1007788705),null);
+} else {
+if((((cljs.core.count(selected_layout_path) > (0))) && (cljs.core._EQ_.cljs$core$IFn$_invoke$arity$2(selected_layout_path,down_path)))){
+ellah.graphics.update_attr_BANG_(new cljs.core.Keyword(null,"selected-layout-path","selected-layout-path",1007788705),cljs.core.pop);
+} else {
+}
+
+ellah.graphics.track_discard(ellah.vedn.get_child(new cljs.core.Keyword(null,"form","form",-1624062471).cljs$core$IFn$_invoke$arity$1(cljs.core.deref(ellah.graphics.graphics_state)),cljs.core.vec(cljs.core.concat.cljs$core$IFn$_invoke$arity$2(cljs.core.list((0)),down_path))));
+
+ellah.graphics.update_attr_BANG_(new cljs.core.Keyword(null,"form","form",-1624062471),(function (p1__80494_SHARP_){
+return ellah.vedn.remove_child(p1__80494_SHARP_,cljs.core.vec(cljs.core.concat.cljs$core$IFn$_invoke$arity$2(cljs.core.list((0)),down_path)));
 }));
+}
 } else {
 }
 
 break;
 case "formbar":
-var vec__91319_91688 = new cljs.core.Keyword(null,"down-formbar-indeces","down-formbar-indeces",-1191819382).cljs$core$IFn$_invoke$arity$1(mouse_state);
-var outer_index_91689 = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__91319_91688,(0),null);
-var inner_index_91690 = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__91319_91688,(1),null);
-ellah.graphics.update_attr_BANG_(new cljs.core.Keyword(null,"formbars","formbars",393026901),(function (formbars){
-return cljs.core.update_in.cljs$core$IFn$_invoke$arity$3(formbars,new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [outer_index_91689,new cljs.core.Keyword(null,"forms","forms",2045992350)], null),(function (p1__91313_SHARP_){
-return ellah.vedn.vector_remove(p1__91313_SHARP_,inner_index_91690);
-}));
-}));
+var map__80502_81390 = mouse;
+var map__80502_81391__$1 = (((((!((map__80502_81390 == null))))?(((((map__80502_81390.cljs$lang$protocol_mask$partition0$ & (64))) || ((cljs.core.PROTOCOL_SENTINEL === map__80502_81390.cljs$core$ISeq$))))?true:false):false))?cljs.core.apply.cljs$core$IFn$_invoke$arity$2(cljs.core.hash_map,map__80502_81390):map__80502_81390);
+var down_formbar_form_path_81392 = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__80502_81391__$1,new cljs.core.Keyword(null,"down-formbar-form-path","down-formbar-form-path",-1673861711));
+if(cljs.core.truth_(down_formbar_form_path_81392)){
+var arrangement_81393 = ellah.graphics.formbar_arrangement();
+ellah.graphics.track_discard(cljs.core.get_in.cljs$core$IFn$_invoke$arity$2(arrangement_81393,down_formbar_form_path_81392));
+
+ellah.graphics.delete_formbar_form_at(down_formbar_form_path_81392);
+} else {
+}
 
 break;
 default:
@@ -1802,26 +3372,21 @@ default:
 
 break;
 case "eval":
-if(cljs.core.truth_(down_path)){
-var down_form_91691 = ellah.vedn.get_child(new cljs.core.Keyword(null,"form","form",-1624062471).cljs$core$IFn$_invoke$arity$1(cljs.core.deref(ellah.graphics.graphics_state)),cljs.core.vec(cljs.core.concat.cljs$core$IFn$_invoke$arity$2(cljs.core.list((0)),down_path)));
-ellah.evaluation.eval_clj.cljs$core$IFn$_invoke$arity$variadic(ellah.vedn.vedn__GT_clj(down_form_91691),cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([ellah.graphics.log_eval_result], 0));
+var current_placement_form_81394 = ellah.graphics.placement_form();
+if(cljs.core.truth_(current_placement_form_81394)){
+ellah.evaluation.eval_clj.cljs$core$IFn$_invoke$arity$variadic(ellah.vedn.vedn__GT_clj(current_placement_form_81394),cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([ellah.graphics.log_eval_result], 0));
 } else {
 }
 
 break;
 case "formbar":
-var current_placement_form_91692 = ellah.graphics.placement_form();
-if(cljs.core.truth_(current_placement_form_91692)){
-var vec__91322_91693 = ellah.graphics.formbar_insertion_indeces(mouse_state);
-var outer_index_91694 = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__91322_91693,(0),null);
-var inner_index_91695 = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__91322_91693,(1),null);
-ellah.graphics.update_attr_BANG_(new cljs.core.Keyword(null,"formbars","formbars",393026901),(function (formbars){
-return cljs.core.update_in.cljs$core$IFn$_invoke$arity$3(formbars,new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [outer_index_91694,new cljs.core.Keyword(null,"forms","forms",2045992350)], null),(function (p1__91314_SHARP_){
-return ellah.vedn.vector_insert(p1__91314_SHARP_,(inner_index_91695 + (1)),current_placement_form_91692);
+var insertion_index_81395 = ellah.graphics.get_formbar_insertion_index();
+var formbar_path_81396 = ellah.graphics.formbar_path_at(mouse);
+cljs.core.swap_BANG_.cljs$core$IFn$_invoke$arity$2(ellah.graphics.graphics_state,(function (state){
+return cljs.core.update_in.cljs$core$IFn$_invoke$arity$3(state,cljs.core.concat.cljs$core$IFn$_invoke$arity$variadic(new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"formbars","formbars",393026901)], null),formbar_path_81396,cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"forms","forms",2045992350)], null)], 0)),(function (p1__80495_SHARP_){
+return ellah.vedn.vector_insert(p1__80495_SHARP_,insertion_index_81395,ellah.graphics.placement_form());
 }));
 }));
-} else {
-}
 
 break;
 default:
@@ -1830,8 +3395,28 @@ default:
 } else {
 }
 
-if(((cljs.core._EQ_.cljs$core$IFn$_invoke$arity$2(new cljs.core.Keyword(null,"down-zone","down-zone",-858806618).cljs$core$IFn$_invoke$arity$1(mouse_state),new cljs.core.Keyword(null,"program","program",781564284))) && ((!(ellah.graphics.mouse_dragging_QMARK_()))))){
-ellah.graphics.set_attr_BANG_(new cljs.core.Keyword(null,"selected-layout-path","selected-layout-path",1007788705),new cljs.core.Keyword(null,"down-path","down-path",-1576662356).cljs$core$IFn$_invoke$arity$1(mouse_state));
+if(((cljs.core._EQ_.cljs$core$IFn$_invoke$arity$2(new cljs.core.Keyword(null,"down-zone","down-zone",-858806618).cljs$core$IFn$_invoke$arity$1(mouse),new cljs.core.Keyword(null,"program","program",781564284))) && ((!(ellah.graphics.mouse_dragging_QMARK_()))))){
+ellah.graphics.set_attr_BANG_(new cljs.core.Keyword(null,"selected-layout-path","selected-layout-path",1007788705),new cljs.core.Keyword(null,"down-path","down-path",-1576662356).cljs$core$IFn$_invoke$arity$1(mouse));
+
+var zoomed_form_81397 = ellah.vedn.get_child(new cljs.core.Keyword(null,"form","form",-1624062471).cljs$core$IFn$_invoke$arity$1(cljs.core.deref(ellah.graphics.graphics_state)),cljs.core.concat.cljs$core$IFn$_invoke$arity$2(new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [(0)], null),down_path));
+var map__80504_81398 = zoomed_form_81397;
+var map__80504_81399__$1 = (((((!((map__80504_81398 == null))))?(((((map__80504_81398.cljs$lang$protocol_mask$partition0$ & (64))) || ((cljs.core.PROTOCOL_SENTINEL === map__80504_81398.cljs$core$ISeq$))))?true:false):false))?cljs.core.apply.cljs$core$IFn$_invoke$arity$2(cljs.core.hash_map,map__80504_81398):map__80504_81398);
+var type_81400 = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__80504_81399__$1,new cljs.core.Keyword(null,"type","type",1174270348));
+var value_81401 = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__80504_81399__$1,new cljs.core.Keyword(null,"value","value",305978217));
+if(cljs.core._EQ_.cljs$core$IFn$_invoke$arity$2(type_81400,new cljs.core.Keyword(null,"literal","literal",1664775605))){
+ellah.graphics.activate_text_input(down_path);
+} else {
+if(cljs.core.truth_(new cljs.core.Keyword(null,"text-input-path","text-input-path",1110769199).cljs$core$IFn$_invoke$arity$1(cljs.core.deref(ellah.graphics.graphics_state)))){
+ellah.graphics.hide_text_input();
+
+ellah.graphics.update_attr_BANG_(new cljs.core.Keyword(null,"form","form",-1624062471),(function (form){
+return ellah.vedn.replace_child(form,cljs.core.concat.cljs$core$IFn$_invoke$arity$2(new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [(0)], null),new cljs.core.Keyword(null,"text-input-path","text-input-path",1110769199).cljs$core$IFn$_invoke$arity$1(cljs.core.deref(ellah.graphics.graphics_state))),new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null,"type","type",1174270348),new cljs.core.Keyword(null,"literal","literal",1664775605),new cljs.core.Keyword(null,"value","value",305978217),new cljs.core.Keyword(null,"text-input","text-input",-1937260843).cljs$core$IFn$_invoke$arity$1(cljs.core.deref(ellah.graphics.graphics_state)).value], null));
+}));
+
+ellah.util.log.cljs$core$IFn$_invoke$arity$variadic(cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([new cljs.core.Keyword(null,"text-input","text-input",-1937260843).cljs$core$IFn$_invoke$arity$1(cljs.core.deref(ellah.graphics.graphics_state)).value], 0));
+} else {
+}
+}
 } else {
 }
 
@@ -1848,75 +3433,75 @@ var stage = app.stage;
 
 ellah.graphics.set_attr_BANG_(new cljs.core.Keyword(null,"graphics","graphics",-2079995979),cljs.core.PersistentArrayMap.EMPTY);
 
-var seq__91326_91696 = cljs.core.seq(cljs.core.mapv.cljs$core$IFn$_invoke$arity$3(cljs.core.vector,ellah.constants.ui_layers,cljs.core.range.cljs$core$IFn$_invoke$arity$0()));
-var chunk__91327_91697 = null;
-var count__91328_91698 = (0);
-var i__91329_91699 = (0);
+var seq__80507_81402 = cljs.core.seq(cljs.core.mapv.cljs$core$IFn$_invoke$arity$3(cljs.core.vector,ellah.constants.ui_layers,cljs.core.range.cljs$core$IFn$_invoke$arity$0()));
+var chunk__80508_81403 = null;
+var count__80509_81404 = (0);
+var i__80510_81405 = (0);
 while(true){
-if((i__91329_91699 < count__91328_91698)){
-var vec__91336_91700 = chunk__91327_91697.cljs$core$IIndexed$_nth$arity$2(null,i__91329_91699);
-var layer_91701 = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__91336_91700,(0),null);
-var z_91702 = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__91336_91700,(1),null);
-ellah.graphics.update_attr_BANG_(new cljs.core.Keyword(null,"graphics","graphics",-2079995979),((function (seq__91326_91696,chunk__91327_91697,count__91328_91698,i__91329_91699,vec__91336_91700,layer_91701,z_91702,app,stage){
-return (function (p1__91325_SHARP_){
+if((i__80510_81405 < count__80509_81404)){
+var vec__80517_81406 = chunk__80508_81403.cljs$core$IIndexed$_nth$arity$2(null,i__80510_81405);
+var layer_81407 = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__80517_81406,(0),null);
+var z_81408 = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__80517_81406,(1),null);
+ellah.graphics.update_attr_BANG_(new cljs.core.Keyword(null,"graphics","graphics",-2079995979),((function (seq__80507_81402,chunk__80508_81403,count__80509_81404,i__80510_81405,vec__80517_81406,layer_81407,z_81408,app,stage){
+return (function (p1__80506_SHARP_){
 var graphics = (new module$node_modules$pixi_DOT_js$dist$cjs$pixi.Graphics());
-(graphics.zIndex = z_91702);
+(graphics.zIndex = z_81408);
 
 stage.addChild(graphics);
 
-return cljs.core.assoc.cljs$core$IFn$_invoke$arity$3(p1__91325_SHARP_,layer_91701,graphics);
-});})(seq__91326_91696,chunk__91327_91697,count__91328_91698,i__91329_91699,vec__91336_91700,layer_91701,z_91702,app,stage))
+return cljs.core.assoc.cljs$core$IFn$_invoke$arity$3(p1__80506_SHARP_,layer_81407,graphics);
+});})(seq__80507_81402,chunk__80508_81403,count__80509_81404,i__80510_81405,vec__80517_81406,layer_81407,z_81408,app,stage))
 );
 
 
-var G__91703 = seq__91326_91696;
-var G__91704 = chunk__91327_91697;
-var G__91705 = count__91328_91698;
-var G__91706 = (i__91329_91699 + (1));
-seq__91326_91696 = G__91703;
-chunk__91327_91697 = G__91704;
-count__91328_91698 = G__91705;
-i__91329_91699 = G__91706;
+var G__81409 = seq__80507_81402;
+var G__81410 = chunk__80508_81403;
+var G__81411 = count__80509_81404;
+var G__81412 = (i__80510_81405 + (1));
+seq__80507_81402 = G__81409;
+chunk__80508_81403 = G__81410;
+count__80509_81404 = G__81411;
+i__80510_81405 = G__81412;
 continue;
 } else {
-var temp__5753__auto___91707 = cljs.core.seq(seq__91326_91696);
-if(temp__5753__auto___91707){
-var seq__91326_91708__$1 = temp__5753__auto___91707;
-if(cljs.core.chunked_seq_QMARK_(seq__91326_91708__$1)){
-var c__4556__auto___91709 = cljs.core.chunk_first(seq__91326_91708__$1);
-var G__91710 = cljs.core.chunk_rest(seq__91326_91708__$1);
-var G__91711 = c__4556__auto___91709;
-var G__91712 = cljs.core.count(c__4556__auto___91709);
-var G__91713 = (0);
-seq__91326_91696 = G__91710;
-chunk__91327_91697 = G__91711;
-count__91328_91698 = G__91712;
-i__91329_91699 = G__91713;
+var temp__5753__auto___81413 = cljs.core.seq(seq__80507_81402);
+if(temp__5753__auto___81413){
+var seq__80507_81414__$1 = temp__5753__auto___81413;
+if(cljs.core.chunked_seq_QMARK_(seq__80507_81414__$1)){
+var c__4556__auto___81415 = cljs.core.chunk_first(seq__80507_81414__$1);
+var G__81416 = cljs.core.chunk_rest(seq__80507_81414__$1);
+var G__81417 = c__4556__auto___81415;
+var G__81418 = cljs.core.count(c__4556__auto___81415);
+var G__81419 = (0);
+seq__80507_81402 = G__81416;
+chunk__80508_81403 = G__81417;
+count__80509_81404 = G__81418;
+i__80510_81405 = G__81419;
 continue;
 } else {
-var vec__91339_91714 = cljs.core.first(seq__91326_91708__$1);
-var layer_91715 = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__91339_91714,(0),null);
-var z_91716 = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__91339_91714,(1),null);
-ellah.graphics.update_attr_BANG_(new cljs.core.Keyword(null,"graphics","graphics",-2079995979),((function (seq__91326_91696,chunk__91327_91697,count__91328_91698,i__91329_91699,vec__91339_91714,layer_91715,z_91716,seq__91326_91708__$1,temp__5753__auto___91707,app,stage){
-return (function (p1__91325_SHARP_){
+var vec__80520_81420 = cljs.core.first(seq__80507_81414__$1);
+var layer_81421 = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__80520_81420,(0),null);
+var z_81422 = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__80520_81420,(1),null);
+ellah.graphics.update_attr_BANG_(new cljs.core.Keyword(null,"graphics","graphics",-2079995979),((function (seq__80507_81402,chunk__80508_81403,count__80509_81404,i__80510_81405,vec__80520_81420,layer_81421,z_81422,seq__80507_81414__$1,temp__5753__auto___81413,app,stage){
+return (function (p1__80506_SHARP_){
 var graphics = (new module$node_modules$pixi_DOT_js$dist$cjs$pixi.Graphics());
-(graphics.zIndex = z_91716);
+(graphics.zIndex = z_81422);
 
 stage.addChild(graphics);
 
-return cljs.core.assoc.cljs$core$IFn$_invoke$arity$3(p1__91325_SHARP_,layer_91715,graphics);
-});})(seq__91326_91696,chunk__91327_91697,count__91328_91698,i__91329_91699,vec__91339_91714,layer_91715,z_91716,seq__91326_91708__$1,temp__5753__auto___91707,app,stage))
+return cljs.core.assoc.cljs$core$IFn$_invoke$arity$3(p1__80506_SHARP_,layer_81421,graphics);
+});})(seq__80507_81402,chunk__80508_81403,count__80509_81404,i__80510_81405,vec__80520_81420,layer_81421,z_81422,seq__80507_81414__$1,temp__5753__auto___81413,app,stage))
 );
 
 
-var G__91717 = cljs.core.next(seq__91326_91708__$1);
-var G__91718 = null;
-var G__91719 = (0);
-var G__91720 = (0);
-seq__91326_91696 = G__91717;
-chunk__91327_91697 = G__91718;
-count__91328_91698 = G__91719;
-i__91329_91699 = G__91720;
+var G__81423 = cljs.core.next(seq__80507_81414__$1);
+var G__81424 = null;
+var G__81425 = (0);
+var G__81426 = (0);
+seq__80507_81402 = G__81423;
+chunk__80508_81403 = G__81424;
+count__80509_81404 = G__81425;
+i__80510_81405 = G__81426;
 continue;
 }
 } else {
@@ -1927,35 +3512,46 @@ break;
 
 document.body.appendChild(app.view);
 
-ellah.graphics.resize();
-
 app.ticker.add(update_fn);
 
-var interaction_91721 = cljs.core.get.cljs$core$IFn$_invoke$arity$2(cljs.core.js__GT_clj.cljs$core$IFn$_invoke$arity$1(new cljs.core.Keyword(null,"app","app",-560961707).cljs$core$IFn$_invoke$arity$1(cljs.core.deref(ellah.graphics.graphics_state)).renderer.plugins),"interaction");
-interaction_91721.on("pointerdown",ellah.graphics.on_click_down);
+var interaction_81427 = cljs.core.get.cljs$core$IFn$_invoke$arity$2(cljs.core.js__GT_clj.cljs$core$IFn$_invoke$arity$1(new cljs.core.Keyword(null,"app","app",-560961707).cljs$core$IFn$_invoke$arity$1(cljs.core.deref(ellah.graphics.graphics_state)).renderer.plugins),"interaction");
+interaction_81427.on("pointerdown",ellah.graphics.on_click_down);
 
-interaction_91721.on("pointerup",ellah.graphics.on_click_up);
+interaction_81427.on("pointerup",ellah.graphics.on_click_up);
 
-interaction_91721.on("pointermove",ellah.graphics.update_mouse_pos);
+interaction_81427.on("pointermove",ellah.graphics.update_mouse_pos);
 
 ellah.graphics.set_attr_BANG_(new cljs.core.Keyword(null,"camera-pos","camera-pos",666924233),new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null,"x","x",2099068185),(0),new cljs.core.Keyword(null,"y","y",-1757859776),(0)], null));
 
 ellah.graphics.set_attr_BANG_(new cljs.core.Keyword(null,"camera-zoom","camera-zoom",-1214902147),(1));
 
-ellah.graphics.set_attr_BANG_(new cljs.core.Keyword(null,"eval-zone-size","eval-zone-size",1345284358),ellah.constants.eval_zone_min_size);
+ellah.graphics.set_attr_BANG_(new cljs.core.Keyword(null,"eval-zone-radius","eval-zone-radius",1772203622),ellah.constants.eval_zone_min_radius);
 
-ellah.graphics.set_attr_BANG_(new cljs.core.Keyword(null,"form","form",-1624062471),ellah.vedn.clj__GT_vedn(ellah.vedn.test_str));
+ellah.graphics.set_attr_BANG_(new cljs.core.Keyword(null,"form","form",-1624062471),ellah.vedn.clj__GT_vedn(ellah.constants.starting_program));
 
 ellah.graphics.set_attr_BANG_(new cljs.core.Keyword(null,"eval-results","eval-results",553789722),cljs.core.PersistentVector.EMPTY);
 
 ellah.graphics.set_attr_BANG_(new cljs.core.Keyword(null,"formbars","formbars",393026901),ellah.constants.formbar_defaults);
 
-var font = (new module$node_modules$fontfaceobserver$fontfaceobserver_standalone(ellah.constants.font_name));
-return font.load().then((function (){
+var font_81428 = (new module$node_modules$fontfaceobserver$fontfaceobserver_standalone(ellah.constants.font_name));
+font_81428.load().then((function (){
 ellah.graphics.set_attr_BANG_(new cljs.core.Keyword(null,"font-loaded?","font-loaded?",-1665361590),true);
 
 return ellah.util.log.cljs$core$IFn$_invoke$arity$variadic(cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2(["Font loaded."], 0));
 }));
+
+var text_input_81429 = document.createElement("input");
+(text_input_81429.type = "text");
+
+document.body.appendChild(text_input_81429);
+
+ellah.graphics.set_attr_BANG_(new cljs.core.Keyword(null,"text-input","text-input",-1937260843),text_input_81429);
+
+(text_input_81429.style.position = "absolute");
+
+ellah.graphics.hide_text_input();
+
+return ellah.graphics.resize();
 });
 
 //# sourceMappingURL=ellah.graphics.js.map
